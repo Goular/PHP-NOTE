@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>网页标题</title>
+    <meta name="keywords" content="关键字列表"/>
+    <meta name="description" content="网页描述"/>
+    <link rel="stylesheet" type="text/css" href=""/>
+    <style type="text/css">
+        .t1 {
+            color: red;
+        }
+
+        .t2 {
+            background: #cccccc
+        }
+    </style>
+    <script type="text/javascript"></script>
+</head>
+<body>
+<a href='?c=Product&act=ShowAllProduct'>产品列表</a>
+<a href='?'>用户列表</a>
+<hr/>
+<a href='?c=User&act=ShowForm'>添加新用户</a>
+用户列表：
+<table border='1'>
+    <?php
+	foreach( $data1 as  $key => $rec )
+    {
+    ?>
+    <tr>
+        <td><?php echo $rec['user_name']; ?></td>
+        <td class='t1'><?php echo $rec['age']; ?></td>
+        <td><?php echo $rec['edu']; ?></td>
+        <td class='t2'><?php echo $rec['xingqu']; ?></td>
+        <td><?php echo $rec['from']; ?></td>
+        <td><?php echo $rec['reg_time']; ?></td>
+        <td>
+            <a href='?c=User&act=del&id=<?php echo $rec["user_id"]; ?>' onclick='return queren()'>删除</a>
+            <a href='?c=User&act=detail&id=<?php echo $rec["user_id"]; ?>'>详细</a>
+            <a href='?c=User&act=Edit&id=<?php echo $rec["user_id"]; ?>'>修改</a>
+        </td>
+    </tr>
+    <?php
+	}
+	?>
+</table>
+<br/>
+当前用户总数：<?php echo $data2;?>
+
+<hr/>
+<a href="?p=back&c=Admin&act=Login">进入后台</a>
+</body>
+</html>
+<script>
+    function queren() {
+        return window.confirm("你真的要删除吗？");
+    }
+</script>

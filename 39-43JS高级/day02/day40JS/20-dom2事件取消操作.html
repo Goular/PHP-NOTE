@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<h2>dom2级事件取消操作</h2>
+
+<div>Today is cloud</div>
+<input type="button" value="取消" onclick="cancel()"/>
+</body>
+</html>
+<script>
+    var dv = document.getElementsByTagName('div')[0];
+
+    function cancel() {
+        dv.removeEventListener('click', f1);
+        dv.removeEventListener("mouseover", over);
+    }
+
+    dv.addEventListener('click', function () {
+        dv.style.backgroundColor = "lightblue";
+    });
+
+    dv.addEventListener('click', function () {
+        console.log('I am here');
+    });
+
+    function f1() {
+        console.log('视频不用加密了');
+    }
+    dv.addEventListener('click', f1);
+
+    function over() {
+        dv.style.backgroundColor = "lightgreen";
+    }
+    dv.addEventListener('mouseover', over);//直接拔事件处理函数名字设置上(没有()括号的)
+
+    function out() {
+        dv.style.backgroundColor = "pink";
+    }
+    dv.addEventListener('mouseout', out);
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //② 给多个不同事件绑定同一个处理
+        //页面加载完毕 给div设置事件
+        $(function(){
+            //$('div').bind(类型1 类型2 类型3 ..，处理函数);
+            //注意：不同类型事件彼此之间通过“一个”空格分隔
+            $('div').bind('click mouseover mouseout',function(evt){
+                console.log('The next season is winter.');
+            });
+            //多事件绑定 一个空格隔开就可以了
+
+        });
+
+    </script>
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:pink;}
+    </style>
+</head>
+<body>
+    <h2>事件绑定(多个事件同一个处理)</h2>
+    <div>this is autumn</div>
+</body>
+</html>

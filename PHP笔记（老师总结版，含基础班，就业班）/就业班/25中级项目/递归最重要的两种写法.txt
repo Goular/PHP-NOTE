@@ -1,0 +1,25 @@
+//按顺序保存归并
+//对给定的数组进行重新的排序
+public function tree($arr,$parent_id=0,$level=0){
+	static $res = array();
+	foreach($arr as $value){
+		if($value['parent_id'] == $parent_id){
+			$value['level'] = $level;
+			$res[] = $value;
+			tree($arr,$value['id'],$level+1);
+		}
+	}
+	return $res;
+}
+
+//将平行的二维数组，转成包含关系的多维数组
+public function getTypes($arr,$parent_id=0){
+	$res = array();
+	foreach($arr as $value){
+		if($value['parent_id'] == $parent_id){
+			$value['child'] = getTypes($arr,$value['id']);
+			$res[] = $value;
+		}
+	}
+	return $res;
+}

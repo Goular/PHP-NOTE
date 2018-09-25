@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //对象调用其他函数 或 方法
+        //对象调用其他对象的方法,为对象增加一个成员，该成员就是被调用方法的另一个名字
+        var cat = {
+            mingzi: '波斯猫',
+            climb: function () {
+                console.log(this.mingzi + "在爬树");
+            }
+        };
+
+        var tiger = {
+            mingzi: "东北虎",
+            act: function () {
+                console.log("猛虎扑食");
+            }
+        };
+
+        tiger.pa = cat.climb;
+        tiger.pa();
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

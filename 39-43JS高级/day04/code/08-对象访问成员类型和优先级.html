@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //对象访问成员类型和优先级
+        function Cat() {
+            this.weapon = "伶牙俐齿";
+        }
+
+        var kitty = new Cat();
+        kitty.weapon = "走直线";
+
+        function Tiger() {
+            this.color = "yellow";
+            this.leg = 4;
+            this.act = function () {
+                console.log("猛虎扑食");
+            };
+            this.weapon = "嘶吼";
+        }
+
+        Tiger.prototype = kitty;
+        var north = new Tiger();
+        north.weapon = "大爪子";
+
+        console.log(north.weapon);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

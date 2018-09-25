@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //修改属性信息  $().attr(属性名称, 值);
+            //document.getElementById('username').type = "checkbox";//火狐浏览器起作用 [不推荐修改]
+            //$('input:first').attr('type','checkbox');// type property can't be changed
+            //除了type属性，其他的(规定的、自定义)都允许修改
+            $("input:first").attr('class','banana');
+            $("input:first").attr('id','usertel');
+            $("input:first").attr('name','usertel');
+            $("input:first").attr('value','13212344321');
+            $("input:first").attr('address','上海');
+        }
+
+        function f2(){
+            //json对象 批量修改属性
+            var jn = {
+                'class':'pear',
+                'id':'usermail',
+                'name':'usermail',
+                'value':'jim@163.com',
+                'address':'广州'
+            }
+            $('input:first').attr(jn);
+        }
+
+        function f3(){
+            $("input:first").attr('value',function(){
+                return 123456;
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>属性操作</h2>
+<input type="text" class="apple" id="username" name="username" value="tom" address="beijing"  />
+<input type="button" value="修改1" onclick="f1()" />
+<input type="button" value="修改2" onclick="f2()" />
+<input type="button" value="修改3" onclick="f3()" />
+</body>
+</html>

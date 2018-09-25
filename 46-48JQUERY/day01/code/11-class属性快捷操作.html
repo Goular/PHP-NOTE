@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+
+        function f1(){
+            //同一属性多次修改信息:追加，覆盖
+            //为class属性设置内容
+            //attr()方法多次使用，属性值会追加给class属性
+            //attr方法会产生追加的问题，而addClass会产生的是叠加
+            $('div').attr('class','apple');
+            $('div').attr('class','pear');
+            $('div').attr('class','banana');
+
+            $('div').addClass('apple');
+            $('div').addClass('pear');
+            $('div').addClass('banana');
+        }
+
+        function f2(){
+            //删除class属性的值
+            $('div').removeClass("pear");
+            $('div').removeClass("apple");
+            $('div').removeClass("banana");
+        }
+
+        function f3(){
+            //开关效果，class属性值设置，可以重复执行查看效果
+            $('div').toggleClass('pear');
+        }
+
+    </script>
+    <style>
+        .apple{width:300px;height: 200px;background-color: lightgreen;}
+        .pear{color:blue;}
+        .banana{font-size: 30px;}
+    </style>
+</head>
+<body>
+<h2>class属性快捷操作</h2>
+<div>this classname is php0710</div>
+<input type="button" value="设置" onclick="f1()" />
+<input type="button" value="删除" onclick="f2()" />
+<input type="button" value="开关" onclick="f3()" />
+</body>
+</html>

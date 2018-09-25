@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //call方式函数调用
+        //函数名字.call(函数内部this的引用,实参,实参,实参...);
+        //函数名字.apply(函数内部this的引用,[实参,实参,实参...]);
+        function study(addr, time) {
+            console.log(this.mingzi + "在学习跑步，地点是：" + addr + ",时间是" + time);
+        }
+
+        var cat = {
+            mingzi: "波斯猫"
+        }
+
+        var pig = {
+            mingzi: "荷兰猪"
+        }
+
+        study.call(cat, "杨箕村", "上午");
+        study.call(pig, "西三旗", "傍晚");
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		.t1{color:red;}
+		.t2{background:#cccccc}
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+<a href='?c=Product&a=ShowAllProduct'>产品列表</a>
+<a href='?c=User'>用户列表</a>
+<hr />
+产品列表：
+<table border='1'>
+	<?php
+	foreach( $data as  $key => $rec )
+	{
+	?>
+	<tr>
+		<td><?php echo $rec['pro_name']; ?></td>
+		<td class='t1'><?php echo $rec['protype_name']; ?></td>
+		<td><?php echo $rec['price']; ?></td>
+		<td class='t2'><?php echo $rec['pinpai']; ?></td>
+		<td><?php echo $rec['chandi']; ?></td>
+		<td>
+			<a href='?c=Product&a=del&id=<?php echo $rec['pro_id']; ?>' onclick='return queren()'>删除</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+</table>
+<br />
+</body>
+</html>
+<script>
+	function queren(){
+		return window.confirm("你真的要删除吗？");
+	}
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>事件对象作用</h2>
+
+<form method="post" action="./25.php">
+    <p>用户名：<input type="text" name="username"/></p>
+
+    <p>密码：<input type="text" name="userpwd"/></p>
+
+    <p>邮箱：<input type="text" name="useremail"/></p>
+
+    <p><input type="submit" value="注册"/></p>
+</form>
+</body>
+</html>
+
+<script>
+    //给form表单设置事件
+    var fm = document.getElementsByTagName('form')[0];
+    //设置一个form表单提交事件
+    //    fm.onsubmit = function (event) {
+    //        alert('邮箱格式不正确');
+    //        //dom1级事件能够进行事件的拦截
+    //        //return false;
+    //        //下面的方法同样能够生效
+    //        event.preventDefault();
+    //    };
+
+    //使用的是dom2级事件处理
+    fm.addEventListener('submit', function (event) {
+        alert("邮箱格式不正确2");
+        //return false;//使用该语句拦截失败，原因是dom2级事件不认这个返回有什么作用
+        event.preventDefault();//组织浏览器转跳（dom1级事件和dom2级事件都起作用）
+    });
+
+
+</script>

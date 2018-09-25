@@ -1,0 +1,9 @@
+<!ELEMENT rss (channel)+>
+<!ELEMENT channel (title,link,description,language,item+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT item (title,link,pubDate,description)>
+<!ELEMENT pubDate (#PCDATA)>
+<!ATTLIST rss version CDATA #FIXED '2.0'>

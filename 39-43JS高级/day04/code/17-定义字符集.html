@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //定义字符集
+        //在没有特殊限制的时候就是单词匹配
+        //从左往右匹配到第一个符合模式的内容即可
+
+        //[a-z]26个字母之一
+        var str = "2015-09-12 is a SunShine Day";
+
+        var reg = /[a-z]/;
+        var reg = /[m-w]/;
+        var reg = /[M-W]/;
+
+        //[uxpq]四个字母之一
+        var reg = /[uxpq]/;
+
+        //数字[0-9]的数字之一
+        var reg = /[0-9]/;
+        var reg = /[4-7]/;
+
+        //[a-z_-]26个字母，下划线，中横线匹配之一
+        var reg = /[a-zA-Z0-9_-]/;
+
+        //匹配字符串  被匹配字符串.match(正则内容)
+        // 返回匹配到的结果
+        var result = str.match(reg);
+        console.log(result);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

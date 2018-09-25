@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>节点删除</h2>
+<input type="button" value="节点删除" onclick="f1()"/><br/>
+<ul id="foreign">
+    <li addr='德国'>奔驰</li>
+    <li addr='美国' id="bie">别克</li>
+    <li addr='英国'>路虎</li>
+</ul>
+<ul id="china">
+    <li addr='中国'>奇瑞</li>
+    <li addr='中国' id="xia">夏利</li>
+    <li addr='中国'>奥拓</li>
+</ul>
+</body>
+</html>
+<script>
+    //removeChild 删除节点
+    function f1() {
+        var xiali = document.getElementById("xia");
+        xiali.parentNode.removeChild(xiali);//删除夏利自身节点
+    }
+</script>
+

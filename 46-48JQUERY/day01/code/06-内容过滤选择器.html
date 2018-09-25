@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //① :contains(text) 节点内部包含text字符串信息
+            $('div:contains("beijing")').css('color','red');
+
+            //② :empty 获得空节点
+            console.log($('div:empty'));
+
+            //③ :has(选择器)  节点必须包含“选择器”对应的子节点
+            console.log($('div:has(p)'));
+
+            //④ :parent  作为父节点存在的节点
+            console.log($('div:parent'));
+
+        }
+        //contains
+        //empty
+        //has(选择器)
+        //:parent
+    </script>
+
+</head>
+<body>
+    <h2 class="orange">jquery内容过滤选择器</h2>
+    <div>xiaoming like beijing</div>
+    <div>mary like newyork</div>
+    <div><p></p></div>
+    <div><p></p></div>
+    <div>     </div>
+    <div></div>
+    <input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

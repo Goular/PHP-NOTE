@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //复制继承（多次调用方法，就是执行多继承的使用）
+        function Tiger() {
+            this.leg = 4;
+            this.color = "yellow";
+        }
+        Tiger.prototype.extend = function (obj) {
+            //遍历obj的每个成员变量，赋予当前的对象this
+            for (var k in obj) {
+                if (this.hasOwnProperty(k) === false) {
+                    this[k] = obj[k];
+                }
+            }
+        }
+
+        var south = new Tiger();
+        var dog = {mingzi: "旺财", age: 6, color: "white"};
+        var pig = {hobby: "sleep睡觉"};
+
+        south.extend(dog);
+        south.extend(pig);
+        console.log(south);
+        var north = new Tiger();
+        console.log(north);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //特别字符集
+        //在没有特殊限制的时候就是“单次”匹配
+        //从左往右匹配到第一个符合模式的内容即可
+
+        //+  : 其前面那个单元出现1次或以上
+        var str = "2015-09-12 is a SunShine Day";
+        var reg = /[0-9]+/;
+
+        var str = "gooogle";
+        var reg = /go+gle/;
+
+        //*  : 其前面那个单元出现0次或以上
+        var str = "ggle";
+        var reg = /go*gle/;
+
+        var str = "hello beijing";
+        var reg = /[0-9]*/;
+
+        var str = "gole";
+        var reg = /go?gle/;
+
+        var result = str.match(reg);
+        console.log(result);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

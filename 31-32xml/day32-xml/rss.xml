@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE rss SYSTEM 'rss.dtd'>
+<rss version='2.0'>
+	<channel>
+		<title>传智播客PHP学院</title>
+		<link>http://php.itcast.cn</link>
+		<description>学PHP，首选传智播客</description>
+		<language>zn-cn</language>
+		<item>
+			<title>标题1</title>
+			<link>http://php.itcast.cn/1.php</link>
+			<pubDate>2013-05-09 10:23:40</pubDate>
+			<description>正文1</description>
+		</item>
+		<item>
+			<title>标题2</title>
+			<link>http://php.itcast.cn/2.php</link>
+			<pubDate>2013-05-09 10:23:40</pubDate>
+			<description>正文2</description>
+		</item>
+	</channel>
+</rss>

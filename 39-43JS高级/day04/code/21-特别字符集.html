@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //特别字符集
+        //在没有特殊限制的时候就是“单次”匹配
+        //从左往右匹配到第一个符合模式的内容即可
+
+        //( ): 标记一个子表达式的开始和结束位置。
+        //     在正则表达式内部的小括号都称作“模式单元”
+        //作用：
+        //① 提高子表达式优先级
+        //② 从一个大的字符串中拆分小的字符串出来
+        var str = "gogogogogogogle";
+        var reg = /(go)+(gle)/;
+
+        var rst = str.match(reg);
+
+        console.log(rst);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

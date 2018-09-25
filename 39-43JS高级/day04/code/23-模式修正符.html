@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //模式修正符
+        //g: 全局匹配
+        //i: 忽略大小写
+
+        var str = "BeiJing2008XiangGang1997AoMen1999";
+        var reg = /[a-z]+[0-9]+/ig;
+
+        var reg2 = /[a-z]+([0-9]+)/;
+
+        //匹配字符串  被匹配字符串.match(正则内容)
+        // 返回匹配到的结果
+        var rst = str.match(reg);
+        console.log(rst);//["BeiJing2008", "XiangGang1997", "AoMen1999"]
+
+        for (var rrs in rst) {
+            var match = rst[rrs].match(reg2);
+            console.log(match);
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

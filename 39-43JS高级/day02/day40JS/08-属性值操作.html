@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>属性值操作</h2>
+<input type="text" addr="beijing" id="mingzi" name="username" value="tom" class="orange"/>
+<br/><br/>
+<input type="button" value="设置" onclick="f1()"/>
+</body>
+</html>
+
+<script>
+    function f1() {
+        var name = document.getElementsByTagName("input")[0];
+        //设置属性的值
+        //1) 节点对象.属性名称 = 值;  只能修改 "规定的" 属性
+        name.id = "email";
+        name.name = "usermail";
+        name.value = "ma@124.com";
+        name.className = "apple";
+        name.type = "checkbox";
+
+        //2) 节点对象.setAttribute(name,value)  "规定的、自定义的" 属性都可以修改
+        name.setAttribute("addr", "tianjin");
+        name.setAttribute("class", "banana");
+    }
+
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="./jquery-table-color.js"></script>
+    <script>
+        //项目里边有许多地方都要用到table表格隔行换色
+        //为了避免其他地方也编写重复的代码，就把这个表格换色功能的代码
+        //封装为"插件"的形式。
+        //插件作用：避免写重复代码，简化开发
+
+        //页面加载完毕给table的tr设置颜色
+
+        //为jquery对象增加一个操作方法，名称为:setTableColor();
+        //jquery对象可以调用成员：init、fn、fn.extend()
+
+        //JQuery的插件开发的形式有两种
+        //$.fn.setTableColor = function(){}
+        //$.fn.extend({setTableColor = function(){});
+
+        $(function(){
+            $('table').setTableColor('green','gray');
+        });
+    </script>
+
+    <style type="text/css">
+        table{width:700px; margin:auto; border:1px solid black; border-collapse:collapse;}
+        td {border:1px solid black}
+        h2{width:700px; margin:auto; text-align:center;}
+    </style>
+</head>
+<body>
+<h2>插件开发使用</h2>
+<table>
+    <tr><td>序号</td><td>名称</td><td>价格</td><td>数量</td></tr>
+    <tr><td>1</td><td>iphone</td><td>6500</td><td>15</td></tr>
+    <tr><td>2</td><td>htc</td><td>3200</td><td>6</td></tr>
+    <tr><td>3</td><td>samsung</td><td>4600</td><td>23</td></tr>
+    <tr><td>4</td><td>huawei</td><td>1900</td><td>31</td></tr>
+    <tr><td>5</td><td>nokia</td><td>1300</td><td>10</td></tr>
+    <tr><td>6</td><td>htc</td><td>3200</td><td>6</td></tr>
+    <tr><td>7</td><td>samsung</td><td>4600</td><td>23</td></tr>
+    <tr><td>8</td><td>huawei</td><td>1900</td><td>31</td></tr>
+    <tr><td>9</td><td>nokia</td><td>1300</td><td>10</td></tr>
+</table>
+</body>
+</html>

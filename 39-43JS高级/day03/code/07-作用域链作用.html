@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //作用域链作用
+        //③ 变量的作用域是“声明时”决定的，非运行时
+        //   访问的变量信息是系统的“唯一”变量，调用的时候取决于该变量的"当时信息"
+
+        var identity = "student";
+
+        function f1() {
+            console.log("身份:::" + identity);
+        }
+
+        f1();//student
+
+        identity = "CTO";
+
+        f1();//CTO
+
+    </script>
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

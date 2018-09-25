@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包的使用规则
+        function f1(num) {
+            function f2() {
+                console.log('数字：：' + num)
+            }
+
+            return f2;
+        }
+
+        var fa = f1(100);
+        var fb = f1(110);
+        var fc = f1(120);
+
+        fa();
+        fb();
+        fc();
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

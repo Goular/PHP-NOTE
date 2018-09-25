@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function f1() {
+        var len = arguments.length;
+        if (len == 1) {
+            console.log('名字:' + arguments[0]);
+        }else if(len == 2){
+            console.log('名字:' + arguments[0]+","+"年龄::"+arguments[1]);
+        }else if(len == 3){
+            console.log('名字:' + arguments[0]+","+"年龄::"+arguments[1]+","+"城市::"+arguments[2]);
+        }
+    }
+
+    //实参 与 形参 没有严格对应要求
+    f1('mary');
+    f1('linken',26);
+    f1('xiaoming',24,'beijing');
+
+    //以上函数调用根据实参个数有自适应效果，是"重载"的效果
+    //并且是利用arguments关键字实现的重载
+</script>
+</body>
+</html>

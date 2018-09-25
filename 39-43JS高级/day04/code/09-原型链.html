@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //原型链
+        function Cat() {
+            this.color = "gray";
+        }
+        var kitty = new Cat();
+
+        function Tiger() {
+            this.act = "猛虎下山";
+        }
+        Tiger.prototype = kitty;
+        var north = new Tiger();
+
+        function Wolf() {
+            this.eye = "闪闪发光";
+        }
+        Wolf.prototype = north;
+        var seven = new Wolf();
+
+        function Dog() {
+            this.hobby = "看家护林";
+        }
+        Dog.prototype = seven;
+
+        var wangcai = new Dog();
+        console.log(wangcai);
+        console.log(wangcai.constructor);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

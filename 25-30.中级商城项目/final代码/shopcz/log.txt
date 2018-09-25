@@ -1,0 +1,1453 @@
+[2016-10-07 09:22:11]set names utf8
+[2016-10-07 09:22:11]DESC cz_category
+[2016-10-07 09:22:11]select * from cz_category;
+[2016-10-07 09:22:12]set names utf8
+[2016-10-07 09:22:12]DESC cz_category
+[2016-10-07 09:22:12]select * from cz_category;
+[2016-10-07 10:23:14]set names utf8
+[2016-10-07 10:23:14]DESC cz_category
+[2016-10-07 10:23:14]select * from cz_category;
+[2016-10-07 10:23:26]set names utf8
+[2016-10-07 10:23:26]DESC cz_goods_type
+[2016-10-07 10:23:26]select * from cz_goods_type
+[2016-10-07 10:27:51]set names utf8
+[2016-10-07 10:27:51]DESC cz_goods_type
+[2016-10-07 10:27:51]select * from cz_goods_type
+[2016-10-07 10:56:16]set names utf8
+[2016-10-07 10:56:16]DESC cz_goods_type
+[2016-10-07 10:56:16]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 10:56:16]select count(*) from cz_goods_type
+[2016-10-07 10:59:44]set names utf8
+[2016-10-07 10:59:44]DESC cz_goods_type
+[2016-10-07 10:59:44]INSERT INTO `cz_goods_type` (`type_name`) VALUES ('酱油')
+[2016-10-07 10:59:46]set names utf8
+[2016-10-07 10:59:46]DESC cz_goods_type
+[2016-10-07 10:59:46]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 10:59:46]select count(*) from cz_goods_type
+[2016-10-07 11:00:41]set names utf8
+[2016-10-07 11:00:41]DESC cz_goods_type
+[2016-10-07 11:00:41]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:00:41]select count(*) from cz_goods_type
+[2016-10-07 11:00:59]set names utf8
+[2016-10-07 11:00:59]DESC cz_goods_type
+[2016-10-07 11:00:59]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:00:59]select count(*) from cz_goods_type
+[2016-10-07 11:01:16]set names utf8
+[2016-10-07 11:01:16]DESC cz_goods_type
+[2016-10-07 11:01:16]INSERT INTO `cz_goods_type` (`type_name`) VALUES ('辣椒')
+[2016-10-07 11:01:18]set names utf8
+[2016-10-07 11:01:18]DESC cz_goods_type
+[2016-10-07 11:01:18]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:01:18]select count(*) from cz_goods_type
+[2016-10-07 11:01:27]set names utf8
+[2016-10-07 11:01:27]DESC cz_goods_type
+[2016-10-07 11:01:27]INSERT INTO `cz_goods_type` (`type_name`) VALUES ('狗屎')
+[2016-10-07 11:01:29]set names utf8
+[2016-10-07 11:01:29]DESC cz_goods_type
+[2016-10-07 11:01:29]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:01:29]select count(*) from cz_goods_type
+[2016-10-07 11:01:39]set names utf8
+[2016-10-07 11:01:39]DESC cz_goods_type
+[2016-10-07 11:01:39]INSERT INTO `cz_goods_type` (`type_name`) VALUES ('天梯')
+[2016-10-07 11:01:41]set names utf8
+[2016-10-07 11:01:41]DESC cz_goods_type
+[2016-10-07 11:01:41]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:01:41]select count(*) from cz_goods_type
+[2016-10-07 11:01:45]set names utf8
+[2016-10-07 11:01:45]DESC cz_goods_type
+[2016-10-07 11:01:45]select * from cz_goods_type order by type_id desc limit 3,3;
+[2016-10-07 11:01:45]select count(*) from cz_goods_type
+[2016-10-07 11:01:46]set names utf8
+[2016-10-07 11:01:46]DESC cz_goods_type
+[2016-10-07 11:01:46]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:01:46]select count(*) from cz_goods_type
+[2016-10-07 11:01:48]set names utf8
+[2016-10-07 11:01:48]DESC cz_goods_type
+[2016-10-07 11:01:48]select * from cz_goods_type order by type_id desc limit 3,3;
+[2016-10-07 11:01:48]select count(*) from cz_goods_type
+[2016-10-07 11:01:49]set names utf8
+[2016-10-07 11:01:49]DESC cz_goods_type
+[2016-10-07 11:01:49]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:01:49]select count(*) from cz_goods_type
+[2016-10-07 11:03:58]set names utf8
+[2016-10-07 11:03:58]DESC cz_goods_type
+[2016-10-07 11:03:58]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:03:58]select count(*) from cz_goods_type
+[2016-10-07 11:23:09]set names utf8
+[2016-10-07 11:23:09]DESC cz_goods_type
+[2016-10-07 11:23:09]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:23:09]select count(*) from cz_goods_type
+[2016-10-07 11:32:35]set names utf8
+[2016-10-07 11:32:35]DESC cz_goods_type
+[2016-10-07 11:32:35]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-07 11:32:35]select count(*) from cz_goods_type
+[2016-10-07 11:32:42]set names utf8
+[2016-10-07 11:32:42]DESC cz_goods_type
+[2016-10-07 11:32:42]select * from cz_goods_type
+[2016-10-07 11:33:02]set names utf8
+[2016-10-07 11:33:02]DESC cz_goods_type
+[2016-10-07 11:33:02]select * from cz_goods_type
+[2016-10-07 12:11:02]set names utf8
+[2016-10-07 12:11:02]DESC cz_goods_type
+[2016-10-07 12:11:02]select * from cz_goods_type
+[2016-10-07 12:11:33]set names utf8
+[2016-10-07 12:11:33]DESC cz_goods_type
+[2016-10-07 12:11:33]select * from cz_goods_type
+[2016-10-07 12:12:10]set names utf8
+[2016-10-07 12:12:10]DESC cz_goods_type
+[2016-10-07 12:12:10]select * from cz_goods_type
+[2016-10-08 12:02:54]set names utf8
+[2016-10-08 12:02:54]DESC cz_admin
+[2016-10-08 12:02:54]select * from cz_admin where admin_name = 'admin' and password = 'e10adc3949ba59abbe56e057f20f883e' limit 1
+[2016-10-08 12:02:54]set names utf8
+[2016-10-08 12:02:54]DESC cz_admin
+[2016-10-08 12:02:54]select * from cz_admin
+[2016-10-08 12:04:18]set names utf8
+[2016-10-08 12:04:18]DESC cz_attribute
+[2016-10-08 12:04:18]select * from cz_attribute where type_id = 0
+[2016-10-08 15:17:06]set names utf8
+[2016-10-08 15:17:06]DESC cz_admin
+[2016-10-08 15:17:06]select * from cz_admin where admin_name = 'admin' and password = 'e10adc3949ba59abbe56e057f20f883e' limit 1
+[2016-10-08 15:17:06]set names utf8
+[2016-10-08 15:17:06]DESC cz_admin
+[2016-10-08 15:17:06]select * from cz_admin
+[2016-10-08 15:17:22]set names utf8
+[2016-10-08 15:17:22]DESC cz_attribute
+[2016-10-08 15:17:22]select * from cz_attribute where type_id = 0
+[2016-10-08 15:20:06]set names utf8
+[2016-10-08 15:20:06]DESC cz_attribute
+[2016-10-08 15:20:06]select * from cz_attribute where type_id = 0
+[2016-10-08 15:20:31]set names utf8
+[2016-10-08 15:20:31]DESC cz_attribute
+[2016-10-08 15:20:31]select * from cz_attribute where type_id = 
+[2016-10-08 15:20:35]set names utf8
+[2016-10-08 15:20:35]DESC cz_admin
+[2016-10-08 15:20:35]select * from cz_admin
+[2016-10-08 15:20:37]set names utf8
+[2016-10-08 15:20:37]DESC cz_attribute
+[2016-10-08 15:20:37]select * from cz_attribute where type_id = 
+[2016-10-08 15:20:48]set names utf8
+[2016-10-08 15:20:48]DESC cz_admin
+[2016-10-08 15:20:48]select * from cz_admin
+[2016-10-08 15:20:57]set names utf8
+[2016-10-08 15:20:57]DESC cz_attribute
+[2016-10-08 15:20:57]select * from cz_attribute where type_id = 
+[2016-10-08 15:23:19]set names utf8
+[2016-10-08 15:23:19]DESC cz_attribute
+[2016-10-08 15:23:19]select * from cz_attribute where type_id = 
+[2016-10-08 15:25:06]set names utf8
+[2016-10-08 15:25:06]DESC cz_category
+[2016-10-08 15:25:06]select * from cz_category;
+[2016-10-08 15:25:12]set names utf8
+[2016-10-08 15:25:12]DESC cz_category
+[2016-10-08 15:25:12]select * from cz_category;
+[2016-10-08 15:25:13]set names utf8
+[2016-10-08 15:25:13]DESC cz_category
+[2016-10-08 15:25:13]select * from cz_category;
+[2016-10-08 15:25:17]set names utf8
+[2016-10-08 15:25:17]DESC cz_category
+[2016-10-08 15:25:17]select * from `cz_category` where `cat_id`=4
+[2016-10-08 15:25:17]select * from cz_category;
+[2016-10-08 15:25:19]set names utf8
+[2016-10-08 15:25:19]DESC cz_category
+[2016-10-08 15:25:19]select * from cz_category;
+[2016-10-08 15:25:56]set names utf8
+[2016-10-08 15:25:56]DESC cz_attribute
+[2016-10-08 15:25:56]select * from cz_attribute where type_id = 
+[2016-10-08 15:26:05]set names utf8
+[2016-10-08 15:26:05]DESC cz_goods_type
+[2016-10-08 15:26:05]select * from cz_goods_type
+[2016-10-08 15:27:00]set names utf8
+[2016-10-08 15:27:00]DESC cz_goods_type
+[2016-10-08 15:27:00]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:27:00]select count(*) from cz_goods_type
+[2016-10-08 15:27:15]set names utf8
+[2016-10-08 15:27:15]DESC cz_attribute
+[2016-10-08 15:27:15]select * from cz_attribute where type_id = 4
+[2016-10-08 15:27:30]set names utf8
+[2016-10-08 15:27:30]DESC cz_goods_type
+[2016-10-08 15:27:30]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:27:30]select count(*) from cz_goods_type
+[2016-10-08 15:27:32]set names utf8
+[2016-10-08 15:27:32]DESC cz_attribute
+[2016-10-08 15:27:32]select * from cz_attribute where type_id = 2
+[2016-10-08 15:27:34]set names utf8
+[2016-10-08 15:27:34]DESC cz_goods_type
+[2016-10-08 15:27:34]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:27:34]select count(*) from cz_goods_type
+[2016-10-08 15:27:35]set names utf8
+[2016-10-08 15:27:35]DESC cz_attribute
+[2016-10-08 15:27:35]select * from cz_attribute where type_id = 3
+[2016-10-08 15:27:52]set names utf8
+[2016-10-08 15:27:52]DESC cz_goods_type
+[2016-10-08 15:27:52]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:27:52]select count(*) from cz_goods_type
+[2016-10-08 15:28:03]set names utf8
+[2016-10-08 15:28:03]DESC cz_goods_type
+[2016-10-08 15:28:03]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:28:03]select count(*) from cz_goods_type
+[2016-10-08 15:29:03]set names utf8
+[2016-10-08 15:29:03]DESC cz_attribute
+[2016-10-08 15:29:03]select * from cz_attribute where type_id = 4
+[2016-10-08 15:31:06]set names utf8
+[2016-10-08 15:31:06]DESC cz_attribute
+[2016-10-08 15:31:06]select * from cz_attribute where type_id = 4
+[2016-10-08 15:31:10]set names utf8
+[2016-10-08 15:31:10]DESC cz_goods_type
+[2016-10-08 15:31:10]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:31:10]select count(*) from cz_goods_type
+[2016-10-08 15:31:12]set names utf8
+[2016-10-08 15:31:12]DESC cz_attribute
+[2016-10-08 15:31:12]select * from cz_attribute where type_id = 4
+[2016-10-08 15:34:30]set names utf8
+[2016-10-08 15:34:30]DESC cz_attribute
+[2016-10-08 15:34:30]select * from cz_attribute where type_id = 4
+[2016-10-08 15:34:58]set names utf8
+[2016-10-08 15:34:58]DESC cz_goods_type
+[2016-10-08 15:34:58]select * from cz_goods_type
+[2016-10-08 15:35:57]set names utf8
+[2016-10-08 15:35:57]DESC cz_attribute
+[2016-10-08 15:35:57]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('颜色','1','2','1','红色
+绿色')
+[2016-10-08 15:35:59]set names utf8
+[2016-10-08 15:35:59]DESC cz_attribute
+[2016-10-08 15:35:59]select * from cz_attribute where type_id = 
+[2016-10-08 15:36:07]set names utf8
+[2016-10-08 15:36:07]DESC cz_goods_type
+[2016-10-08 15:36:07]select * from cz_goods_type
+[2016-10-08 15:36:07]set names utf8
+[2016-10-08 15:36:07]DESC cz_attribute
+[2016-10-08 15:36:07]select * from cz_attribute where type_id = 4
+[2016-10-08 15:36:08]set names utf8
+[2016-10-08 15:36:08]DESC cz_goods_type
+[2016-10-08 15:36:08]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:36:08]select count(*) from cz_goods_type
+[2016-10-08 15:36:10]set names utf8
+[2016-10-08 15:36:10]DESC cz_attribute
+[2016-10-08 15:36:10]select * from cz_attribute where type_id = 4
+[2016-10-08 15:36:14]set names utf8
+[2016-10-08 15:36:14]DESC cz_goods_type
+[2016-10-08 15:36:14]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:36:14]select count(*) from cz_goods_type
+[2016-10-08 15:36:15]set names utf8
+[2016-10-08 15:36:15]DESC cz_attribute
+[2016-10-08 15:36:15]select * from cz_attribute where type_id = 3
+[2016-10-08 15:36:16]set names utf8
+[2016-10-08 15:36:16]DESC cz_goods_type
+[2016-10-08 15:36:16]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:36:16]select count(*) from cz_goods_type
+[2016-10-08 15:36:17]set names utf8
+[2016-10-08 15:36:17]DESC cz_attribute
+[2016-10-08 15:36:17]select * from cz_attribute where type_id = 2
+[2016-10-08 15:36:19]set names utf8
+[2016-10-08 15:36:19]DESC cz_goods_type
+[2016-10-08 15:36:19]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:36:19]select count(*) from cz_goods_type
+[2016-10-08 15:36:20]set names utf8
+[2016-10-08 15:36:20]DESC cz_attribute
+[2016-10-08 15:36:20]select * from cz_attribute where type_id = 4
+[2016-10-08 15:36:22]set names utf8
+[2016-10-08 15:36:22]DESC cz_goods_type
+[2016-10-08 15:36:22]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:36:22]select count(*) from cz_goods_type
+[2016-10-08 15:37:07]set names utf8
+[2016-10-08 15:37:07]DESC cz_goods_type
+[2016-10-08 15:37:07]select * from cz_goods_type order by type_id desc limit 3,3;
+[2016-10-08 15:37:07]select count(*) from cz_goods_type
+[2016-10-08 15:37:08]set names utf8
+[2016-10-08 15:37:08]DESC cz_attribute
+[2016-10-08 15:37:08]select * from cz_attribute where type_id = 1
+[2016-10-08 15:37:49]set names utf8
+[2016-10-08 15:37:49]DESC cz_goods_type
+[2016-10-08 15:37:49]select * from cz_goods_type order by type_id desc limit 3,3;
+[2016-10-08 15:37:49]select count(*) from cz_goods_type
+[2016-10-08 15:37:51]set names utf8
+[2016-10-08 15:37:51]DESC cz_goods_type
+[2016-10-08 15:37:51]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:37:51]select count(*) from cz_goods_type
+[2016-10-08 15:38:19]set names utf8
+[2016-10-08 15:38:19]DESC cz_goods_type
+[2016-10-08 15:38:19]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:19]select count(*) from cz_goods_type
+[2016-10-08 15:38:20]set names utf8
+[2016-10-08 15:38:20]DESC cz_goods_type
+[2016-10-08 15:38:20]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:20]select count(*) from cz_goods_type
+[2016-10-08 15:38:22]set names utf8
+[2016-10-08 15:38:22]DESC cz_attribute
+[2016-10-08 15:38:22]select * from cz_attribute where type_id = 3
+[2016-10-08 15:38:25]set names utf8
+[2016-10-08 15:38:25]DESC cz_goods_type
+[2016-10-08 15:38:25]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:25]select count(*) from cz_goods_type
+[2016-10-08 15:38:26]set names utf8
+[2016-10-08 15:38:26]DESC cz_attribute
+[2016-10-08 15:38:26]select * from cz_attribute where type_id = 4
+[2016-10-08 15:38:29]set names utf8
+[2016-10-08 15:38:29]DESC cz_goods_type
+[2016-10-08 15:38:29]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:29]select count(*) from cz_goods_type
+[2016-10-08 15:38:36]set names utf8
+[2016-10-08 15:38:36]DESC cz_goods_type
+[2016-10-08 15:38:36]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:36]select count(*) from cz_goods_type
+[2016-10-08 15:38:37]set names utf8
+[2016-10-08 15:38:37]DESC cz_goods_type
+[2016-10-08 15:38:37]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:38:37]select count(*) from cz_goods_type
+[2016-10-08 15:54:00]set names utf8
+[2016-10-08 15:54:00]DESC cz_goods_type
+[2016-10-08 15:54:00]select * from cz_goods_type
+[2016-10-08 15:54:00]set names utf8
+[2016-10-08 15:54:00]DESC cz_attribute
+[2016-10-08 15:54:00]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit ,
+[2016-10-08 15:54:02]set names utf8
+[2016-10-08 15:54:02]DESC cz_goods_type
+[2016-10-08 15:54:03]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:54:03]select count(*) from cz_goods_type
+[2016-10-08 15:54:04]set names utf8
+[2016-10-08 15:54:04]DESC cz_goods_type
+[2016-10-08 15:54:04]select * from cz_goods_type
+[2016-10-08 15:54:04]set names utf8
+[2016-10-08 15:54:04]DESC cz_attribute
+[2016-10-08 15:54:04]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 3 limit ,
+[2016-10-08 15:59:07]set names utf8
+[2016-10-08 15:59:07]DESC cz_goods_type
+[2016-10-08 15:59:07]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:59:07]select count(*) from cz_goods_type
+[2016-10-08 15:59:09]set names utf8
+[2016-10-08 15:59:09]DESC cz_goods_type
+[2016-10-08 15:59:09]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-08 15:59:09]select count(*) from cz_goods_type
+[2016-10-08 15:59:10]set names utf8
+[2016-10-08 15:59:10]DESC cz_goods_type
+[2016-10-08 15:59:10]select * from cz_goods_type
+[2016-10-08 15:59:10]set names utf8
+[2016-10-08 15:59:10]DESC cz_attribute
+[2016-10-08 15:59:10]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 15:59:10]select count(*) from cz_attribute where  type_id = 4
+[2016-10-08 15:59:13]set names utf8
+[2016-10-08 15:59:13]DESC cz_goods_type
+[2016-10-08 15:59:13]select * from cz_goods_type
+[2016-10-08 15:59:13]set names utf8
+[2016-10-08 15:59:13]DESC cz_attribute
+[2016-10-08 15:59:13]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 15:59:13]select count(*) from cz_attribute where  type_id = 1
+[2016-10-08 15:59:15]set names utf8
+[2016-10-08 15:59:15]DESC cz_goods_type
+[2016-10-08 15:59:15]select * from cz_goods_type
+[2016-10-08 15:59:15]set names utf8
+[2016-10-08 15:59:15]DESC cz_attribute
+[2016-10-08 15:59:15]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 2 limit 0,2
+[2016-10-08 15:59:15]select count(*) from cz_attribute where  type_id = 2
+[2016-10-08 15:59:16]set names utf8
+[2016-10-08 15:59:16]DESC cz_goods_type
+[2016-10-08 15:59:16]select * from cz_goods_type
+[2016-10-08 15:59:16]set names utf8
+[2016-10-08 15:59:16]DESC cz_attribute
+[2016-10-08 15:59:16]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 3 limit 0,2
+[2016-10-08 15:59:16]select count(*) from cz_attribute where  type_id = 3
+[2016-10-08 15:59:18]set names utf8
+[2016-10-08 15:59:18]DESC cz_goods_type
+[2016-10-08 15:59:18]select * from cz_goods_type
+[2016-10-08 15:59:18]set names utf8
+[2016-10-08 15:59:18]DESC cz_attribute
+[2016-10-08 15:59:18]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 15:59:18]select count(*) from cz_attribute where  type_id = 4
+[2016-10-08 15:59:19]set names utf8
+[2016-10-08 15:59:19]DESC cz_goods_type
+[2016-10-08 15:59:19]select * from cz_goods_type
+[2016-10-08 15:59:19]set names utf8
+[2016-10-08 15:59:19]DESC cz_attribute
+[2016-10-08 15:59:19]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 15:59:19]select count(*) from cz_attribute where  type_id = 1
+[2016-10-08 15:59:23]set names utf8
+[2016-10-08 15:59:23]DESC cz_admin
+[2016-10-08 15:59:23]select * from cz_admin
+[2016-10-08 15:59:25]set names utf8
+[2016-10-08 15:59:25]DESC cz_goods_type
+[2016-10-08 15:59:25]select * from cz_goods_type
+[2016-10-08 15:59:25]set names utf8
+[2016-10-08 15:59:25]DESC cz_attribute
+[2016-10-08 15:59:25]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 15:59:25]select count(*) from cz_attribute where  type_id = 1
+[2016-10-08 15:59:27]set names utf8
+[2016-10-08 15:59:27]DESC cz_goods_type
+[2016-10-08 15:59:27]select * from cz_goods_type
+[2016-10-08 16:00:45]set names utf8
+[2016-10-08 16:00:45]DESC cz_attribute
+[2016-10-08 16:00:45]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('尺寸','1','1','0','')
+[2016-10-08 16:00:47]set names utf8
+[2016-10-08 16:00:47]DESC cz_goods_type
+[2016-10-08 16:00:47]select * from cz_goods_type
+[2016-10-08 16:00:47]set names utf8
+[2016-10-08 16:00:47]DESC cz_attribute
+[2016-10-08 16:00:47]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id =  limit 0,2
+[2016-10-08 16:02:46]set names utf8
+[2016-10-08 16:02:46]DESC cz_goods_type
+[2016-10-08 16:02:46]select * from cz_goods_type
+[2016-10-08 16:02:50]set names utf8
+[2016-10-08 16:02:50]DESC cz_goods_type
+[2016-10-08 16:02:50]select * from cz_goods_type
+[2016-10-08 16:03:09]set names utf8
+[2016-10-08 16:03:09]DESC cz_attribute
+[2016-10-08 16:03:09]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('产地','2','1','0','')
+[2016-10-08 16:03:11]set names utf8
+[2016-10-08 16:03:11]DESC cz_goods_type
+[2016-10-08 16:03:11]select * from cz_goods_type
+[2016-10-08 16:03:11]set names utf8
+[2016-10-08 16:03:11]DESC cz_attribute
+[2016-10-08 16:03:11]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id =  limit 0,2
+[2016-10-08 16:04:00]set names utf8
+[2016-10-08 16:04:00]DESC cz_goods_type
+[2016-10-08 16:04:00]select * from cz_goods_type
+[2016-10-08 16:04:00]set names utf8
+[2016-10-08 16:04:00]DESC cz_attribute
+[2016-10-08 16:04:00]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 16:04:00]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 16:04:04]set names utf8
+[2016-10-08 16:04:04]DESC cz_goods_type
+[2016-10-08 16:04:04]select * from cz_goods_type
+[2016-10-08 16:04:04]set names utf8
+[2016-10-08 16:04:04]DESC cz_attribute
+[2016-10-08 16:04:04]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 2 limit 0,2
+[2016-10-08 16:04:04]select count(*) from cz_attribute where type_id = 2
+[2016-10-08 16:04:06]set names utf8
+[2016-10-08 16:04:06]DESC cz_goods_type
+[2016-10-08 16:04:06]select * from cz_goods_type
+[2016-10-08 16:04:06]set names utf8
+[2016-10-08 16:04:06]DESC cz_attribute
+[2016-10-08 16:04:06]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 3 limit 0,2
+[2016-10-08 16:04:06]select count(*) from cz_attribute where type_id = 3
+[2016-10-08 16:04:08]set names utf8
+[2016-10-08 16:04:08]DESC cz_goods_type
+[2016-10-08 16:04:08]select * from cz_goods_type
+[2016-10-08 16:04:08]set names utf8
+[2016-10-08 16:04:08]DESC cz_attribute
+[2016-10-08 16:04:08]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 16:04:08]select count(*) from cz_attribute where type_id = 4
+[2016-10-08 16:04:09]set names utf8
+[2016-10-08 16:04:09]DESC cz_goods_type
+[2016-10-08 16:04:09]select * from cz_goods_type
+[2016-10-08 16:04:09]set names utf8
+[2016-10-08 16:04:09]DESC cz_attribute
+[2016-10-08 16:04:09]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 16:04:09]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 16:05:19]set names utf8
+[2016-10-08 16:05:19]DESC cz_goods_type
+[2016-10-08 16:05:19]select * from cz_goods_type
+[2016-10-08 16:05:19]set names utf8
+[2016-10-08 16:05:19]DESC cz_attribute
+[2016-10-08 16:05:19]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 16:05:19]select count(*) from cz_attribute where type_id = 4
+[2016-10-08 16:05:22]set names utf8
+[2016-10-08 16:05:22]DESC cz_goods_type
+[2016-10-08 16:05:22]select * from cz_goods_type
+[2016-10-08 16:06:29]set names utf8
+[2016-10-08 16:06:29]DESC cz_attribute
+[2016-10-08 16:06:29]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('性质','4','2','1','黄欢
+李欢')
+[2016-10-08 16:06:31]set names utf8
+[2016-10-08 16:06:31]DESC cz_goods_type
+[2016-10-08 16:06:31]select * from cz_goods_type
+[2016-10-08 16:06:31]set names utf8
+[2016-10-08 16:06:31]DESC cz_attribute
+[2016-10-08 16:06:31]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 16:06:31]select count(*) from cz_attribute where type_id = 4
+[2016-10-08 16:15:34]set names utf8
+[2016-10-08 16:15:34]DESC cz_goods_type
+[2016-10-08 16:15:34]select * from cz_goods_type
+[2016-10-08 16:15:35]set names utf8
+[2016-10-08 16:15:35]DESC cz_goods_type
+[2016-10-08 16:15:35]select * from cz_goods_type
+[2016-10-08 16:15:35]set names utf8
+[2016-10-08 16:15:35]DESC cz_attribute
+[2016-10-08 16:15:35]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-08 16:15:35]select count(*) from cz_attribute where type_id = 4
+[2016-10-08 16:15:37]set names utf8
+[2016-10-08 16:15:37]DESC cz_goods_type
+[2016-10-08 16:15:37]select * from cz_goods_type
+[2016-10-08 16:15:37]set names utf8
+[2016-10-08 16:15:37]DESC cz_attribute
+[2016-10-08 16:15:37]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 2 limit 0,2
+[2016-10-08 16:15:37]select count(*) from cz_attribute where type_id = 2
+[2016-10-08 16:15:39]set names utf8
+[2016-10-08 16:15:39]DESC cz_goods_type
+[2016-10-08 16:15:39]select * from cz_goods_type
+[2016-10-08 16:15:39]set names utf8
+[2016-10-08 16:15:39]DESC cz_attribute
+[2016-10-08 16:15:39]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 16:15:39]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 16:15:48]set names utf8
+[2016-10-08 16:15:48]DESC cz_goods_type
+[2016-10-08 16:15:48]select * from cz_goods_type
+[2016-10-08 16:15:57]set names utf8
+[2016-10-08 16:15:57]DESC cz_attribute
+[2016-10-08 16:15:57]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('体坛','1','0','0','')
+[2016-10-08 16:15:59]set names utf8
+[2016-10-08 16:15:59]DESC cz_goods_type
+[2016-10-08 16:15:59]select * from cz_goods_type
+[2016-10-08 16:15:59]set names utf8
+[2016-10-08 16:15:59]DESC cz_attribute
+[2016-10-08 16:15:59]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 16:15:59]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 16:16:06]set names utf8
+[2016-10-08 16:16:06]DESC cz_goods_type
+[2016-10-08 16:16:06]select * from cz_goods_type
+[2016-10-08 16:16:06]set names utf8
+[2016-10-08 16:16:06]DESC cz_attribute
+[2016-10-08 16:16:06]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 2,2
+[2016-10-08 16:16:06]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 17:42:51]set names utf8
+[2016-10-08 17:42:51]DESC cz_admin
+[2016-10-08 17:42:51]select * from cz_admin where admin_name = 'admin' and password = 'e10adc3949ba59abbe56e057f20f883e' limit 1
+[2016-10-08 17:42:51]set names utf8
+[2016-10-08 17:42:51]DESC cz_admin
+[2016-10-08 17:42:51]select * from cz_admin
+[2016-10-08 17:42:59]set names utf8
+[2016-10-08 17:42:59]DESC cz_brand
+[2016-10-08 17:42:59]select count(*) from cz_brand
+[2016-10-08 17:42:59]select * from cz_brand limit 0,2
+[2016-10-08 17:43:30]set names utf8
+[2016-10-08 17:43:30]DESC cz_brand
+[2016-10-08 17:43:30]INSERT INTO `cz_brand` (`brand_name`,`url`,`brand_desc`,`sort_order`,`is_show`,`logo`) VALUES ('NIKE','http://www.nike.com','Nike','50','1','20161008/2016100817433057f9142263ea5.jpg')
+[2016-10-08 17:43:32]set names utf8
+[2016-10-08 17:43:32]DESC cz_brand
+[2016-10-08 17:43:32]select count(*) from cz_brand
+[2016-10-08 17:43:32]select * from cz_brand limit 0,2
+[2016-10-08 17:44:17]set names utf8
+[2016-10-08 17:44:17]DESC cz_brand
+[2016-10-08 17:44:17]select * from `cz_brand` where `brand_id`=1
+[2016-10-08 17:44:24]set names utf8
+[2016-10-08 17:44:24]DESC cz_brand
+[2016-10-08 17:44:24]UPDATE `cz_brand` SET `brand_name`='NIKE',`brand_desc`='Nike',`sort_order`='50',`url`='http://www.nike.com',`is_show`='1' WHERE `brand_id`=1
+[2016-10-08 17:44:26]set names utf8
+[2016-10-08 17:44:26]DESC cz_brand
+[2016-10-08 17:44:26]select * from `cz_brand` where `brand_id`=1
+[2016-10-08 17:44:32]set names utf8
+[2016-10-08 17:44:32]DESC cz_brand
+[2016-10-08 17:44:32]UPDATE `cz_brand` SET `brand_name`='NIKE',`brand_desc`='Nike',`sort_order`='50',`url`='http://www.nike.com',`is_show`='1' WHERE `brand_id`=1
+[2016-10-08 17:44:34]set names utf8
+[2016-10-08 17:44:34]DESC cz_brand
+[2016-10-08 17:44:34]select * from `cz_brand` where `brand_id`=1
+[2016-10-08 17:44:39]set names utf8
+[2016-10-08 17:44:39]DESC cz_brand
+[2016-10-08 17:44:39]select count(*) from cz_brand
+[2016-10-08 17:44:39]select * from cz_brand limit 0,2
+[2016-10-08 17:47:03]set names utf8
+[2016-10-08 17:47:03]DESC cz_goods_type
+[2016-10-08 17:47:03]select * from cz_goods_type
+[2016-10-08 17:47:03]set names utf8
+[2016-10-08 17:47:03]DESC cz_attribute
+[2016-10-08 17:47:03]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 17:47:03]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 17:49:58]set names utf8
+[2016-10-08 17:49:58]DESC cz_admin
+[2016-10-08 17:49:59]select * from cz_admin
+[2016-10-08 17:50:04]set names utf8
+[2016-10-08 17:50:04]DESC cz_brand
+[2016-10-08 17:50:04]select count(*) from cz_brand
+[2016-10-08 17:50:04]select * from cz_brand limit 0,2
+[2016-10-08 17:51:45]set names utf8
+[2016-10-08 17:51:45]DESC cz_goods_type
+[2016-10-08 17:51:45]select * from cz_goods_type
+[2016-10-08 17:51:45]set names utf8
+[2016-10-08 17:51:45]DESC cz_attribute
+[2016-10-08 17:51:45]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-08 17:51:45]select count(*) from cz_attribute where type_id = 1
+[2016-10-08 17:51:47]set names utf8
+[2016-10-08 17:51:47]DESC cz_goods_type
+[2016-10-08 17:51:47]select * from cz_goods_type
+[2016-10-08 17:51:53]set names utf8
+[2016-10-08 17:51:53]DESC cz_brand
+[2016-10-08 17:51:53]select * from `cz_brand` where `brand_id`=1
+[2016-10-08 17:52:09]set names utf8
+[2016-10-08 17:52:09]DESC cz_brand
+[2016-10-08 17:52:09]UPDATE `cz_brand` SET `brand_name`='NIKE',`brand_desc`='Nike112',`sort_order`='50',`url`='http://www.nike.com',`is_show`='1' WHERE `brand_id`=1
+[2016-10-08 17:52:11]set names utf8
+[2016-10-08 17:52:11]DESC cz_brand
+[2016-10-08 17:52:11]select count(*) from cz_brand
+[2016-10-08 17:52:11]select * from cz_brand limit 0,2
+[2016-10-08 17:52:51]set names utf8
+[2016-10-08 17:52:51]DESC cz_admin
+[2016-10-08 17:52:51]select * from cz_admin
+[2016-10-08 17:52:53]set names utf8
+[2016-10-08 17:52:53]DESC cz_brand
+[2016-10-08 17:52:53]select count(*) from cz_brand
+[2016-10-08 17:52:53]select * from cz_brand limit 0,2
+[2016-10-08 17:53:33]set names utf8
+[2016-10-08 17:53:33]DESC cz_admin
+[2016-10-08 17:53:33]select * from cz_admin
+[2016-10-08 17:53:35]set names utf8
+[2016-10-08 17:53:35]DESC cz_brand
+[2016-10-08 17:53:35]select count(*) from cz_brand
+[2016-10-08 17:53:35]select * from cz_brand limit 0,2
+[2016-10-08 17:53:50]set names utf8
+[2016-10-08 17:53:50]DESC cz_admin
+[2016-10-08 17:53:50]select * from cz_admin
+[2016-10-08 17:53:52]set names utf8
+[2016-10-08 17:53:52]DESC cz_brand
+[2016-10-08 17:53:52]select count(*) from cz_brand
+[2016-10-08 17:53:52]select * from cz_brand limit 0,2
+[2016-10-09 15:51:26]set names utf8
+[2016-10-09 15:51:26]DESC cz_admin
+[2016-10-09 15:51:27]select * from cz_admin where admin_name = 'admin' and password = 'e10adc3949ba59abbe56e057f20f883e' limit 1
+[2016-10-09 15:51:27]set names utf8
+[2016-10-09 15:51:27]DESC cz_admin
+[2016-10-09 15:51:27]select * from cz_admin
+[2016-10-09 15:51:30]set names utf8
+[2016-10-09 15:51:30]DESC cz_category
+[2016-10-09 15:51:30]select * from cz_category;
+[2016-10-09 15:51:30]set names utf8
+[2016-10-09 15:51:30]DESC cz_brand
+[2016-10-09 15:51:30]select * from cz_brand
+[2016-10-09 15:51:30]set names utf8
+[2016-10-09 15:51:30]DESC cz_goods_type
+[2016-10-09 15:51:30]select * from cz_goods_type
+[2016-10-09 15:51:38]set names utf8
+[2016-10-09 15:51:38]DESC cz_category
+[2016-10-09 15:51:38]select * from cz_category;
+[2016-10-09 15:51:38]set names utf8
+[2016-10-09 15:51:38]DESC cz_brand
+[2016-10-09 15:51:38]select * from cz_brand
+[2016-10-09 15:51:38]set names utf8
+[2016-10-09 15:51:38]DESC cz_goods_type
+[2016-10-09 15:51:38]select * from cz_goods_type
+[2016-10-09 15:51:40]set names utf8
+[2016-10-09 15:51:40]DESC cz_category
+[2016-10-09 15:51:40]select * from cz_category;
+[2016-10-09 15:51:40]set names utf8
+[2016-10-09 15:51:40]DESC cz_brand
+[2016-10-09 15:51:40]select * from cz_brand
+[2016-10-09 15:51:40]set names utf8
+[2016-10-09 15:51:40]DESC cz_goods_type
+[2016-10-09 15:51:40]select * from cz_goods_type
+[2016-10-09 15:51:41]set names utf8
+[2016-10-09 15:51:41]DESC cz_goods_type
+[2016-10-09 15:51:41]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-09 15:51:41]select count(*) from cz_goods_type
+[2016-10-09 15:51:41]set names utf8
+[2016-10-09 15:51:41]DESC cz_category
+[2016-10-09 15:51:41]select * from cz_category;
+[2016-10-09 15:51:41]set names utf8
+[2016-10-09 15:51:41]DESC cz_brand
+[2016-10-09 15:51:41]select * from cz_brand
+[2016-10-09 15:51:41]set names utf8
+[2016-10-09 15:51:41]DESC cz_goods_type
+[2016-10-09 15:51:41]select * from cz_goods_type
+[2016-10-09 15:51:45]set names utf8
+[2016-10-09 15:51:45]DESC cz_category
+[2016-10-09 15:51:45]select * from cz_category;
+[2016-10-09 15:51:45]set names utf8
+[2016-10-09 15:51:45]DESC cz_brand
+[2016-10-09 15:51:45]select * from cz_brand
+[2016-10-09 15:51:45]set names utf8
+[2016-10-09 15:51:45]DESC cz_goods_type
+[2016-10-09 15:51:45]select * from cz_goods_type
+[2016-10-09 15:51:47]set names utf8
+[2016-10-09 15:51:47]DESC cz_category
+[2016-10-09 15:51:47]select * from cz_category;
+[2016-10-09 15:51:47]set names utf8
+[2016-10-09 15:51:47]DESC cz_brand
+[2016-10-09 15:51:47]select * from cz_brand
+[2016-10-09 15:51:47]set names utf8
+[2016-10-09 15:51:47]DESC cz_goods_type
+[2016-10-09 15:51:47]select * from cz_goods_type
+[2016-10-09 15:51:53]set names utf8
+[2016-10-09 15:51:53]DESC cz_category
+[2016-10-09 15:51:53]select * from cz_category;
+[2016-10-09 15:51:53]set names utf8
+[2016-10-09 15:51:53]DESC cz_brand
+[2016-10-09 15:51:53]select * from cz_brand
+[2016-10-09 15:51:53]set names utf8
+[2016-10-09 15:51:53]DESC cz_goods_type
+[2016-10-09 15:51:53]select * from cz_goods_type
+[2016-10-09 15:51:54]set names utf8
+[2016-10-09 15:51:54]DESC cz_category
+[2016-10-09 15:51:54]select * from cz_category;
+[2016-10-09 15:51:54]set names utf8
+[2016-10-09 15:51:54]DESC cz_brand
+[2016-10-09 15:51:54]select * from cz_brand
+[2016-10-09 15:51:54]set names utf8
+[2016-10-09 15:51:54]DESC cz_goods_type
+[2016-10-09 15:51:54]select * from cz_goods_type
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_category
+[2016-10-09 15:51:55]select * from cz_category;
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_brand
+[2016-10-09 15:51:55]select * from cz_brand
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_goods_type
+[2016-10-09 15:51:55]select * from cz_goods_type
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_category
+[2016-10-09 15:51:55]select * from cz_category;
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_brand
+[2016-10-09 15:51:55]select * from cz_brand
+[2016-10-09 15:51:55]set names utf8
+[2016-10-09 15:51:55]DESC cz_goods_type
+[2016-10-09 15:51:55]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_category
+[2016-10-09 15:51:56]select * from cz_category;
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_brand
+[2016-10-09 15:51:56]select * from cz_brand
+[2016-10-09 15:51:56]set names utf8
+[2016-10-09 15:51:56]DESC cz_goods_type
+[2016-10-09 15:51:56]select * from cz_goods_type
+[2016-10-09 15:51:57]set names utf8
+[2016-10-09 15:51:57]DESC cz_category
+[2016-10-09 15:51:57]select * from cz_category;
+[2016-10-09 15:51:57]set names utf8
+[2016-10-09 15:51:57]DESC cz_brand
+[2016-10-09 15:51:57]select * from cz_brand
+[2016-10-09 15:51:57]set names utf8
+[2016-10-09 15:51:57]DESC cz_goods_type
+[2016-10-09 15:51:57]select * from cz_goods_type
+[2016-10-09 15:52:44]set names utf8
+[2016-10-09 15:52:44]DESC cz_category
+[2016-10-09 15:52:44]select * from cz_category;
+[2016-10-09 15:52:44]set names utf8
+[2016-10-09 15:52:44]DESC cz_brand
+[2016-10-09 15:52:44]select * from cz_brand
+[2016-10-09 15:52:44]set names utf8
+[2016-10-09 15:52:44]DESC cz_goods_type
+[2016-10-09 15:52:44]select * from cz_goods_type
+[2016-10-09 15:53:49]set names utf8
+[2016-10-09 15:53:49]DESC cz_category
+[2016-10-09 15:53:49]select * from cz_category;
+[2016-10-09 15:53:49]set names utf8
+[2016-10-09 15:53:49]DESC cz_brand
+[2016-10-09 15:53:49]select * from cz_brand
+[2016-10-09 15:53:49]set names utf8
+[2016-10-09 15:53:49]DESC cz_goods_type
+[2016-10-09 15:53:49]select * from cz_goods_type
+[2016-10-09 16:50:54]set names utf8
+[2016-10-09 16:50:54]DESC cz_category
+[2016-10-09 16:50:54]select * from cz_category;
+[2016-10-09 16:50:54]set names utf8
+[2016-10-09 16:50:54]DESC cz_brand
+[2016-10-09 16:50:54]select * from cz_brand
+[2016-10-09 16:50:54]set names utf8
+[2016-10-09 16:50:54]DESC cz_goods_type
+[2016-10-09 16:50:54]select * from cz_goods_type
+[2016-10-09 16:50:57]set names utf8
+[2016-10-09 16:50:57]DESC cz_attribute
+[2016-10-09 16:50:59]set names utf8
+[2016-10-09 16:51:00]DESC cz_attribute
+[2016-10-09 16:51:02]set names utf8
+[2016-10-09 16:51:02]DESC cz_attribute
+[2016-10-09 16:51:07]set names utf8
+[2016-10-09 16:51:07]DESC cz_attribute
+[2016-10-09 16:51:09]set names utf8
+[2016-10-09 16:51:09]DESC cz_attribute
+[2016-10-09 16:51:13]set names utf8
+[2016-10-09 16:51:13]DESC cz_attribute
+[2016-10-09 16:54:40]set names utf8
+[2016-10-09 16:54:40]DESC cz_category
+[2016-10-09 16:54:40]select * from cz_category;
+[2016-10-09 16:54:40]set names utf8
+[2016-10-09 16:54:40]DESC cz_brand
+[2016-10-09 16:54:40]select * from cz_brand
+[2016-10-09 16:54:40]set names utf8
+[2016-10-09 16:54:40]DESC cz_goods_type
+[2016-10-09 16:54:40]select * from cz_goods_type
+[2016-10-09 16:54:42]set names utf8
+[2016-10-09 16:54:42]DESC cz_attribute
+[2016-10-09 16:54:42]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-09 16:55:34]set names utf8
+[2016-10-09 16:55:34]DESC cz_attribute
+[2016-10-09 16:55:34]SELECT * FROM cz_attribute WHERE type_id = 2
+[2016-10-09 16:55:36]set names utf8
+[2016-10-09 16:55:36]DESC cz_attribute
+[2016-10-09 16:55:36]SELECT * FROM cz_attribute WHERE type_id = 3
+[2016-10-09 16:55:38]set names utf8
+[2016-10-09 16:55:38]DESC cz_attribute
+[2016-10-09 16:55:38]SELECT * FROM cz_attribute WHERE type_id = 4
+[2016-10-09 16:56:29]set names utf8
+[2016-10-09 16:56:29]DESC cz_admin
+[2016-10-09 16:56:29]select * from cz_admin
+[2016-10-09 16:56:31]set names utf8
+[2016-10-09 16:56:31]DESC cz_category
+[2016-10-09 16:56:31]select * from cz_category;
+[2016-10-09 16:56:31]set names utf8
+[2016-10-09 16:56:31]DESC cz_brand
+[2016-10-09 16:56:31]select * from cz_brand
+[2016-10-09 16:56:31]set names utf8
+[2016-10-09 16:56:31]DESC cz_goods_type
+[2016-10-09 16:56:31]select * from cz_goods_type
+[2016-10-09 16:56:33]set names utf8
+[2016-10-09 16:56:33]DESC cz_goods_type
+[2016-10-09 16:56:33]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-09 16:56:33]select count(*) from cz_goods_type
+[2016-10-09 16:56:36]set names utf8
+[2016-10-09 16:56:36]DESC cz_goods_type
+[2016-10-09 16:56:36]select * from cz_goods_type
+[2016-10-09 16:56:36]set names utf8
+[2016-10-09 16:56:36]DESC cz_attribute
+[2016-10-09 16:56:36]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 4 limit 0,2
+[2016-10-09 16:56:36]select count(*) from cz_attribute where type_id = 4
+[2016-10-09 16:56:39]set names utf8
+[2016-10-09 16:56:39]DESC cz_goods_type
+[2016-10-09 16:56:39]select * from cz_goods_type
+[2016-10-09 16:56:58]set names utf8
+[2016-10-09 16:56:58]DESC cz_attribute
+[2016-10-09 16:56:58]INSERT INTO `cz_attribute` (`attr_name`,`type_id`,`attr_type`,`attr_input_type`,`attr_value`) VALUES ('成本','1','0','2','')
+[2016-10-09 16:57:00]set names utf8
+[2016-10-09 16:57:00]DESC cz_goods_type
+[2016-10-09 16:57:00]select * from cz_goods_type
+[2016-10-09 16:57:00]set names utf8
+[2016-10-09 16:57:00]DESC cz_attribute
+[2016-10-09 16:57:00]select * from cz_attribute as a INNER JOIN cz_goods_type as b on a.type_id = b.type_id where a.type_id = 1 limit 0,2
+[2016-10-09 16:57:00]select count(*) from cz_attribute where type_id = 1
+[2016-10-09 16:57:03]set names utf8
+[2016-10-09 16:57:03]DESC cz_category
+[2016-10-09 16:57:03]select * from cz_category;
+[2016-10-09 16:57:03]set names utf8
+[2016-10-09 16:57:03]DESC cz_brand
+[2016-10-09 16:57:03]select * from cz_brand
+[2016-10-09 16:57:03]set names utf8
+[2016-10-09 16:57:03]DESC cz_goods_type
+[2016-10-09 16:57:03]select * from cz_goods_type
+[2016-10-09 16:57:06]set names utf8
+[2016-10-09 16:57:06]DESC cz_attribute
+[2016-10-09 16:57:06]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-09 16:57:09]set names utf8
+[2016-10-09 16:57:09]DESC cz_attribute
+[2016-10-09 16:57:09]SELECT * FROM cz_attribute WHERE type_id = 2
+[2016-10-09 16:57:10]set names utf8
+[2016-10-09 16:57:10]DESC cz_attribute
+[2016-10-09 16:57:10]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-09 16:59:12]set names utf8
+[2016-10-09 16:59:12]DESC cz_admin
+[2016-10-09 16:59:12]select * from cz_admin
+[2016-10-09 16:59:14]set names utf8
+[2016-10-09 16:59:14]DESC cz_category
+[2016-10-09 16:59:14]select * from cz_category;
+[2016-10-09 16:59:14]set names utf8
+[2016-10-09 16:59:14]DESC cz_brand
+[2016-10-09 16:59:14]select * from cz_brand
+[2016-10-09 16:59:14]set names utf8
+[2016-10-09 16:59:14]DESC cz_goods_type
+[2016-10-09 16:59:14]select * from cz_goods_type
+[2016-10-09 16:59:16]set names utf8
+[2016-10-09 16:59:16]DESC cz_attribute
+[2016-10-09 16:59:16]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-09 16:59:17]set names utf8
+[2016-10-09 16:59:17]DESC cz_attribute
+[2016-10-09 16:59:17]SELECT * FROM cz_attribute WHERE type_id = 2
+[2016-10-09 16:59:19]set names utf8
+[2016-10-09 16:59:19]DESC cz_attribute
+[2016-10-09 16:59:19]SELECT * FROM cz_attribute WHERE type_id = 4
+[2016-10-10 07:39:52]set names utf8
+[2016-10-10 07:39:52]DESC cz_admin
+[2016-10-10 07:39:52]select * from cz_admin where admin_name = 'admin' and password = 'e10adc3949ba59abbe56e057f20f883e' limit 1
+[2016-10-10 07:39:52]set names utf8
+[2016-10-10 07:39:52]DESC cz_admin
+[2016-10-10 07:39:52]select * from cz_admin
+[2016-10-10 07:39:55]set names utf8
+[2016-10-10 07:39:55]DESC cz_category
+[2016-10-10 07:39:55]select * from cz_category;
+[2016-10-10 07:39:55]set names utf8
+[2016-10-10 07:39:55]DESC cz_brand
+[2016-10-10 07:39:55]select * from cz_brand
+[2016-10-10 07:39:55]set names utf8
+[2016-10-10 07:39:55]DESC cz_goods_type
+[2016-10-10 07:39:55]select * from cz_goods_type
+[2016-10-10 07:40:51]set names utf8
+[2016-10-10 07:40:51]DESC cz_attribute
+[2016-10-10 07:40:51]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-10 07:41:10]set names utf8
+[2016-10-10 07:41:10]DESC cz_category
+[2016-10-10 07:41:10]select * from cz_category;
+[2016-10-10 07:41:10]set names utf8
+[2016-10-10 07:41:10]DESC cz_brand
+[2016-10-10 07:41:10]select * from cz_brand
+[2016-10-10 07:41:10]set names utf8
+[2016-10-10 07:41:10]DESC cz_goods_type
+[2016-10-10 07:41:10]select * from cz_goods_type
+[2016-10-10 07:42:01]set names utf8
+[2016-10-10 07:42:01]DESC cz_attribute
+[2016-10-10 07:42:01]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-10 07:42:19]set names utf8
+[2016-10-10 07:42:19]DESC cz_category
+[2016-10-10 07:42:19]select * from cz_category;
+[2016-10-10 07:42:19]set names utf8
+[2016-10-10 07:42:19]DESC cz_brand
+[2016-10-10 07:42:19]select * from cz_brand
+[2016-10-10 07:42:19]set names utf8
+[2016-10-10 07:42:19]DESC cz_goods_type
+[2016-10-10 07:42:19]select * from cz_goods_type
+[2016-10-10 07:42:21]set names utf8
+[2016-10-10 07:42:21]DESC cz_category
+[2016-10-10 07:42:21]select * from cz_category;
+[2016-10-10 07:42:21]set names utf8
+[2016-10-10 07:42:21]DESC cz_brand
+[2016-10-10 07:42:21]select * from cz_brand
+[2016-10-10 07:42:21]set names utf8
+[2016-10-10 07:42:21]DESC cz_goods_type
+[2016-10-10 07:42:21]select * from cz_goods_type
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_category
+[2016-10-10 07:42:22]select * from cz_category;
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_brand
+[2016-10-10 07:42:22]select * from cz_brand
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_goods_type
+[2016-10-10 07:42:22]select * from cz_goods_type
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_category
+[2016-10-10 07:42:22]select * from cz_category;
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_brand
+[2016-10-10 07:42:22]select * from cz_brand
+[2016-10-10 07:42:22]set names utf8
+[2016-10-10 07:42:22]DESC cz_goods_type
+[2016-10-10 07:42:22]select * from cz_goods_type
+[2016-10-10 07:42:23]set names utf8
+[2016-10-10 07:42:23]DESC cz_category
+[2016-10-10 07:42:23]select * from cz_category;
+[2016-10-10 07:42:23]set names utf8
+[2016-10-10 07:42:23]DESC cz_brand
+[2016-10-10 07:42:23]select * from cz_brand
+[2016-10-10 07:42:23]set names utf8
+[2016-10-10 07:42:23]DESC cz_goods_type
+[2016-10-10 07:42:23]select * from cz_goods_type
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_category
+[2016-10-10 07:42:35]select * from cz_category;
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_brand
+[2016-10-10 07:42:35]select * from cz_brand
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_goods_type
+[2016-10-10 07:42:35]select * from cz_goods_type
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_category
+[2016-10-10 07:42:35]select * from cz_category;
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_brand
+[2016-10-10 07:42:35]select * from cz_brand
+[2016-10-10 07:42:35]set names utf8
+[2016-10-10 07:42:35]DESC cz_goods_type
+[2016-10-10 07:42:35]select * from cz_goods_type
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_category
+[2016-10-10 07:42:36]select * from cz_category;
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_brand
+[2016-10-10 07:42:36]select * from cz_brand
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_goods_type
+[2016-10-10 07:42:36]select * from cz_goods_type
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_category
+[2016-10-10 07:42:36]select * from cz_category;
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_brand
+[2016-10-10 07:42:36]select * from cz_brand
+[2016-10-10 07:42:36]set names utf8
+[2016-10-10 07:42:36]DESC cz_goods_type
+[2016-10-10 07:42:36]select * from cz_goods_type
+[2016-10-10 07:42:37]set names utf8
+[2016-10-10 07:42:37]DESC cz_category
+[2016-10-10 07:42:37]select * from cz_category;
+[2016-10-10 07:42:37]set names utf8
+[2016-10-10 07:42:37]DESC cz_brand
+[2016-10-10 07:42:37]select * from cz_brand
+[2016-10-10 07:42:37]set names utf8
+[2016-10-10 07:42:37]DESC cz_goods_type
+[2016-10-10 07:42:37]select * from cz_goods_type
+[2016-10-10 07:42:38]set names utf8
+[2016-10-10 07:42:38]DESC cz_category
+[2016-10-10 07:42:38]select * from cz_category;
+[2016-10-10 07:42:38]set names utf8
+[2016-10-10 07:42:38]DESC cz_brand
+[2016-10-10 07:42:38]select * from cz_brand
+[2016-10-10 07:42:38]set names utf8
+[2016-10-10 07:42:38]DESC cz_goods_type
+[2016-10-10 07:42:38]select * from cz_goods_type
+[2016-10-10 07:50:57]set names utf8
+[2016-10-10 07:50:57]DESC cz_admin
+[2016-10-10 07:50:57]select * from cz_admin
+[2016-10-10 07:50:59]set names utf8
+[2016-10-10 07:50:59]DESC cz_category
+[2016-10-10 07:50:59]select * from cz_category;
+[2016-10-10 07:50:59]set names utf8
+[2016-10-10 07:50:59]DESC cz_brand
+[2016-10-10 07:50:59]select * from cz_brand
+[2016-10-10 07:50:59]set names utf8
+[2016-10-10 07:50:59]DESC cz_goods_type
+[2016-10-10 07:50:59]select * from cz_goods_type
+[2016-10-10 07:51:18]set names utf8
+[2016-10-10 07:51:18]DESC cz_attribute
+[2016-10-10 07:51:18]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-10 07:51:26]set names utf8
+[2016-10-10 07:51:26]DESC cz_goods
+[2016-10-10 07:51:26]INSERT INTO `cz_goods` (`goods_name`,`goods_sn`,`cat_id`,`brand_id`,`type_id`,`shop_price`,`market_price`,`promote_start_time`,`promote_end_time`,`goods_desc`,`goods_number`,`is_best`,`is_new`,`is_onsale`,`add_time`,`goods_img`) VALUES ('诺基亚N852','ECS000032','4','1','1','3010.00','3612.00','1243807200','1417302000','','4','1','1','1','1476078686','20161010/2016101007512657fb2c5e81460.jpg')
+[2016-10-10 07:51:26]set names utf8
+[2016-10-10 07:51:26]DESC cz_goods_attr
+[2016-10-10 07:51:26]INSERT INTO `cz_goods_attr` (`goods_id`,`attr_id`,`attr_value`,`attr_price`) VALUES ('1','1','红色','0')
+[2016-10-10 07:51:26]INSERT INTO `cz_goods_attr` (`goods_id`,`attr_id`,`attr_value`,`attr_price`) VALUES ('1','2','但是','0')
+[2016-10-10 07:51:26]INSERT INTO `cz_goods_attr` (`goods_id`,`attr_id`,`attr_value`,`attr_price`) VALUES ('1','5','我的','0')
+[2016-10-10 07:51:26]INSERT INTO `cz_goods_attr` (`goods_id`,`attr_id`,`attr_value`,`attr_price`) VALUES ('1','6','32','0')
+[2016-10-10 08:06:01]set names utf8
+[2016-10-10 08:06:01]DESC cz_admin
+[2016-10-10 08:06:01]select * from cz_admin
+[2016-10-10 08:18:29]set names utf8
+[2016-10-10 08:18:29]DESC cz_category
+[2016-10-10 08:18:29]select * from cz_category;
+[2016-10-10 08:18:31]set names utf8
+[2016-10-10 08:18:31]DESC cz_admin
+[2016-10-10 08:18:31]select * from cz_admin
+[2016-10-10 08:18:36]set names utf8
+[2016-10-10 08:18:36]DESC cz_category
+[2016-10-10 08:18:36]select * from cz_category;
+[2016-10-10 08:18:41]set names utf8
+[2016-10-10 08:18:41]DESC cz_category
+[2016-10-10 08:18:41]select * from cz_category;
+[2016-10-10 08:19:05]set names utf8
+[2016-10-10 08:19:05]DESC cz_category
+[2016-10-10 08:19:05]select * from cz_category;
+[2016-10-10 08:19:07]set names utf8
+[2016-10-10 08:19:07]DESC cz_category
+[2016-10-10 08:19:07]select * from `cz_category` where `cat_id`=5
+[2016-10-10 08:19:07]select * from cz_category;
+[2016-10-10 08:19:14]set names utf8
+[2016-10-10 08:19:14]DESC cz_category
+[2016-10-10 08:19:14]select * from cz_category
+[2016-10-10 08:19:18]set names utf8
+[2016-10-10 08:19:18]DESC cz_category
+[2016-10-10 08:19:18]select * from `cz_category` where `cat_id`=5
+[2016-10-10 08:19:18]select * from cz_category;
+[2016-10-10 08:19:42]set names utf8
+[2016-10-10 08:19:42]DESC cz_category
+[2016-10-10 08:19:42]select * from cz_category;
+[2016-10-10 08:19:42]set names utf8
+[2016-10-10 08:19:42]DESC cz_goods_type
+[2016-10-10 08:19:42]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-10 08:19:42]select count(*) from cz_goods_type
+[2016-10-10 08:19:44]set names utf8
+[2016-10-10 08:19:44]DESC cz_category
+[2016-10-10 08:19:44]select * from cz_category;
+[2016-10-10 08:19:45]set names utf8
+[2016-10-10 08:19:45]DESC cz_category
+[2016-10-10 08:19:45]select * from cz_category;
+[2016-10-10 08:20:04]set names utf8
+[2016-10-10 08:20:04]DESC cz_category
+[2016-10-10 08:20:04]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试1','34','50','是','0','1')
+[2016-10-10 08:20:06]set names utf8
+[2016-10-10 08:20:06]DESC cz_category
+[2016-10-10 08:20:06]select * from cz_category;
+[2016-10-10 08:20:08]set names utf8
+[2016-10-10 08:20:08]DESC cz_category
+[2016-10-10 08:20:08]select * from cz_category;
+[2016-10-10 08:20:16]set names utf8
+[2016-10-10 08:20:16]DESC cz_category
+[2016-10-10 08:20:16]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试2','466','50','','0','1')
+[2016-10-10 08:20:18]set names utf8
+[2016-10-10 08:20:18]DESC cz_category
+[2016-10-10 08:20:18]select * from cz_category;
+[2016-10-10 08:20:19]set names utf8
+[2016-10-10 08:20:19]DESC cz_category
+[2016-10-10 08:20:19]select * from cz_category;
+[2016-10-10 08:20:27]set names utf8
+[2016-10-10 08:20:27]DESC cz_category
+[2016-10-10 08:20:27]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试3','433','50','','0','1')
+[2016-10-10 08:20:29]set names utf8
+[2016-10-10 08:20:29]DESC cz_category
+[2016-10-10 08:20:29]select * from cz_category;
+[2016-10-10 08:20:31]set names utf8
+[2016-10-10 08:20:31]DESC cz_category
+[2016-10-10 08:20:31]select * from cz_category;
+[2016-10-10 08:20:37]set names utf8
+[2016-10-10 08:20:37]DESC cz_category
+[2016-10-10 08:20:37]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试4','65','50','','0','1')
+[2016-10-10 08:20:39]set names utf8
+[2016-10-10 08:20:39]DESC cz_category
+[2016-10-10 08:20:39]select * from cz_category;
+[2016-10-10 08:20:43]set names utf8
+[2016-10-10 08:20:43]DESC cz_category
+[2016-10-10 08:20:43]select * from cz_category;
+[2016-10-10 08:20:49]set names utf8
+[2016-10-10 08:20:49]DESC cz_category
+[2016-10-10 08:20:49]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试5','43','50','但是','0','1')
+[2016-10-10 08:20:51]set names utf8
+[2016-10-10 08:20:51]DESC cz_category
+[2016-10-10 08:20:51]select * from cz_category;
+[2016-10-10 08:20:53]set names utf8
+[2016-10-10 08:20:53]DESC cz_category
+[2016-10-10 08:20:53]select * from cz_category;
+[2016-10-10 08:21:03]set names utf8
+[2016-10-10 08:21:03]DESC cz_category
+[2016-10-10 08:21:03]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('测试6','66','50','发送二','0','1')
+[2016-10-10 08:21:05]set names utf8
+[2016-10-10 08:21:05]DESC cz_category
+[2016-10-10 08:21:05]select * from cz_category;
+[2016-10-10 09:11:47]set names utf8
+[2016-10-10 09:11:47]DESC cz_category
+[2016-10-10 09:11:47]select * from cz_category
+[2016-10-10 09:11:55]set names utf8
+[2016-10-10 09:11:55]DESC cz_category
+[2016-10-10 09:11:55]select * from cz_category
+[2016-10-10 09:11:56]set names utf8
+[2016-10-10 09:11:56]DESC cz_category
+[2016-10-10 09:11:56]select * from cz_category
+[2016-10-10 09:12:13]set names utf8
+[2016-10-10 09:12:13]DESC cz_category
+[2016-10-10 09:12:13]select * from cz_category;
+[2016-10-10 09:12:15]set names utf8
+[2016-10-10 09:12:15]DESC cz_admin
+[2016-10-10 09:12:15]select * from cz_admin
+[2016-10-10 09:12:19]set names utf8
+[2016-10-10 09:12:19]DESC cz_category
+[2016-10-10 09:12:19]select * from cz_category;
+[2016-10-10 09:12:22]set names utf8
+[2016-10-10 09:12:22]DESC cz_category
+[2016-10-10 09:12:22]select * from cz_category;
+[2016-10-10 09:12:39]set names utf8
+[2016-10-10 09:12:39]DESC cz_category
+[2016-10-10 09:12:39]INSERT INTO `cz_category` (`cat_name`,`unit`,`sort_order`,`cat_desc`,`parent_id`,`is_show`) VALUES ('英雄联盟','23','50','','0','1')
+[2016-10-10 09:12:41]set names utf8
+[2016-10-10 09:12:41]DESC cz_category
+[2016-10-10 09:12:41]select * from cz_category;
+[2016-10-10 09:12:45]set names utf8
+[2016-10-10 09:12:45]DESC cz_category
+[2016-10-10 09:12:45]select * from cz_category
+[2016-10-10 09:16:25]set names utf8
+[2016-10-10 09:16:25]DESC cz_category
+[2016-10-10 09:16:25]select * from cz_category
+[2016-10-10 09:16:50]set names utf8
+[2016-10-10 09:16:50]DESC cz_category
+[2016-10-10 09:16:50]select * from cz_category
+[2016-10-10 09:17:59]set names utf8
+[2016-10-10 09:17:59]DESC cz_category
+[2016-10-10 09:17:59]select * from cz_category
+[2016-10-10 09:19:27]set names utf8
+[2016-10-10 09:19:27]DESC cz_category
+[2016-10-10 09:19:27]select * from cz_category
+[2016-10-10 09:19:27]set names utf8
+[2016-10-10 09:19:27]DESC cz_category
+[2016-10-10 09:19:27]select * from cz_category
+[2016-10-10 09:19:27]set names utf8
+[2016-10-10 09:19:27]DESC cz_category
+[2016-10-10 09:19:27]select * from cz_category
+[2016-10-10 09:19:27]set names utf8
+[2016-10-10 09:19:27]DESC cz_category
+[2016-10-10 09:19:27]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:28]set names utf8
+[2016-10-10 09:19:28]DESC cz_category
+[2016-10-10 09:19:28]select * from cz_category
+[2016-10-10 09:19:56]set names utf8
+[2016-10-10 09:19:56]DESC cz_category
+[2016-10-10 09:19:56]select * from cz_category
+[2016-10-10 09:21:17]set names utf8
+[2016-10-10 09:21:17]DESC cz_category
+[2016-10-10 09:21:17]select * from cz_category;
+[2016-10-10 09:21:19]set names utf8
+[2016-10-10 09:21:19]DESC cz_category
+[2016-10-10 09:21:19]select * from cz_category
+[2016-10-10 09:21:21]set names utf8
+[2016-10-10 09:21:21]DESC cz_category
+[2016-10-10 09:21:21]select * from cz_category
+[2016-10-10 09:21:27]set names utf8
+[2016-10-10 09:21:27]DESC cz_category
+[2016-10-10 09:21:27]select * from cz_category;
+[2016-10-10 09:21:28]set names utf8
+[2016-10-10 09:21:28]DESC cz_category
+[2016-10-10 09:21:28]select * from cz_category;
+[2016-10-10 09:21:30]set names utf8
+[2016-10-10 09:21:30]DESC cz_category
+[2016-10-10 09:21:30]select * from cz_category;
+[2016-10-10 09:21:46]set names utf8
+[2016-10-10 09:21:46]DESC cz_category
+[2016-10-10 09:21:46]select * from cz_category
+[2016-10-10 09:40:00]set names utf8
+[2016-10-10 09:40:00]DESC cz_category
+[2016-10-10 09:40:00]select * from cz_category;
+[2016-10-10 09:40:04]set names utf8
+[2016-10-10 09:40:04]DESC cz_category
+[2016-10-10 09:40:04]select * from cz_category
+[2016-10-10 09:40:09]set names utf8
+[2016-10-10 09:40:09]DESC cz_category
+[2016-10-10 09:40:09]select * from cz_category;
+[2016-10-10 09:40:11]set names utf8
+[2016-10-10 09:40:11]DESC cz_admin
+[2016-10-10 09:40:11]select * from cz_admin
+[2016-10-10 09:40:15]set names utf8
+[2016-10-10 09:40:15]DESC cz_category
+[2016-10-10 09:40:15]select * from cz_category;
+[2016-10-10 09:40:15]set names utf8
+[2016-10-10 09:40:15]DESC cz_brand
+[2016-10-10 09:40:15]select * from cz_brand
+[2016-10-10 09:40:15]set names utf8
+[2016-10-10 09:40:15]DESC cz_goods_type
+[2016-10-10 09:40:15]select * from cz_goods_type
+[2016-10-10 09:40:38]set names utf8
+[2016-10-10 09:40:38]DESC cz_attribute
+[2016-10-10 09:40:38]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-10 09:40:40]set names utf8
+[2016-10-10 09:40:40]DESC cz_attribute
+[2016-10-10 09:40:40]SELECT * FROM cz_attribute WHERE type_id = 2
+[2016-10-10 09:40:42]set names utf8
+[2016-10-10 09:40:42]DESC cz_attribute
+[2016-10-10 09:40:42]SELECT * FROM cz_attribute WHERE type_id = 1
+[2016-10-10 09:40:45]set names utf8
+[2016-10-10 09:40:45]DESC cz_goods_type
+[2016-10-10 09:40:45]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-10 09:40:45]select count(*) from cz_goods_type
+[2016-10-10 09:41:00]set names utf8
+[2016-10-10 09:41:00]DESC cz_category
+[2016-10-10 09:41:00]select * from cz_category;
+[2016-10-10 09:41:00]set names utf8
+[2016-10-10 09:41:00]DESC cz_brand
+[2016-10-10 09:41:00]select * from cz_brand
+[2016-10-10 09:41:00]set names utf8
+[2016-10-10 09:41:00]DESC cz_goods_type
+[2016-10-10 09:41:00]select * from cz_goods_type
+[2016-10-10 09:50:03]set names utf8
+[2016-10-10 09:50:03]DESC cz_category
+[2016-10-10 09:50:03]select * from cz_category
+[2016-10-10 09:50:24]set names utf8
+[2016-10-10 09:50:24]DESC cz_category
+[2016-10-10 09:50:24]select * from cz_category
+[2016-10-10 10:02:27]set names utf8
+[2016-10-10 10:02:27]DESC cz_category
+[2016-10-10 10:02:27]select * from cz_category
+[2016-10-10 10:02:27]set names utf8
+[2016-10-10 10:02:27]DESC cz_goods
+[2016-10-10 10:02:27]SELECT goods_id,goods_name,shop_price,goods_img FROM cz_goods
+		        WHERE is_best = 1 AND is_onsale = 1
+		        ORDER BY goods_id DESC
+		        LIMIT 4
+[2016-10-10 10:02:36]set names utf8
+[2016-10-10 10:02:36]DESC cz_category
+[2016-10-10 10:02:36]select * from cz_category;
+[2016-10-10 10:02:36]set names utf8
+[2016-10-10 10:02:36]DESC cz_brand
+[2016-10-10 10:02:36]select * from cz_brand
+[2016-10-10 10:02:36]set names utf8
+[2016-10-10 10:02:36]DESC cz_goods_type
+[2016-10-10 10:02:36]select * from cz_goods_type
+[2016-10-10 10:02:37]set names utf8
+[2016-10-10 10:02:37]DESC cz_category
+[2016-10-10 10:02:37]select * from cz_category
+[2016-10-10 10:02:37]set names utf8
+[2016-10-10 10:02:37]DESC cz_goods
+[2016-10-10 10:02:37]SELECT goods_id,goods_name,shop_price,goods_img FROM cz_goods
+		        WHERE is_best = 1 AND is_onsale = 1
+		        ORDER BY goods_id DESC
+		        LIMIT 4
+[2016-10-10 10:02:39]set names utf8
+[2016-10-10 10:02:39]DESC cz_category
+[2016-10-10 10:02:39]select * from cz_category
+[2016-10-10 10:02:39]set names utf8
+[2016-10-10 10:02:39]DESC cz_goods
+[2016-10-10 10:02:39]SELECT goods_id,goods_name,shop_price,goods_img FROM cz_goods
+		        WHERE is_best = 1 AND is_onsale = 1
+		        ORDER BY goods_id DESC
+		        LIMIT 4
+[2016-10-10 10:03:01]set names utf8
+[2016-10-10 10:03:01]DESC cz_category
+[2016-10-10 10:03:01]select * from cz_category
+[2016-10-10 10:03:01]set names utf8
+[2016-10-10 10:03:01]DESC cz_goods
+[2016-10-10 10:03:01]SELECT goods_id,goods_name,shop_price,goods_img FROM cz_goods
+		        WHERE is_best = 1 AND is_onsale = 1
+		        ORDER BY goods_id DESC
+		        LIMIT 4
+[2016-10-10 10:10:40]set names utf8
+[2016-10-10 10:10:40]DESC cz_category
+[2016-10-10 10:10:40]select * from cz_category
+[2016-10-10 10:10:40]set names utf8
+[2016-10-10 10:10:40]DESC cz_goods
+[2016-10-10 10:10:40]SELECT goods_id,goods_name,shop_price,goods_img FROM cz_goods
+		        WHERE is_best = 1 AND is_onsale = 1
+		        ORDER BY goods_id DESC
+		        LIMIT 4
+[2016-10-10 10:10:41]set names utf8
+[2016-10-10 10:10:41]DESC cz_category
+[2016-10-10 10:10:41]select * from cz_category;
+[2016-10-10 10:10:45]set names utf8
+[2016-10-10 10:10:45]DESC cz_admin
+[2016-10-10 10:10:45]select * from cz_admin
+[2016-10-10 10:10:47]set names utf8
+[2016-10-10 10:10:47]DESC cz_goods_type
+[2016-10-10 10:10:47]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-10 10:10:47]select count(*) from cz_goods_type
+[2016-10-10 10:11:44]set names utf8
+[2016-10-10 10:11:44]DESC cz_admin
+[2016-10-10 10:11:44]select * from cz_admin
+[2016-10-10 10:11:46]set names utf8
+[2016-10-10 10:11:46]DESC cz_admin
+[2016-10-10 10:11:46]select * from cz_admin
+[2016-10-10 10:11:47]set names utf8
+[2016-10-10 10:11:47]DESC cz_admin
+[2016-10-10 10:11:47]select * from cz_admin
+[2016-10-10 10:11:49]set names utf8
+[2016-10-10 10:11:49]DESC cz_admin
+[2016-10-10 10:11:49]select * from cz_admin
+[2016-10-10 10:12:10]set names utf8
+[2016-10-10 10:12:10]DESC cz_admin
+[2016-10-10 10:12:10]select * from cz_admin
+[2016-10-10 10:12:19]set names utf8
+[2016-10-10 10:12:19]DESC cz_admin
+[2016-10-10 10:12:19]select * from cz_admin
+[2016-10-10 10:12:20]set names utf8
+[2016-10-10 10:12:20]DESC cz_admin
+[2016-10-10 10:12:20]select * from cz_admin
+[2016-10-10 10:12:20]set names utf8
+[2016-10-10 10:12:20]DESC cz_admin
+[2016-10-10 10:12:20]select * from cz_admin
+[2016-10-10 10:12:21]set names utf8
+[2016-10-10 10:12:21]DESC cz_admin
+[2016-10-10 10:12:21]select * from cz_admin
+[2016-10-10 10:12:21]set names utf8
+[2016-10-10 10:12:21]DESC cz_admin
+[2016-10-10 10:12:21]select * from cz_admin
+[2016-10-10 10:12:51]set names utf8
+[2016-10-10 10:12:51]DESC cz_admin
+[2016-10-10 10:12:51]select * from cz_admin
+[2016-10-10 10:12:53]set names utf8
+[2016-10-10 10:12:53]DESC cz_category
+[2016-10-10 10:12:53]select * from cz_category;
+[2016-10-10 10:12:53]set names utf8
+[2016-10-10 10:12:53]DESC cz_brand
+[2016-10-10 10:12:53]select * from cz_brand
+[2016-10-10 10:12:53]set names utf8
+[2016-10-10 10:12:53]DESC cz_goods_type
+[2016-10-10 10:12:53]select * from cz_goods_type
+[2016-10-10 10:12:54]set names utf8
+[2016-10-10 10:12:54]DESC cz_goods_type
+[2016-10-10 10:12:54]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-10 10:12:54]select count(*) from cz_goods_type
+[2016-10-10 10:33:46]set names utf8
+[2016-10-10 10:33:46]DESC cz_admin
+[2016-10-10 10:33:46]select * from cz_admin
+[2016-10-10 10:33:48]set names utf8
+[2016-10-10 10:33:48]DESC cz_goods_type
+[2016-10-10 10:33:48]select * from cz_goods_type order by type_id desc limit 0,3;
+[2016-10-10 10:33:48]select count(*) from cz_goods_type
+[2016-10-10 10:35:09]set names utf8
+[2016-10-10 10:35:09]DESC cz_admin
+[2016-10-10 10:35:09]select * from cz_admin
+[2016-10-10 10:35:11]set names utf8
+[2016-10-10 10:35:11]DESC cz_goods_type
+[2016-10-10 10:35:11]select a.*,count(a.attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:35:12]set names utf8
+[2016-10-10 10:35:12]DESC cz_goods_type
+[2016-10-10 10:35:12]select a.*,count(a.attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:35:13]set names utf8
+[2016-10-10 10:35:13]DESC cz_goods_type
+[2016-10-10 10:35:13]select a.*,count(a.attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:36:43]set names utf8
+[2016-10-10 10:36:43]DESC cz_admin
+[2016-10-10 10:36:43]select * from cz_admin
+[2016-10-10 10:36:44]set names utf8
+[2016-10-10 10:36:44]DESC cz_goods_type
+[2016-10-10 10:36:44]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:36:44]select count(*) from cz_goods_type
+[2016-10-10 10:36:49]set names utf8
+[2016-10-10 10:36:49]DESC cz_goods_type
+[2016-10-10 10:36:49]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 3,3
+[2016-10-10 10:36:49]select count(*) from cz_goods_type
+[2016-10-10 10:38:05]set names utf8
+[2016-10-10 10:38:05]DESC cz_brand
+[2016-10-10 10:38:05]select count(*) from cz_brand
+[2016-10-10 10:38:05]select * from cz_brand limit 0,2
+[2016-10-10 10:38:18]set names utf8
+[2016-10-10 10:38:18]DESC cz_category
+[2016-10-10 10:38:18]select * from cz_category;
+[2016-10-10 10:38:18]set names utf8
+[2016-10-10 10:38:18]DESC cz_brand
+[2016-10-10 10:38:18]select * from cz_brand
+[2016-10-10 10:38:18]set names utf8
+[2016-10-10 10:38:18]DESC cz_goods_type
+[2016-10-10 10:38:18]select * from cz_goods_type
+[2016-10-10 10:38:21]set names utf8
+[2016-10-10 10:38:21]DESC cz_category
+[2016-10-10 10:38:21]select * from cz_category;
+[2016-10-10 10:38:21]set names utf8
+[2016-10-10 10:38:21]DESC cz_brand
+[2016-10-10 10:38:21]select count(*) from cz_brand
+[2016-10-10 10:38:21]select * from cz_brand limit 0,2
+[2016-10-10 10:38:25]set names utf8
+[2016-10-10 10:38:25]DESC cz_goods_type
+[2016-10-10 10:38:25]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:38:25]select count(*) from cz_goods_type
+[2016-10-10 10:38:33]set names utf8
+[2016-10-10 10:38:33]DESC cz_goods_type
+[2016-10-10 10:38:33]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 3,3
+[2016-10-10 10:38:33]select count(*) from cz_goods_type
+[2016-10-10 10:38:38]set names utf8
+[2016-10-10 10:38:38]DESC cz_goods_type
+[2016-10-10 10:38:38]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 0,3
+[2016-10-10 10:38:38]select count(*) from cz_goods_type
+[2016-10-10 10:38:39]set names utf8
+[2016-10-10 10:38:39]DESC cz_goods_type
+[2016-10-10 10:38:39]select a.*,count(attr_name) as num from cz_goods_type as a left join cz_attribute as b on a.type_id = b.type_id group by a.type_id order by a.type_id desc limit 3,3
+[2016-10-10 10:38:39]select count(*) from cz_goods_type

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //原型继承注意：
+        //① 构造函数同时继承多个对象，后者覆盖前者
+        //② 继承对象 与 构造函数 拥有同名称成员，本身构造函数成员起作用
+        //③ 构造函数同时 继承对象 和 单一成员，需要"先继承对象、再继承单一成员"
+
+        function Tiger() {
+            this.color = "yellow";
+            this.leg = 4;
+            this.act = function () {
+                console.log("猛虎扑食");
+            }
+        }
+
+        var pig = {
+            mingzi: '赫赫',
+            color: "black"
+        };
+
+
+        //创建的内容是这样的，先定义好了对象再去定义属性，这样比较好，同时属性是不会被覆盖的
+        Tiger.prototype = pig;
+        Tiger.prototype.addr = "东北森林";
+
+        var north = new Tiger();
+        console.log(north);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

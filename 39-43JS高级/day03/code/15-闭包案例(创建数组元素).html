@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包案例--创建数组元素
+
+        var num = new Array();
+        for (var i = 0; i < 4; i++) {
+            num[i] = function () {
+                console.log(i);
+            }
+        }
+
+        //for循环在i=4的时候就结束了
+
+        num[2]();
+        num[3]();
+        num[0]();
+        num[1]();
+
+        //由于i的值是全局固定的，所以i一直都是4
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

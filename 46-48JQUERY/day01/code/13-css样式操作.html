@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //获取   $().css(样式名称)
+            //jquery获取样式信息有 行内、内部、外部
+            //DOM只能获取 行内 样式
+            console.log($('div').css('width'));
+            console.log($('div').css('height'));
+            console.log($('div').css('background-color'));
+            console.log($('div').css('width'));
+
+            //当前jquery版本要求把复合样式拆分为"具体样式"进行操作
+            //border ---->border-(top/left/right/bottom)-(style/color/width)
+            //console.log($('div').css('border')); //(空字符串)
+            console.log($('div').css('border-top-color'));
+            console.log($('div').css('border-top-width'));
+            console.log($('div').css('border-top-style'));
+        }
+
+        function f2(){
+            //设置，只能把样式设置为“行内”样式
+            //存在就修改、否则添加
+            //$().css(name样式名称,value值);
+            $('div').css('width','500px');
+            $('div').css('background-color','pink');
+            $('div').css('color','red');
+
+            //复合样式可以直接设置
+            $('div').css('border','10px solid green');
+
+            //以JSON的形式提交内容
+            $('div').css({'background-color':'green','color':'yellow'});
+        }
+
+
+    </script>
+    <style>
+        div{color:green;}
+        #one{}
+    </style>
+    <link href="./13.css" style="text/css" rel="stylesheet">
+</head>
+<body>
+    <h2>css样式操作</h2>
+    <div id="one" style='width:300px; height:200px; background-color:orange'>this classname is php0710</div>
+    <input type="button" value="获取" onclick="f1()" />
+    <input type="button" value="设置" onclick="f2()" />
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //()小括号模式单元技术
+        //横向:先左，后右
+        //纵向:先外，后里
+        //横向、纵向：第一个横向、再纵向，第二个横向、再纵向，第三个横向、再纵向.....
+
+        //解析的方向是逐步深入，从外到内的读取
+
+        var str = "2015-09-13 09:53:30";
+        var reg = /([0-9]+-(([0-9]+)-[0-9]+)) (([0-9]+:([0-9]+)):[0-9]+)/;
+        var result = str.match(reg);
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

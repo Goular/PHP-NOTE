@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>属性节点获取操作</h2>
+<input type="text" addr="beijing" id="mingzi" name="username" value="tom" class="orange"/>
+<br/><br/>
+<input type="button" value="获取" onclick="f1()"/>
+</body>
+</html>
+
+<script type="text/javascript">
+    window.onload = function () {
+        //首先获得"元素节点"对象
+        var name = document.getElementsByTagName("input")[0];
+        //获得当前标签的所有属性节点
+        console.log(name.attributes);
+
+        //根据集合列表属性节点，获取具体的属性节点
+        console.log(name.attributes.type);
+        console.log(name.attributes.class);
+        console.log(name.attributes.type.nodeType);
+
+        console.log(name.nodeType);
+    };
+
+</script>

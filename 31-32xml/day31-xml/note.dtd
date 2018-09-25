@@ -1,0 +1,8 @@
+<!ELEMENT note (from,to,heading,body)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT heading (#PCDATA)>
+        <!ELEMENT body (#PCDATA)>
+        <!ENTITY company "传智播客">
+        <!ENTITY % company1 "CSDN学院">
+        <!ENTITY own_company "%company1;龙骨天书">

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*匹配邮箱
+         jack_1999@163.com
+         29834723@qq.com
+         _tom_@sohu.com.cn
+         KenLinDun@whitehouce.com
+         mary_666@sina.net.org
+
+         (大小写)字母、数字、下划线作为开始内容
+         邮箱@符号前边名字长度5-15位之间
+         @符号组成，邮箱域名的名字是数字、字母组成
+         后缀.点后边有字母字符串(允许有多个后缀)
+         */
+
+        var reg = /^\w{5,15}@[a-z0-9]+(\.[a-z]+)+$/;
+        var str = "abc";//null
+        var str = "_tom_@sohu.com.cn";//["_tom_@sohu.com.cn", ".cn"]
+        var str = "mary_666@sina.net.org";//["mary_666@sina.net.org", ".org"]
+
+        var result = str.match(reg);
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

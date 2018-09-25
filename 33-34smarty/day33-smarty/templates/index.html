@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!--千万不能出现空格-->
+    <title><{$title}></title>
+
+    <style type="text/css">
+        {literal}
+        h1 {
+            color: tomato;
+            font-size: 60px;
+        }
+        {/literal}
+    </style>
+
+</head>
+<body>
+<!--使用了新的形式的定界符-->
+<h1><{$title}></h1>
+
+<p><{$content}></p>
+
+<!--添加smarty的注释-->
+
+<{*这是注释*}>
+
+</body>
+</html>

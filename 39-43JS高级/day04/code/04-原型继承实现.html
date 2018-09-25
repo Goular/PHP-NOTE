@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //原型继承
+        var cat = {mingzi:'kitty',climb:function(){console.log('在爬树')}};
+
+
+        function Tiger() {
+            this.color = "yellow";
+            this.leg = 4;
+            this.act = function () {
+                console.log("猛虎扑食");
+            }
+        }
+
+        Tiger.prototype = cat;
+
+        var north = new Tiger();
+        console.log(north);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

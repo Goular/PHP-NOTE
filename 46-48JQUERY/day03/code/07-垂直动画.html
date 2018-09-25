@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    function f1(){
+        //隐藏 fadeOut(速度(默认速度)[，回调函数])
+        $('div').fadeOut(3000);
+    }
+
+    function f2(){
+        //显示  fadeIn([速度(默认速度)，回调函数])
+        $('div').fadeIn(3000);
+    }
+    </script>
+
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:green;}
+    </style>
+</head>
+<body>
+    <h2>颜色渐变动画效果</h2>
+    <div>this is autumn</div>
+    <input type="button" value="隐藏" onclick="f1()" />
+    <input type="button" value="显示" onclick="f2()" />
+    <input type="button" value="开关" onclick="f3()" />
+</body>
+</html>

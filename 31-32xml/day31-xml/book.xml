@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--添加注释的格式-->
+<bookstore>
+    <book id="1" category="wx">
+        <title>105个男人和<strong>3个女人</strong>的故事
+        </title>
+        <year>1341</year>
+        <price>154.80</price>
+    </book>
+    <book id="2">
+        <title lang="en">三个国家的罗曼史</title>
+        <year>1391</year>
+        <price>854.80</price>
+        <desc>
+            <![CDATA[
+                用于无格式的进行输出，在该部分的内容不会被浏览器等翻译工具所翻译
+                实体等都不会被翻译
+                <script>
+                    console.log("啦啦啦");
+                </script>
+            ]]>
+        </desc>
+    </book>
+</bookstore>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //点击li弹出内部对应的相应信息
+        window.onload = function () {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onclick = (function (n) {
+                    return function () {
+                        alert(lis[n].firstChild.nodeValue);
+                    }
+                })(i);
+            }
+        };
+    </script>
+</head>
+<body>
+<h2></h2>
+<ul>
+    <li>奔驰</li>
+    <li>宝马</li>
+    <li>奥迪</li>
+</ul>
+</body>
+</html>

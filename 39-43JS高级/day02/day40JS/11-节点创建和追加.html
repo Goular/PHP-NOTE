@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>节点创建和追加</h2>
+<input type="button" value="创建追加" onclick="f1()"/><br/>
+<script>
+    function f1() {
+        var ull = document.createElement("ul");
+        var cars = ["奔驰", "别克", "路虎"];
+        var addrs = ["德国", "美国", "英国"];
+
+        for (var i = 0; i < cars.length; i++) {
+            var lii = document.createElement("li");
+            var txt = document.createTextNode(cars[i]);
+            //设置属性
+            lii.setAttribute("addr", addrs[i]);
+            //节点追加
+            lii.appendChild(txt);
+            ull.appendChild(lii);
+        }
+        document.body.appendChild(ull);
+    }
+
+
+
+</script>
+</body>
+</html>
+

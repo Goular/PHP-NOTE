@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //正向预查(匹配、不匹配)
+        var str = "http://web.0710.com/shop/index.php?name=jim&addr=beijing&age=23";
+
+        //① 正向匹配(获得内容字符串右边出现"=等号"信息)
+        //通过正则获得上述地址栏的get变量的名称(name/addr/age..)
+        //var reg = /[a-z]+(?=辅助条件string|reg)/;
+        var reg = /[a-z]+(?==)/g;
+
+        //② 正向不匹配
+        //var reg = /匹配内容模式(?!辅助条件string|reg)/;
+        //匹配的字母字符串右边"不能"出现数字
+        var reg = /[a-z]{8}(?!\d)/;
+        var str = "shenyang#liaoning";//["shenyang"]
+        var str = "beijingt2015";//null
+        var str = "haerbing&&&&&&&";//["haerbing"]
+
+
+        var result = str.match(reg);
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

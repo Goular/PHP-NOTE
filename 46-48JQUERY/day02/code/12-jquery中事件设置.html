@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //页面加载完毕就给H2设置事件
+            $('h2').mouseover(function () {
+                $('h2').css('background-color', 'lightblue');
+                $(this).css('color', 'blue');
+            });
+
+            $('h2').mouseout(function(){
+                $(this).css('background-color','lightgreen');
+            });
+
+            //为h2绑定多个事件
+            $('h2').mouseover(function(){
+                console.log(1111);
+            });
+        });
+
+
+    </script>
+
+    <style type="text/css">
+        h2{width:300px; height:200px; background-color:pink}
+    </style>
+</head>
+<body>
+<h2>jquery事件设置</h2>
+</body>
+</html>

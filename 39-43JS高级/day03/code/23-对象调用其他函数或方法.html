@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var mingzi = "xiaoming";
+
+        function study() {
+            this.week = "星期四";
+            console.log(this.mingzi + "在学习跑步");
+        }
+
+        window.study();
+
+        var cat = {
+            mingzi: "小白",
+            eat: "fish"
+        };
+
+        cat.xuexi = study;
+        cat.xuexi();
+
+//        var name = "window-name";
+//        var nick = "window-nick";
+//        var Person = {
+//            name: "Jack",
+//            f12: function () {
+//                this.nick = "f12昵称";
+//                function inn() {
+//                    console.log(this.nick);
+//                    console.log(this.name);
+//                }
+//                return inn;
+//            }
+//        };
+//
+//        var f23 = Person.f12();
+//        f23();
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

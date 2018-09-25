@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包失败操作例子
+        window.onload = function () {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < 4; i++) {
+                lis[i].onmouseover = function () {
+                    lis[i].style.backgroundColor = "lightblue";
+                }
+                lis[i].onmouseout = function () {
+                    lis[i].style.backgroundColor = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h2></h2>
+<ul>
+    <li>student</li>
+    <li>teacher</li>
+    <li>farmer</li>
+    <li>workman</li>
+</ul>
+</body>
+</html>

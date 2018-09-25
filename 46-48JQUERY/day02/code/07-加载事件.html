@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //采用的事件注册是二级DOM事件注册
+
+
+        //等待Dom树在内存中虚拟化完成后执行的事件
+        //① $(document).ready(fn);
+        //与window.onload的执行时间是有所区别的
+        $(document).ready(function(){
+            $('h2').css('color','red');
+        });
+
+
+        //② $().ready(fn);
+        //执行onCommentLoaded()事件执行完的触发
+        $().ready(function(){
+            $('h2').css('background-color','lightblue');
+        });
+
+
+        //③ $(function);
+        //把一个function函数当做一个选择器使用
+        //会自动判断并执行相关的内容
+        $(function(){
+            $('h2').css('width','500px');
+        });
+
+
+    </script>
+</head>
+<body>
+    <h2>jquery对加载事件的封装</h2>
+</body>
+</html>

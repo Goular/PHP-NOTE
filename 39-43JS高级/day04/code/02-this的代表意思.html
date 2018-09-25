@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //this的代表意思
+        var subject = "JavaScript语言";
+        function getInfo() {
+            console.log(this);
+            console.log("我们正在学习" + this.subject);
+        }
+        getInfo();
+
+
+        //元素节点对象
+        window.onload = function () {
+            var ben = document.getElementsByTagName("li")[0];
+            ben.onmouseover = function () {
+                console.log(this);
+                console.log(ben);
+                this.style.backgroundColor = "pink";
+                ben.style.color = "red";
+            };
+        };
+
+        //代表调用该方法的当前对象
+        var cat = {
+            mingzi: 'kitty',
+            climb: function () {
+                console.log(this.mingzi + "在爬树");
+            }
+        };
+        cat.climb();
+
+        //call和apply方法里边任意代表其他对象
+        var pig = {mingzi: "小黑"};
+        var wolf = {mingzi: "north"};
+
+        cat.climb.call(pig);
+        cat.climb.call(wolf);
+
+
+
+
+    </script>
+
+</head>
+<body>
+<h2></h2>
+<ul>
+    <li>奔驰</li>
+    <li>宝马</li>
+    <li>奥迪</li>
+</ul>
+</body>
+</html>

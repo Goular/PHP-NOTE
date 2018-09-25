@@ -1,0 +1,27 @@
+<script>
+    //JS六种数据类型
+    //1.number;2.String;3.Object;4.boolean;5.undefined;6.null
+    //PHP八种数据类型
+    //1.整型;2.浮点;3.字符串;4.数组;5.对象;6.null;7.resource;8.boolean;
+    //Java八种基本数据类型
+    //byte short int long
+    //char double float boolean
+
+
+    //案例一:创建相关的浏览器兼容对象
+    if (typeof XMLHttpRequest != 'undefined') {
+        //主流浏览器
+        var xhr = new XMLHttpRequest();
+
+    } else {
+        //方式二，微软形式
+        var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        var xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        var xhr = new ActiveXObject("Msxml2.XMLHTTP.3.0");
+        //var xhr = new ActiveXObject("Msxml2.XMLHTTP.5.0");//IE9不认这个了
+        var xhr = new ActiveXObject("Msxml2.XMLHTTP.6.0");
+        //其他形式的写法，IE全部认识，并生成相关的对象
+    }
+
+    alert(xhr);
+</script>

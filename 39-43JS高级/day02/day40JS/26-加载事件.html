@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function jiazai() {
+            var hh = document.getElementsByTagName("h2")[0];
+            hh.onmouseover = function () {
+                hh.style.color = "blue";
+                this.style.backgroundColor = "orange";
+            }
+        }
+
+        function f1() {
+            console.log("itcast");
+        }
+
+        //window.onload =  匿名函数/有名函数
+        window.onload = function () {
+            jiazai();
+            f1();
+        }
+
+    </script>
+    <style type="text/css">
+        h2 {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<h2>加载事件</h2>
+</body>
+</html>

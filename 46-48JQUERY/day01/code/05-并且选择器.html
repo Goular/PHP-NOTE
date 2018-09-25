@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    function f1(){
+        //并且选择器一次性可以使用多个，每个并且选择器使用前把已经获得节点
+        //的下标进行“归位(归零)”处理
+        $('li:gt(4):lt(2)').css("background-color","lightgreen");
+        $('li:lt(4):last').css('color','blue');
+
+        //节点：必须是标题标签节点、class=orange
+        //普通选择器 也可以构成是并且关系
+        //前后顺序没有要求(例如如下),但是不能产生"歧义"
+        $('.orange:header').css('color','purple');
+
+        //节点：li标签、class=orange
+        $('li.orange').css('color','gold');
+    }
+
+    </script>
+
+</head>
+<body>
+<h1>jquery并且选择器1</h1>
+<h2 class="orange">jquery并且选择器2</h2>
+<h3 class="orange">jquery并且选择器3</h3>
+<ul>
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>诸葛亮</li>
+    <li id="fei">张飞</li>
+    <li class="orange">赵云</li>
+    <li class="orange">马超</li>
+    <li>黄忠</li>
+    <li>魏延</li>
+</ul>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

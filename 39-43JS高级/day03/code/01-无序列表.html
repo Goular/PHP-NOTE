@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function f1() {
+        var ull = document.createElement("ul");
+        var texts = ["Student", "Teacher", "Worker", "Father"];
+        for (var i = 0; i < 4; i++) {
+            var lii = document.createElement("li");
+            var text = document.createTextNode(texts[i]);
+            lii.appendChild(text);
+            ull.appendChild(lii);
+            //dom1级注册事件
+//            lii.onmouseover = function () {
+//                this.style.backgroundColor = "lightblue";
+//            };
+//            lii.onmouseout = function () {
+//                this.style.backgroundColor = "";
+//            };
+            //dom2级注册事件
+            lii.addEventListener("mouseover", over);
+            lii.addEventListener("mouseout", out);
+        }
+        document.body.appendChild(ull);
+    }
+    function over() {
+        this.style.backgroundColor = "lightgreen";
+    }
+
+    function out() {
+        this.style.backgroundColor = "";
+    }
+    window.onload = f1;
+
+</script>
+</body>
+</html>

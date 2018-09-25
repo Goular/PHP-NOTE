@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //闭包案例-创建数组元素
+    var num = new Array();
+    for (var i = 0; i < 4; i++) {
+        num[i] = f1(i);
+    }
+
+    function f1(num) {
+        function f2() {
+            console.log(num);
+        }
+
+        return f2;
+    }
+
+    num[2]();
+    num[1]();
+    num[0]();
+    num[3]();
+
+
+</script>
+</body>
+</html>

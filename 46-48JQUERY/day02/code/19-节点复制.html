@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //页面加载完毕就给shu国的每个li设置mouseover和mouseout事件
+        $().ready(function(){
+            //jquery的全部方法本身有"遍历机制"
+            $('#shu li').mouseover(function(){
+                //this分别依次代表每个li的dom对象
+                $(this).css('background-color','pink');
+            });
+            $('#shu li').mouseout(function(){
+                $(this).css('background-color','');
+            });
+        });
+
+        function f1(){
+            //复制一个“关羽”并追加给wu国
+            //var fu_guan = $('#guan').clone(true);//复制节点(包含节点+事件)
+            var fu_guan = $('#guan').clone(false);//只复制节点
+            $('#wu').append(fu_guan);
+        }
+
+    </script>
+</head>
+<body>
+<h2>节点复制</h2>
+<ul id="shu">
+    <li>刘备</li>
+    <li id="guan">关羽</li>
+    <li>张飞</li>
+</ul>
+<ul id="wu">
+    <li id="quan">孙权</li>
+    <li id="yu">周瑜</li>
+    <li>小乔</li>
+</ul>
+<input type="button" value="复制" onclick="f1()" />
+</body>
+</html>

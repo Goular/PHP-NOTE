@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <!--脚本-->
+    <script>
+        $(function(){
+            //双击移动option项目到相关的位置
+            $('option').dblclick(function(){
+                if(this.parentNode.id == 'hebei'){
+                    $(this).appendTo($('#henan'));
+                }else{
+                    $(this).appendTo($('#heibei'));
+                }
+            });
+        });
+
+        function toRight(){
+            $('#hebei option:selected').appendTo($('#henan'));
+        }
+
+        function toAllRight(){
+            $('#hebei option').appendTo($('#henan'));
+        }
+
+        function toLeft(){
+            $('#henan option:selected').appendTo($('#hebei'));
+        }
+
+        function toAllLeft(){
+            $('#henan option').appendTo($('#hebei'));
+        }
+
+    </script>
+    <!--样式-->
+    <style>
+        select {
+            width: 100px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<select id="hebei" multiple="multiple">
+    <option>石家庄</option>
+    <option>保定</option>
+    <option>邯郸</option>
+    <option>邢台</option>
+    <option>衡水</option>
+</select>
+<select id="henan" multiple="multiple">
+    <option>郑州</option>
+    <option>开封</option>
+    <option>洛阳</option>
+    <option>周口</option>
+    <option>信阳</option>
+</select><br/><br/>
+<input type="button" value="-->" onclick="toRight()">
+<input type="button" value="==>" onclick="toAllRight()">
+<input type="button" value="<--" onclick="toLeft()">
+<input type="button" value="<==" onclick="toAllLeft()">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //作用域链作用
+        //3.变量的作用域是在声明时决定的，而不是在运行时
+        var identity = "student";
+        function f1() {
+            console.log("身份" + identity);
+        }
+
+        function f2() {
+            var identity = "workman";
+            f1();//这个不是嵌套函数，仅仅是直接调用而已，而且变量在声明就定义了，所以，identity的this是window，而不是f2();
+        }
+
+        f2();
+    </script>
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

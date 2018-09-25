@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function f1() {
+            //ajax去服务器端请求json信息回来
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    eval("var jn_info = " + xhr.responseText);//把字符串信息变为实体对象信息
+                    console.log(jn_info.city);
+                    console.log(jn_info.wind);
+                    console.log(jn_info.temp);
+                }
+            };
+            xhr.open("get","./04.php");
+            xhr.send(null);
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>通过javascript语言接收处理json信息</h2>
+<input type="button" value="触发" onclick="f1();" />
+</body>
+</html>

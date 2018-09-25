@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>节点创建和追加</h2>
+<input type="button" value="创建追加" onclick="f1()"/><br/>
+<ul>
+    <li addr='德国'>奔驰</li>
+    <li addr='美国'>别克</li>
+    <li addr='英国'>路虎</li>
+</ul>
+</body>
+</html>
+
+<script>
+    /**
+     <li addr="中国">红旗</li>
+     给追加到"别克"的前边
+     */
+    function f1() {
+        var lii = document.createElement("li");
+        var txt = document.createTextNode("红旗");
+        lii.appendChild(txt);
+
+        //放置节点到指定的位置
+        var ull = document.getElementsByTagName("ul")[0];
+        var bieke = document.getElementsByTagName("li")[1];
+
+        //ull.insertBefore(lii, bieke);
+        ull.replaceChild(lii, bieke);
+    }
+
+
+</script>

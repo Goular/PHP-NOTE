@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    function f1(){
+        //隐藏  hide([速度 单位毫秒],[回调函数])
+        //回调函数：效果完成后会自动调用该函数
+        //$('div').hide();//CSS  display: none;
+        $('div').hide(3000,function(){
+            alert('我消失了');
+        });
+    }
+
+    function f2(){
+        //显示  show([速度 单位毫秒],[回调函数])
+        //$('div').show();//CSS  display: block;
+        $('div').show(3000,function(){
+            alert('我又回来了');
+            $(this).fadeOut(2000);
+        });
+    }
+
+    function f3(){
+        //开关效果 toggle(速度，回调函数)
+        $('div').toggle(1000);
+    }
+
+    //show
+    //hide
+    //toggle
+    </script>
+
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:green;}
+    </style>
+</head>
+<body>
+    <h2>基本动画效果</h2>
+    <div>this is autumn</div>
+    <input type="button" value="隐藏" onclick="f1()" />
+    <input type="button" value="显示" onclick="f2()" />
+    <input type="button" value="开关" onclick="f3()" />
+</body>
+</html>

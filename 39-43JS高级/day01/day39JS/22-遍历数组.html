@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //遍历数组
+    var city = new Array('beijing', 'shanghai', 'guangzhou');
+    city[3] = 'shenayng';
+    city['jilin'] = 'changchun';
+    city[20] = 'haerbin';
+
+    //for循环遍历，只能读取到索引数组
+    //    for (var i = 0; i < city.length; i++) {
+    //        console.log(i+"---"+city[i]);
+    //    }
+
+    //for--in遍历
+    //for(var 下标变量 in 数组){}
+    //for(var 成员名称 in 对象){}
+
+    for (var key in city) {
+        console.log('k=' + key + " -- " + city[key]);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function checkName() {
+            //获得用户名信息，并传递给服务器
+            var nm = document.getElementById("username").value;
+
+            //对nm的特殊符号(&=等)进行编码处理
+            nm = encodeURIComponent(nm);//encodeURI()与encodeURIComponent()的区别是，encodeURIComponent()对所有字符都编码，encodeURI()还有部分的特殊字符不会编码(&,*,=)
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    alert(xhr.responseText);
+                }
+            }
+            xhr.open('get', "./04.php?name=" + nm + "&age=20");
+            xhr.send(null);
+        }
+
+    </script>
+</head>
+<body>
+<h2>ajax之get方式请求(ajax版用户名校验)</h2>
+
+<p>用户名：<input type="text" id="username" onblur="checkName();"/><br/></p>
+
+<p>密码：<input type="text" id="userpwd"/><br/></p>
+</body>
+</html>

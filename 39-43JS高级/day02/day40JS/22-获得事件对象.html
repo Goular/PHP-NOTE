@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<h2>事件流效果</h2>
+
+<div>Today is very good</div>
+</body>
+</html>
+
+<script>
+    var dv = document.getElementsByTagName("div")[0];
+    dv.onclick = function (evt) {
+        alert(evt);//[object MouseEvent]
+        //alert(window.event); //获得IE6/7/8浏览器事件对象
+        console.log(123);
+    }
+    dv.addEventListener('mouseover', function (evt) {
+        alert(evt);//[object MouseEvent]
+        dv.style.backgroundColor = "lightgreen";
+    });
+    function out(evt) {
+        alert(evt);//[object MouseEvent]
+        dv.style.backgroundColor = "pink";
+        console.log(evt);
+    }
+    dv.addEventListener('mouseout', out);
+</script>

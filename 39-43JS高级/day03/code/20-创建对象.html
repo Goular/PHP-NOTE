@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //创建对象
+        //② 构造函数方式创建对象
+        //   var obj = new 函数名称();
+
+        //   new  函数名称()创建对象的同时，该函数要发生调用执行
+        //   在php里边，new 类()创建对象的时候，也有一个函数发生调用执行
+        //   该函数是__construct()构造函数
+        //   由于php构造函数的关系，因此我们定义该方式为“构造函数方式创建对象”
+
+        function Animal(clr) {
+            //通过"this"声明的成员会变为对象的默认成员
+            var age = 5;
+            this.weight = 130;
+            this.act = function () {
+                console.log("撒欢跑步");
+            }
+        }
+
+        var dog = new Animal('gray');
+        dog.leg = 4;
+        dog['hobby'] = function () {
+            console.log('看家护林');
+        }
+        console.log(dog);
+
+
+        word = "牛津";
+
+        function f1() {
+            this.f2 = function () {
+                console.log(word);
+            }
+        }
+        var f3 = new f1();
+        f3.f2();
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

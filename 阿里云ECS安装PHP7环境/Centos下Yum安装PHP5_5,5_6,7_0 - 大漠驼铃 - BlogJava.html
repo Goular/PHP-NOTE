@@ -1,0 +1,632 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0061)http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" ""><HTML><HEAD 
+id="Head"><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>	Centos下Yum安装PHP5.5,5.6,7.0 - 大漠驼铃 - BlogJava </TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="keywords" id="metaKeywords" 
+content="Centos下Yum安装PHP5.5,5.6,7.0"><LINK href="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/common.css" 
+rel="stylesheet" type="text/css"><LINK id="MainCss" href="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/style.css" 
+rel="stylesheet" type="text/css"><LINK id="SecondaryCss" href="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/customcss.aspx" 
+rel="stylesheet" type="text/css"><LINK title="RSS" id="RSSLink" href="http://www.blogjava.net/nkjava/rss.aspx" 
+rel="alternate" type="application/rss+xml">
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY>
+<FORM name="Form1" id="Form1" action="422289.html" method="post">
+<DIV><INPUT name="__EVENTTARGET" id="__EVENTTARGET" type="hidden"> <INPUT name="__EVENTARGUMENT" id="__EVENTARGUMENT" type="hidden"> 
+<INPUT name="__VIEWSTATE" id="&#10;__VIEWSTATE" type="hidden"> </DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/WebResource.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT language="JavaScript">
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</SCRIPT>
+												 
+<SCRIPT language="JavaScript">function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/ScriptResource.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/ScriptResource(1).js" type="text/javascript"></SCRIPT>
+         
+<SCRIPT type="text/javascript">
+    /*960*90 创建于 2015-01-24*/
+    var cpro_id = "u1921334";
+</SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/c.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+    /*250*200 创建于 2015-01-24*/
+var cpro_id = "u1921331";
+</SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/f.js" type="text/javascript"></SCRIPT>
+ 
+<TABLE width="100%" class="Framework" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id="top">
+      <H1><A class="headermaintitle" id="Header1_HeaderTitle" href="http://www.blogjava.net/nkjava/">大漠驼铃</A></H1>
+      <DIV 
+      id="subtitle">置身浩瀚的沙漠，方向最为重要，希望此blog能向大漠驼铃一样，给我方向和指引。<BR>Java,Php,Shell,Python,服务器运维,大数据，SEO, 
+      网站开发、运维,云服务技术支持，IM服务供应商, FreeSwitch搭建，技术支持等. 技术讨论QQ群：428622099</DIV></DIV>
+      <DIV id="sub">
+      <DIV class="BlogStats">随笔 - 233, 文章 - 3, 评论 - 117, 引用 - 
+  0</DIV></DIV></TD></TR></TBODY></TABLE>
+<TABLE width="100%" class="Framework" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD class="LeftCell" rowspan="2">
+      <DIV id="leftmenu">数据加载中……			 </DIV></TD>
+    <TD class="MainCell">
+      <DIV id="main">
+      <DIV class="post">
+      <H2><A id="viewpost1_TitleUrl" href="http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html">Centos下Yum安装PHP5.5,5.6,7.0</A>
+      		 </H2>
+      <DIV class="postbody">默认的版本太低了，手动安装有一些麻烦，想采用Yum安装的可以使用下面的方案：<BR>
+      <DIV>1.检查当前安装的PHP包</DIV>
+      <DIV>
+      <DIV style="padding: 4px 5px 4px 4px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 98%; font-size: 13px; -ms-word-break: break-all; background-color: rgb(238, 238, 238);"><!--<br /><br />Code highlighting produced by Actipro CodeHighlighter (freeware)<br />http://www.CodeHighlighter.com/<br /><br />-->yum&nbsp;<SPAN 
+      style="color: rgb(0, 0, 255);">list</SPAN>&nbsp;installed&nbsp;|&nbsp;grep&nbsp;php</DIV></DIV>
+      <DIV>如果有安装的PHP包，先删除他们</DIV>
+      <DIV>
+      <DIV style="padding: 4px 5px 4px 4px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 98%; font-size: 13px; -ms-word-break: break-all; background-color: rgb(238, 238, 238);"><!--<br /><br />Code highlighting produced by Actipro CodeHighlighter (freeware)<br />http://www.CodeHighlighter.com/<br /><br />-->&nbsp;yum&nbsp;remove&nbsp;php.x86_64&nbsp;php-cli.x86_64&nbsp;php-common.x86_64&nbsp;php-gd.x86_64&nbsp;php-ldap.x86_64&nbsp;php-mbstring.x86_64&nbsp;php-mcrypt.x86_64&nbsp;php-<SPAN 
+      style="color: rgb(0, 128, 128);">mysql</SPAN>.x86_64&nbsp;php-pdo.x86_64</DIV></DIV>
+      <DIV>2.Centos 5.X</DIV>
+      <DIV>
+      <DIV style="padding: 4px 5px 4px 4px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 98%; font-size: 13px; -ms-word-break: break-all; background-color: rgb(238, 238, 238);"><!--<br /><br />Code highlighting produced by Actipro CodeHighlighter (freeware)<br />http://www.CodeHighlighter.com/<br /><br />-->&nbsp; 
+      rpm&nbsp;-Uvh&nbsp;http:<SPAN 
+      style="color: rgb(0, 128, 0);">//</SPAN><SPAN style="color: rgb(0, 128, 0);">mirror.webtatic.com/yum/el5/latest.rpm</SPAN><SPAN 
+      style="color: rgb(0, 128, 0);"><BR></SPAN>&nbsp;&nbsp;CentOs&nbsp;6.x<BR>&nbsp;&nbsp;rpm&nbsp;-Uvh&nbsp;http:<SPAN 
+      style="color: rgb(0, 128, 0);">//</SPAN><SPAN style="color: rgb(0, 128, 0);">mirror.webtatic.com/yum/el6/latest.rpm</SPAN><SPAN 
+      style="color: rgb(0, 128, 0);"><BR></SPAN>&nbsp;&nbsp;CentOs&nbsp;7.X<BR>rpm&nbsp;-Uvh&nbsp;https:<SPAN 
+      style="color: rgb(0, 128, 0);">//</SPAN><SPAN style="color: rgb(0, 128, 0);">mirror.webtatic.com/yum/el7/epel-release.rpm</SPAN><SPAN 
+      style="color: rgb(0, 128, 0);"><BR></SPAN>rpm&nbsp;-Uvh&nbsp;https:<SPAN 
+      style="color: rgb(0, 128, 0);">//</SPAN><SPAN style="color: rgb(0, 128, 0);">mirror.webtatic.com/yum/el7/webtatic-release.rpm</SPAN></DIV></DIV>
+      <DIV></DIV>
+      <DIV>如果想删除上面安装的包，重新安装<BR>rpm -qa | grep webstatic<BR>rpm -e 
+      &nbsp;上面搜索到的包即可<BR><BR>3.运行yum install</DIV>
+      <DIV>&nbsp;<SPAN style="font-size: 13px; background-color: rgb(238, 238, 238);">&nbsp;yum&nbsp;install&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">cli</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">common</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">gd</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">ldap</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">mbstring</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">mcrypt</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="color: rgb(0, 128, 128); font-size: 13px;">mysql</SPAN><SPAN style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64&nbsp;php55w</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">-</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">pdo</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">.</SPAN><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);">x86_64<BR><BR></SPAN>
+      <DIV>yum install php56w.x86_64 php56w-cli.x86_64 php56w-common.x86_64 
+      php56w-gd.x86_64 php56w-ldap.x86_64 php56w-mbstring.x86_64 
+      php56w-mcrypt.x86_64 php56w-mysql.x86_64 php56w-pdo.x86_64</DIV><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);"><BR>注：如果想升级到5.6把上面的55w换成56w就可以了。<BR><BR></SPAN><SPAN 
+      style="font-family: Arial; background-color: rgb(255, 255, 255);">yum 
+      install php70w.x86_64 php70w-cli.x86_64 php</SPAN><SPAN style="font-family: Arial; background-color: rgb(255, 255, 255);">70</SPAN><SPAN 
+      style="font-family: Arial; background-color: rgb(255, 255, 255);">w-common.x86_64 
+      php</SPAN><SPAN style="font-family: Arial; background-color: rgb(255, 255, 255);">70</SPAN><SPAN 
+      style="font-family: Arial; background-color: rgb(255, 255, 255);">w-gd.x86_64 
+      php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 
+      php70w-mysql.x86_64 php70w-pdo.x86_64</SPAN><BR><SPAN style="font-size: 13px; background-color: rgb(238, 238, 238);">4.安装PHP 
+      FPM<BR></SPAN>
+      <DIV>yum install php55w-fpm <BR>yum install php56w-fpm <BR>yum install 
+      php70w-fpm<BR><SPAN style="font-size: 13px; background-color: rgb(238, 238, 238);">注：如果想升级到5.6把上面的55w换成56w就可以了。<BR><BR><BR><BR><BR><BR><BR><BR><BR></SPAN></DIV><SPAN 
+      style="font-size: 13px; background-color: rgb(238, 238, 238);"><BR>亲们，如果您有问题，可以联系我们技术支持，网址：<A 
+      title="北京韦尔科技有限公司" 
+      href="http://www.ourwill.cn/">北京韦尔科技有限公司</A></SPAN></DIV></DIV>
+      <P class="postfoot">			posted on 2015-01-20 08:53 <A href="http://www.blogjava.net/nkjava/">草原上的骆驼</A> 
+      阅读(73075) <A href="http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html#Post">评论(0)</A> 
+      &nbsp;<A href="http://www.blogjava.net/nkjava/admin/EditPosts.aspx?postid=422289">编辑</A> 
+      &nbsp;<A href="http://www.blogjava.net/nkjava/AddToFavorite.aspx?id=422289">收藏</A> 
+       所属分类: <A 
+      href="http://www.blogjava.net/nkjava/category/47459.html">PHP</A> 
+      		</P></DIV><IMG width="1" height="1" src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/422289.jpg">
+      	 <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html"
+dc:identifier="http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html"
+dc:title="Centos下Yum安装PHP5.5,5.6,7.0"
+trackback:ping="http://www.blogjava.net/nkjava/services/trackbacks/422289.aspx" />
+</rdf:RDF>
+-->
+	 
+<SCRIPT type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</SCRIPT>
+       
+      <DIV id="AjaxHolder_UpdatePanel1"></DIV></DIV></TD></TR>
+  <TR>
+    <TD class="FooterCell">
+      <P id="footer">	Powered by: 	 <BR><A name="Hyperlink1" id="Footer1_Hyperlink3" 
+      style="font-family: Verdana; font-size: 12px;" href="http://www.blogjava.net/">BlogJava</A>
+      	 <BR>	Copyright © 草原上的骆驼 </P></TD></TR></TBODY></TABLE>
+<DIV id="lefttemp" style="display: none;">
+<H3>导航</H3>
+<UL>
+  <LI><A id="MyLinks1_HomeLink" href="http://www.blogjava.net/">BlogJava</A>	 
+  <LI><A id="MyLinks1_MyHomeLink" href="http://www.blogjava.net/nkjava/">首页</A>
+  	 <LI><A id="MyLinks1_NewPostLink" href="http://www.blogjava.net/nkjava/admin/EditPosts.aspx?opt=1">新随笔</A>
+	 
+  <LI><A id="MyLinks1_ContactLink" accesskey="9" href="http://www.blogjava.net/nkjava/contact.aspx?id=1">联系</A>
+	 
+  <LI><A id="MyLinks1_XMLLink" href="http://www.blogjava.net/nkjava/rss"><IMG 
+  style="border-width: 0px;" alt="RSS 2.0 Feed" src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/xml.gif"></A><A 
+  id="MyLinks1_Syndication" href="http://www.blogjava.net/nkjava/rss">聚合</A>	 
+  <LI><A id="MyLinks1_Admin" href="http://www.blogjava.net/nkjava/admin/EditPosts.aspx">管理</A></LI></UL>
+<TABLE title="日历" class="Cal" id="Calendar1_entryCal" style="border-width: 1px; border-style: solid; border-collapse: collapse;" 
+border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD style="background-color: silver;" colspan="7">
+      <TABLE class="CalTitle" style="width: 100%; border-collapse: collapse;" 
+      border="0" cellspacing="0">
+        <TBODY>
+        <TR>
+          <TD class="CalNextPrev" style="width: 15%;"><A title="转到上一个月" style="color: black;" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V5448')">&lt;</A></TD>
+          <TD align="center" style="width: 70%;">2015年1月</TD>
+          <TD align="right" class="CalNextPrev" style="width: 15%;"><A title="转到下一个月" 
+            style="color: black;" href="javascript:__doPostBack('Calendar1$entryCal','V5510')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH align="center" class="CalDayHeader" abbr="日" scope="col">日</TH>
+    <TH align="center" class="CalDayHeader" abbr="一" scope="col">一</TH>
+    <TH align="center" class="CalDayHeader" abbr="二" scope="col">二</TH>
+    <TH align="center" class="CalDayHeader" abbr="三" scope="col">三</TH>
+    <TH align="center" class="CalDayHeader" abbr="四" scope="col">四</TH>
+    <TH align="center" class="CalDayHeader" abbr="五" scope="col">五</TH>
+    <TH align="center" class="CalDayHeader" abbr="六" scope="col">六</TH></TR>
+  <TR>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">28</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">29</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">30</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">31</TD>
+    <TD align="center" style="width: 14%;">1</TD>
+    <TD align="center" style="width: 14%;">2</TD>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">3</TD></TR>
+  <TR>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">4</TD>
+    <TD align="center" style="width: 14%;">5</TD>
+    <TD align="center" style="width: 14%;">6</TD>
+    <TD align="center" style="width: 14%;">7</TD>
+    <TD align="center" style="width: 14%;">8</TD>
+    <TD align="center" style="width: 14%;">9</TD>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">10</TD></TR>
+  <TR>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">11</TD>
+    <TD align="center" style="width: 14%;">12</TD>
+    <TD align="center" style="width: 14%;">13</TD>
+    <TD align="center" style="width: 14%;">14</TD>
+    <TD align="center" style="width: 14%;">15</TD>
+    <TD align="center" style="width: 14%;">16</TD>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">17</TD></TR>
+  <TR>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">18</TD>
+    <TD align="center" style="width: 14%;">19</TD>
+    <TD align="center" style="width: 14%;"><A href="http://www.blogjava.net/nkjava/archive/2015/01/20.html"><U>20</U></A></TD>
+    <TD align="center" style="width: 14%;"><A href="http://www.blogjava.net/nkjava/archive/2015/01/21.html"><U>21</U></A></TD>
+    <TD align="center" style="width: 14%;"><A href="http://www.blogjava.net/nkjava/archive/2015/01/22.html"><U>22</U></A></TD>
+    <TD align="center" style="width: 14%;">23</TD>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">24</TD></TR>
+  <TR>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">25</TD>
+    <TD align="center" style="width: 14%;">26</TD>
+    <TD align="center" style="width: 14%;">27</TD>
+    <TD align="center" style="width: 14%;"><A href="http://www.blogjava.net/nkjava/archive/2015/01/28.html"><U>28</U></A></TD>
+    <TD align="center" style="width: 14%;">29</TD>
+    <TD align="center" style="width: 14%;">30</TD>
+    <TD align="center" class="CalWeekendDay" style="width: 14%;">31</TD></TR>
+  <TR>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">1</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">2</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">3</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">4</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">5</TD>
+    <TD align="center" class="CalOtherMonthDay" style="width: 14%;">6</TD>
+    <TD align="center" class="CalOtherMonthDay" 
+  style="width: 14%;">7</TD></TR></TBODY></TABLE>
+<META name="vs_showGrid" content="False"> 
+<H3>公告</H3>
+本博客提供技术讨论QQ群：428622099，希望志同道合的朋友加入群，共同进步和学习。<BR>如果您觉得本博客还可以，请支持网页顶部的广告，谢谢。<BR>
+<DIV></DIV>
+<DIV></DIV>
+<DIV></DIV>
+<H3>常用链接</H3>
+<UL>
+  <LI><A id="SingleColumn1_ctl00_repeaterLinks_ctl01_lnkLinkItem" href="http://www.blogjava.net/nkjava/MyPosts.html">我的随笔</A></LI>
+  <LI><A id="SingleColumn1_ctl00_repeaterLinks_ctl02_lnkLinkItem" href="http://www.blogjava.net/nkjava/MyArticles.html">我的文章</A></LI>
+  <LI><A id="SingleColumn1_ctl00_repeaterLinks_ctl03_lnkLinkItem" href="http://www.blogjava.net/nkjava/MyComments.html">我的评论</A></LI>
+  <LI><A id="SingleColumn1_ctl00_repeaterLinks_ctl04_lnkLinkItem" href="http://www.blogjava.net/nkjava/OtherPosts.html">我的参与</A></LI>
+  <LI><A id="SingleColumn1_ctl00_repeaterLinks_ctl05_lnkLinkItem" href="http://www.blogjava.net/nkjava/RecentComments.html">最新评论</A></LI></UL>
+<H3>留言簿<SPAN style="font-size: 11px; font-weight: normal;">(8)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_ctl01_lnkMessages" href="http://www.blogjava.net/nkjava/Contact.aspx?id=1">给我留言</A>
+	 
+  <LI><A id="SingleColumn1_ctl01_lnkPublicMsgView" href="http://www.blogjava.net/nkjava/default.aspx?opt=msg">查看公开留言</A>
+	 
+  <LI><A id="SingleColumn1_ctl01_lnkPrivateMsgView" href="http://www.blogjava.net/nkjava/admin/MyMessages.aspx">查看私人留言</A>
+  	 </LI></UL>
+<H3>随笔分类<SPAN style="font-size: 11px; font-weight: normal;">(211)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link" href="http://www.blogjava.net/nkjava/category/42992.html">Computer 
+  Chemistry(5)</A><A title="Subscribe to Computer Chemistry(5)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/42992.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link" href="http://www.blogjava.net/nkjava/category/44248.html">CSS(4)</A><A 
+  title="Subscribe to CSS(4)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/44248.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link" href="http://www.blogjava.net/nkjava/category/36593.html">JavaScript(4)</A><A 
+  title="Subscribe to JavaScript(4)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36593.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link" href="http://www.blogjava.net/nkjava/category/36597.html">JAVA基础知识(31)</A><A 
+  title="Subscribe to JAVA基础知识(31)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36597.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link" href="http://www.blogjava.net/nkjava/category/37729.html">JAVA框架(20)</A><A 
+  title="Subscribe to JAVA框架(20)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37729.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link" href="http://www.blogjava.net/nkjava/category/37789.html">Linux(66)</A><A 
+  title="Subscribe to Linux(66)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37789.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link" href="http://www.blogjava.net/nkjava/category/47459.html">PHP(9)</A><A 
+  title="Subscribe to PHP(9)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/47459.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link" href="http://www.blogjava.net/nkjava/category/47980.html">Python(11)</A><A 
+  title="Subscribe to Python(11)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/47980.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link" href="http://www.blogjava.net/nkjava/category/43381.html">Ruby(6)</A><A 
+  title="Subscribe to Ruby(6)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/43381.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link" href="http://www.blogjava.net/nkjava/category/37788.html">Windows(4)</A><A 
+  title="Subscribe to Windows(4)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37788.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link" href="http://www.blogjava.net/nkjava/category/37980.html">其它(4)</A><A 
+  title="Subscribe to 其它(4)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37980.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link" href="http://www.blogjava.net/nkjava/category/37506.html">应用服务器(5)</A><A 
+  title="Subscribe to 应用服务器(5)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37506.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link" href="http://www.blogjava.net/nkjava/category/43382.html">手册(2)</A><A 
+  title="Subscribe to 手册(2)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/43382.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link" href="http://www.blogjava.net/nkjava/category/38040.html">搜索服务(7)</A><A 
+  title="Subscribe to 搜索服务(7)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/38040.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link" href="http://www.blogjava.net/nkjava/category/36596.html">数据库-DataBase(16)</A><A 
+  title="Subscribe to 数据库-DataBase(16)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36596.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link" href="http://www.blogjava.net/nkjava/category/37572.html">日记(6)</A><A 
+  title="Subscribe to 日记(6)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37572.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link" href="http://www.blogjava.net/nkjava/category/37527.html">编辑器Editor(3)</A><A 
+  title="Subscribe to 编辑器Editor(3)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37527.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link" href="http://www.blogjava.net/nkjava/category/36698.html">设计模式-DP(1)</A><A 
+  title="Subscribe to 设计模式-DP(1)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36698.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link" href="http://www.blogjava.net/nkjava/category/37575.html">项目管理(7)</A><A 
+  title="Subscribe to 项目管理(7)" id="SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/37575.html/rss">(rss)</A></LI></UL>
+<H3>随笔档案<SPAN style="font-size: 11px; font-weight: normal;">(234)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link" href="http://www.blogjava.net/nkjava/archive/2017/08.html">2017年8月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link" href="http://www.blogjava.net/nkjava/archive/2016/11.html">2016年11月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link" href="http://www.blogjava.net/nkjava/archive/2016/10.html">2016年10月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link" href="http://www.blogjava.net/nkjava/archive/2016/08.html">2016年8月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link" href="http://www.blogjava.net/nkjava/archive/2016/07.html">2016年7月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link" href="http://www.blogjava.net/nkjava/archive/2016/06.html">2016年6月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link" href="http://www.blogjava.net/nkjava/archive/2016/03.html">2016年3月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link" href="http://www.blogjava.net/nkjava/archive/2016/02.html">2016年2月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link" href="http://www.blogjava.net/nkjava/archive/2016/01.html">2016年1月 
+  (6)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link" href="http://www.blogjava.net/nkjava/archive/2015/10.html">2015年10月 
+  (4)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link" href="http://www.blogjava.net/nkjava/archive/2015/09.html">2015年9月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link" href="http://www.blogjava.net/nkjava/archive/2015/08.html">2015年8月 
+  (4)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link" href="http://www.blogjava.net/nkjava/archive/2015/07.html">2015年7月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link" href="http://www.blogjava.net/nkjava/archive/2015/05.html">2015年5月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl15_Link" href="http://www.blogjava.net/nkjava/archive/2015/04.html">2015年4月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl16_Link" href="http://www.blogjava.net/nkjava/archive/2015/03.html">2015年3月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl17_Link" href="http://www.blogjava.net/nkjava/archive/2015/02.html">2015年2月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl18_Link" href="http://www.blogjava.net/nkjava/archive/2015/01.html">2015年1月 
+  (5)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl19_Link" href="http://www.blogjava.net/nkjava/archive/2014/12.html">2014年12月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl20_Link" href="http://www.blogjava.net/nkjava/archive/2014/11.html">2014年11月 
+  (7)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl21_Link" href="http://www.blogjava.net/nkjava/archive/2014/09.html">2014年9月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl22_Link" href="http://www.blogjava.net/nkjava/archive/2014/08.html">2014年8月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl23_Link" href="http://www.blogjava.net/nkjava/archive/2014/07.html">2014年7月 
+  (5)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl24_Link" href="http://www.blogjava.net/nkjava/archive/2014/06.html">2014年6月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl25_Link" href="http://www.blogjava.net/nkjava/archive/2014/04.html">2014年4月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl26_Link" href="http://www.blogjava.net/nkjava/archive/2013/11.html">2013年11月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl27_Link" href="http://www.blogjava.net/nkjava/archive/2013/10.html">2013年10月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl28_Link" href="http://www.blogjava.net/nkjava/archive/2013/02.html">2013年2月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl29_Link" href="http://www.blogjava.net/nkjava/archive/2012/09.html">2012年9月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl30_Link" href="http://www.blogjava.net/nkjava/archive/2012/03.html">2012年3月 
+  (5)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl31_Link" href="http://www.blogjava.net/nkjava/archive/2012/02.html">2012年2月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl32_Link" href="http://www.blogjava.net/nkjava/archive/2012/01.html">2012年1月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl33_Link" href="http://www.blogjava.net/nkjava/archive/2011/12.html">2011年12月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl34_Link" href="http://www.blogjava.net/nkjava/archive/2011/11.html">2011年11月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl35_Link" href="http://www.blogjava.net/nkjava/archive/2011/08.html">2011年8月 
+  (4)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl36_Link" href="http://www.blogjava.net/nkjava/archive/2011/05.html">2011年5月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl37_Link" href="http://www.blogjava.net/nkjava/archive/2011/03.html">2011年3月 
+  (10)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl38_Link" href="http://www.blogjava.net/nkjava/archive/2011/02.html">2011年2月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl39_Link" href="http://www.blogjava.net/nkjava/archive/2010/12.html">2010年12月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl40_Link" href="http://www.blogjava.net/nkjava/archive/2010/11.html">2010年11月 
+  (4)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl41_Link" href="http://www.blogjava.net/nkjava/archive/2010/10.html">2010年10月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl42_Link" href="http://www.blogjava.net/nkjava/archive/2010/09.html">2010年9月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl43_Link" href="http://www.blogjava.net/nkjava/archive/2010/08.html">2010年8月 
+  (6)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl44_Link" href="http://www.blogjava.net/nkjava/archive/2010/07.html">2010年7月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl45_Link" href="http://www.blogjava.net/nkjava/archive/2010/06.html">2010年6月 
+  (1)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl46_Link" href="http://www.blogjava.net/nkjava/archive/2010/05.html">2010年5月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl47_Link" href="http://www.blogjava.net/nkjava/archive/2010/04.html">2010年4月 
+  (5)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl48_Link" href="http://www.blogjava.net/nkjava/archive/2010/03.html">2010年3月 
+  (10)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl49_Link" href="http://www.blogjava.net/nkjava/archive/2010/02.html">2010年2月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl50_Link" href="http://www.blogjava.net/nkjava/archive/2010/01.html">2010年1月 
+  (6)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl51_Link" href="http://www.blogjava.net/nkjava/archive/2009/12.html">2009年12月 
+  (7)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl52_Link" href="http://www.blogjava.net/nkjava/archive/2009/11.html">2009年11月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl53_Link" href="http://www.blogjava.net/nkjava/archive/2009/10.html">2009年10月 
+  (5)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl54_Link" href="http://www.blogjava.net/nkjava/archive/2009/08.html">2009年8月 
+  (2)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl55_Link" href="http://www.blogjava.net/nkjava/archive/2009/06.html">2009年6月 
+  (6)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl56_Link" href="http://www.blogjava.net/nkjava/archive/2009/05.html">2009年5月 
+  (7)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl57_Link" href="http://www.blogjava.net/nkjava/archive/2009/04.html">2009年4月 
+  (11)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl58_Link" href="http://www.blogjava.net/nkjava/archive/2009/03.html">2009年3月 
+  (23)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl59_Link" href="http://www.blogjava.net/nkjava/archive/2009/02.html">2009年2月 
+  (28)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl60_Link" href="http://www.blogjava.net/nkjava/archive/2008/12.html">2008年12月 
+  (3)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl01_LinkList_ctl61_Link" href="http://www.blogjava.net/nkjava/archive/2008/11.html">2008年11月 
+  (1)</A></LI></UL>
+<H3>文章分类<SPAN style="font-size: 11px; font-weight: normal;">(1)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link" href="http://www.blogjava.net/nkjava/category/36570.html">ajax</A><A 
+  title="Subscribe to ajax" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36570.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link" href="http://www.blogjava.net/nkjava/category/36273.html">blog(1)</A><A 
+  title="Subscribe to blog(1)" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36273.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link" href="http://www.blogjava.net/nkjava/category/36274.html">data 
+  structure</A><A title="Subscribe to data structure" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36274.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link" href="http://www.blogjava.net/nkjava/category/36267.html">JAVA</A><A 
+  title="Subscribe to JAVA" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36267.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link" href="http://www.blogjava.net/nkjava/category/36268.html">linux</A><A 
+  title="Subscribe to linux" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36268.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_Link" href="http://www.blogjava.net/nkjava/category/36271.html">pojo</A><A 
+  title="Subscribe to pojo" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36271.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_Link" href="http://www.blogjava.net/nkjava/category/36272.html">source</A><A 
+  title="Subscribe to source" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36272.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_Link" href="http://www.blogjava.net/nkjava/category/36270.html">spring</A><A 
+  title="Subscribe to spring" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36270.html/rss">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl09_Link" href="http://www.blogjava.net/nkjava/category/36269.html">struts</A><A 
+  title="Subscribe to struts" id="SingleColumn1_Categories_CatList_ctl02_LinkList_ctl09_RssLink" 
+  href="http://www.blogjava.net/nkjava/category/36269.html/rss">(rss)</A></LI></UL>
+<H3>文章档案<SPAN style="font-size: 11px; font-weight: normal;">(1)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link" href="http://www.blogjava.net/nkjava/archives/2008/12.html">2008年12月 
+  (1)</A></LI></UL>
+<H3>相册</H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link" href="http://www.blogjava.net/nkjava/gallery/36277.html">javaee</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link" href="http://www.blogjava.net/nkjava/gallery/36276.html">pic</A></LI></UL>
+<H3>作品</H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link" href="http://www.ourwill.cn/">北京韦尔科技有限公司</A></LI>
+  <LI 
+  style="margin-top: 2px;">北京韦尔科技有限公司是一家从事互联网相关技术研发型的公司，对外提供互联网相关技术培训，产品研发等。</LI>
+  <LI><A id="SingleColumn1_Categories_CatList_ctl05_LinkList_ctl02_Link" href="http://tuwenzhibo.com/">图文直播平台</A></LI>
+  <LI 
+  style="margin-top: 2px;">图文直播-让直播更简单更有效。图文直播基于文字、图片、视频的直播方式，直播可嵌入APP、网站和微信公众平台，提供多种方式面向企业个人支持在线直播云服务、远程部署服务、技术支持服务！</LI></UL>
+<SCRIPT language="JavaScript">
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</SCRIPT>
+ 
+<H3>搜索</H3>
+<UL>
+  <LI>
+  <LI><INPUT name="q" id="q" style="width: 130px;" onkeydown="return SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/nkjava')" type="text">&nbsp;<INPUT name="sa" onclick="SearchGoogle(document.getElementById('q'),event,'www.blogjava.net/nkjava')" type="button" value="搜索">
+  	 </LI></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>		积分 -		 536187	 
+  <LI>排名 -		 77	 </LI></UL>
+<H3>最新评论	 <A id="SingleColumn1__968518_RSSHyperlink1" href="http://www.blogjava.net/nkjava/CommentsRSS.aspx"><IMG 
+style="border-width: 0px;" src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/xml.gif"></A></H3>
+<DIV class="RecentComment">
+<UL>
+  <LI style="-ms-word-break: break-all;"><A id="SingleColumn1__968518_CommentList_ctl01_Hyperlink1" 
+  href="http://www.blogjava.net/nkjava/archive/2016/08/03/418210.html#431435">1.&nbsp;re: 
+  中国农业银行网上支付平台商户接口编程</A>			 </LI>
+  <LI style="-ms-word-break: break-all;">@森<BR>问题解决了吗？			 </LI>
+  <LI style="text-align: right; margin-right: 4px;">--NKJAVA</LI></UL></DIV>
+<H3>阅读排行榜</H3>
+<DIV class="RecentComment">
+<UL style="-ms-word-break: break-all;">
+  <LI><A id="SingleColumn1__e2f42c_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2015/01/20/422289.html">1.&nbsp;Centos下Yum安装PHP5.5,5.6,7.0(73074)</A>
+  			 </LI>
+  <LI><A id="SingleColumn1__e2f42c_TopList_ctl02_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2011/08/29/357502.html">2.&nbsp;Centos搭建SVN服务器三步曲(70843)</A>
+  			 </LI>
+  <LI><A id="SingleColumn1__e2f42c_TopList_ctl03_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2009/03/05/258073.html">3.&nbsp;javax.servlet.jsp.PageContext 
+  cannot be resolved to a type的解決之道(21922)</A>			 </LI>
+  <LI><A id="SingleColumn1__e2f42c_TopList_ctl04_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2014/11/21/420406.html">4.&nbsp;Centos 
+  升级MySQL版本或者Yum安装Mysql5.6(13585)</A>			 </LI>
+  <LI><A id="SingleColumn1__e2f42c_TopList_ctl05_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2009/02/10/254119.html">5.&nbsp;Hibernate 
+  Tools for Eclipse插件的安装和使用(13410)</A>			 </LI></UL></DIV>
+<H3>评论排行榜</H3>
+<DIV class="RecentComment">
+<UL style="-ms-word-break: break-all;">
+  <LI><A id="SingleColumn1__2ee3ecd_TopList_ctl01_Hyperlink1" href="http://www.blogjava.net/nkjava/archive/2011/08/29/357502.html">1.&nbsp;Centos搭建SVN服务器三步曲(25)</A>
+  			 </LI></UL></DIV></DIV>
+<SCRIPT type="text/javascript">
+    /*960*90 创建于 2015-01-22*/
+    var cpro_id = "u1916572";
+</SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/c.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/f.txt" async=""></SCRIPT>
+ <!-- 博客内容 --> <INS class="adsbygoogle" style="width: 728px; height: 90px; display: inline-block;" 
+data-ad-slot="8748526022" data-ad-client="ca-pub-5698782321729030"></INS> 
+<SCRIPT>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</SCRIPT>
+ 
+<SCRIPT>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?44c86ff8efdab03ea84a939eda2696f7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</SCRIPT>
+     
+<SCRIPT type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</SCRIPT>
+ </FORM>
+<SCRIPT src="Centos下Yum安装PHP5_5,5_6,7_0%20-%20大漠驼铃%20-%20BlogJava_files/ShowHidden.js" type="text/javascript"></SCRIPT>
+	 
+<SCRIPT type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-476124-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</SCRIPT>
+ </BODY></HTML>

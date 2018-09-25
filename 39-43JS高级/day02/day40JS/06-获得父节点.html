@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>获得父节点</h2>
+<ul>
+    <li>哈尔滨</li>
+    <li>长春</li>
+    <li>沈阳</li>
+</ul>
+</body>
+</html>
+<script>
+    //获取父节点
+    var ull = document.getElementsByTagName("ul")[0];
+
+    console.log(ull.parentNode);
+    console.log(ull.parentNode.parentNode);
+
+    console.log(ull.parentNode.parentNode.parentNode);
+    console.log(ull.parentNode.parentNode.nodeType);
+    console.log(ull.parentNode.parentNode.parentNode.parentNode);
+</script>

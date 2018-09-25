@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //异常
+        var weather = "sunshine";
+        var week = "Saturday";
+        //异常语法结构
+        //try{有可能产生异常代码
+        //    产生问题的后续代码不给执行
+        //}catch(){捕捉异常}finally{最终要执行代码}
+
+        try {
+            console.log("天气:" + weather);
+            console.log("星期:" + week);
+
+            //console.log("温度:" + temp);
+            //var per = new eval();
+            throw new DOMException('扑街');
+            console.log("abcd");
+            console.log("efgh");
+        } catch (e) {
+            console.log(e.message);
+        } finally {
+            console.log(1234);
+            console.log(5678);
+            console.log("... ...");
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

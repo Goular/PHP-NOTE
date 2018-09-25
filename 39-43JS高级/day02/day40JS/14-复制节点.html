@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<h2>节点复制追加</h2>
+<input type="button" value="节点复制追加" onclick="f1()"/><br/>
+<ul id="foreign">
+    <li addr='德国'>奔驰</li>
+    <li addr='美国' id="bie">别克</li>
+    <li addr='英国'>路虎</li>
+</ul>
+<ul id="china">
+    <li addr='中国'>奇瑞</li>
+    <li addr='中国' id="xia">夏利</li>
+    <li addr='中国'>奥拓</li>
+</ul>
+</body>
+</html>
+<script>
+    //cloneNode复制节点
+    function f1() {
+        var waiguo = document.getElementById("foreign");
+        var xiali = document.getElementById("xia");
+        //var fu_xiali = waiguo.cloneNode(true);//深层复制
+        var fu_xiali = xiali.cloneNode(false);//浅层复制
+
+        waiguo.appendChild(fu_xiali);
+    }
+</script>

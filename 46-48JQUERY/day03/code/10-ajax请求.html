@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1() {
+            //$.get()和$.post()是对ajax封装的具体操作方法，层次最高，可选参数少
+            //url, data, callback, type
+            //type默认为string
+//            $.get('./10.php',function(msg){
+//                alert(msg);
+//            });
+
+//            $.post('./10.php',function(msg){
+//                alert(msg);
+//            });
+
+            //提交json
+            $.ajax({
+                url: "./10.php",
+                data: "goods_num=102&goods_name=apple",
+                type:'post',
+                dataType:'json',
+                success:function(msg){
+                    alert(msg);
+                }
+            });
+
+            //$.ajax({url:'',data:'',type:'',dataType:'',success:function(){});
+        }
+    </script>
+</head>
+<body>
+<h2>ajax请求</h2>
+<input type="button" value="触发" onclick="f1()"/>
+</body>
+</html>

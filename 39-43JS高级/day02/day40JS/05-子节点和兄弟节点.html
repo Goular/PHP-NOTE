@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>子节点和兄弟节点获取</h2>
+<ul>
+    <li>哈尔滨</li>
+    <li>长春</li>
+    <li>沈阳</li>
+    <li>济南</li>
+</ul>
+</body>
+</html>
+
+<script>
+    //childNodes:获得内部子节点信息
+    //在主流浏览器(火狐、chrome、safari、opera)里边，会把“回车/空白”也当做空白节点处理
+    //(在之前老IE浏览器里边不给考虑(回车/空格)空白节点)
+    var ull = document.getElementsByTagName("ul")[0];
+    console.log(ull);
+    var childNodes = ull.childNodes;
+    var length = childNodes.length;
+    console.log(childNodes);
+    console.log(length);
+
+    console.log("------------------");
+
+    //下一个兄弟节点nextSibling,上一个兄弟previousSlibing
+    var changchun = document.getElementsByTagName('li')[1];
+    console.log(changchun.nextSibling.nextSibling);
+    console.log(changchun.previousSibling.previousSibling);
+
+    //读取第一个节点/最后一个节点
+    //    console.log(ull.firstChild.nextSibling);
+    //    console.log(ull.lastChild.previousSibling);
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //遍历对象及成员属组判断
+        function Tiger() {
+            this.color = "yellow";
+            this.leg = 4;
+            this.act = function () {
+                console.log("猛虎扑食");
+            };
+            this.weapon = "嘶吼";
+        }
+
+        Tiger.prototype = {addr: "beijing", weight: 230};
+        var south = new Tiger();
+
+        //对象遍历
+        for (var k in south) {
+            if (south.hasOwnProperty(k)) {
+                console.log("自己的:" + k);
+            } else {
+                console.log("继承的:" + k);
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

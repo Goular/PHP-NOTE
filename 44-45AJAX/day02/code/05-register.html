@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用传统的方式访问服务端</title>
+
+    <script>
+
+        //在使用AJAX GET的时候，需要编码一下，不然会出错
+        //方法是js:encodeUrlComponet
+        //php方法：
+
+        //JavaScript+AJAX无刷新方式form表单提交
+        window.onload = function () {
+            var fm = document.getElementsByTagName("form")[0];
+            fm.onsubmit = function (evt) {
+                //1.收集用户输入的表单域信息
+                var nm = document.getElementById("mingzi").value;
+                var mi = document.getElementById("mima").value;
+                var yu = document.getElementById("youxiang").value;
+
+                var info = "name=" + nm + "&pwd=" + mi + "&email=" + yu;
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                  if(xhr.readyState == 4){
+                      alert(xhr.responseText);
+                  }
+                };
+                xhr.open("post", "./05.php");
+                xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                //利用ajax来提交POST表单信息
+                xhr.send(info);
+                //阻止浏览器form表单提交动作,利用ajax来提交
+                evt.preventDefault();//不阻止提交，那么就会出现两次提交，且页面会进行相关的跳转
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>用户注册</h2>
+
+<form method="post" action="./05.php">
+    <p>用户名:<input type="text" id="mingzi" name="username"/></p>
+
+    <p>密码：:<input type="password" id="mima" name="userpwd"/></p>
+
+    <p>邮箱：:<input type="text" id="youxiang" name="useremail"/></p>
+
+    <p><input type="submit" value="注册"/></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+    function f1(){
+        //获取  获得选中option项目的value属性值
+        //"单选"下拉列表,
+        //console.log($('option:selected').val());//attr('value')
+        //"多选/单选"下拉列表(遍历选中的项目，并获取每个项目的value属性值，再拼接为字符串2,3,4)
+        //$(下拉列表).val();
+
+        console.log($('select').val());
+    }
+
+    function f2(){
+        //设置默认选中项目
+        //$(下拉列表).val([元素，元素...]);数组参数的元素就是需要被设置选中项目的value值
+        //1、4选中
+        $('select').val([11,21,41]);
+    }
+
+
+    </script>
+
+</head>
+<body>
+城市(下拉列表):<select multiple="multiple" style="height:200px">
+    <option value="01">请选择</option>
+    <option value="11">哈尔滨</option>
+    <option value="21">长春</option>
+    <option value="31">沈阳</option>
+    <option value="41">石家庄</option>
+    </select>
+    <br /><br />
+    <input type="button" value="获取" onclick="f1()" />
+    <input type="button" value="设置" onclick="f2()" />
+</body>
+</html>

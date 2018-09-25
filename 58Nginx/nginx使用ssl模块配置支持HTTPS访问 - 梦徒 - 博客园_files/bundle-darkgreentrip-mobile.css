@@ -1,0 +1,72 @@
+body {
+	font-family: "PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif; font-size: 14px !important;
+}
+#blog_nav_rss {
+	display: none !important;
+}
+#blog_nav_rss_image {
+	display: none !important;
+}
+#blog_nav_newpost {
+	display: none !important;
+}
+img {
+	height: auto; max-width: 300px !important;
+}
+div.commentform textarea {
+	width: 330px; height: 200px;
+}
+.commentbox_title {
+	width: auto;
+}
+#green_channel {
+	width: 320px;
+}
+#cnblogs_post_body table[style] {
+	width: auto !important; height: auto !important;
+}
+#sidebar_search_box input[type=text] {
+	width: 260px;
+}
+.sh-gutter .line {
+	white-space: normal !important;
+}
+.sh-gutter code {
+	white-space: normal !important;
+}
+#cnblogs_post_body table {
+	display: block; -ms-overflow-x: scroll; -webkit-overflow-scrolling: regular;
+}
+#cnblogs_post_body th {
+	white-space: nowrap;
+}
+#cnblogs_post_body td {
+	white-space: nowrap;
+}
+.cnblogs-post-body th {
+	white-space: nowrap;
+}
+.cnblogs-post-body td {
+	white-space: nowrap;
+}
+#main {
+	width: auto !important; padding-right: 5px; padding-left: 0px !important; min-width: auto !important;
+}
+#navigator {
+	width: auto !important;
+}
+#sideBar {
+	width: auto !important;
+}
+#mainContent {
+	margin-left: 0px !important; float: none !important;
+}
+#mainContent .forFlow {
+	margin-left: 5px !important;
+}
+#comment_form {
+	padding-left: 10px !important;
+}
+#blogTitle h1 {
+	width: auto !important;
+}

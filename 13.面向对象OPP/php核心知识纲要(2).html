@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP核心知识纲要（2）</title>
+<script src="jquery-1.7.1.js"></script>
+<script>
+	$(function(){
+		$("ul").hide();
+		$("body>ul").show();
+
+		$("li").each(function(){
+			if($(this)[0].childNodes.length > 1 && $("ul",this).size() > 0)
+			{
+				$($(this)[0].childNodes[0]).wrap("<a href='#'></a>");
+
+			}
+		});
+		$("li > a").click(function(){
+			$(this).next().toggle();
+			$(this).css({"text-decoration":"underline"});
+			return false;
+		});
+		$("ul:first").dblclick(function(){
+			$("ul").show();
+		});
+		
+		//$("li>ul").toggle();
+		//$("li>ul:first").toggle();
+
+	});
+</script>
+</head>
+
+<body>
+<ul>
+  <li>面向对象编程
+    <ul>
+      <li>面向对象编程思想介绍：
+        <ul>
+          <li>传统的面向过程的编程思想：
+            <ul>
+              <li>将要实现的功能描述为一个从开始到结束的连续的“步骤（过程）”。</li>
+              <li>依次逐步完成这些步骤。如果步骤较大，又可以将该步骤再次细分为子步骤，以此类推。</li>
+              <li>程序从头开始执行一直到结尾并得到所需结果。</li>
+              <li>例子：完成来传智“报名学习”这件事，可以这样来实现：
+                <ul>
+                  <li>第一步，学生提出要报名，并提供姓名和照片</li>
+                  <li>第二步，咨询老师接收照片并登记学生姓名</li>
+                  <li>第三步，学生缴费（付款到学校账号）并获得缴费凭证</li>
+                  <li>第四步，咨询老师验证凭证并分配班级</li>
+                  <li>第五步，最终结果为：报名完成，学生可以在规定的时间到规定的班级（教室）上课，数据库中就有了该学生的信息。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>现代的面向对象的编程思想：
+            <ul>
+              <li>将要实现的功能描述为一个“对象/物体”完成的任务——现实中也是如此：功能的实现都是依赖于一个实体的“行动/操作/动作”。</li>
+              <li>完成该最终功能的过程中需要实现其他中间功能（过程），则再去调用其它对象（或也可能是自己本身）来实现该中间功能。</li>
+              <li>整个系统的完成（功能的实现）看作是一个一个对象在发挥其各自的“能力”并在内部进行协调有序的调用过程。</li>
+              <li>例子：完成来传智“报名学习”这件事，可以这样来处理：
+                <ul>
+                  <li>学生对象：有姓名有照片，有所属班级，能“提出报名”，能“缴费”</li>
+                  <li>咨询老师对象：能接收照片并登记姓名，能分配班级。</li>
+                  <li>班级对象：有班号，有开班日期，有教室。</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>面向对象基本概念：
+        <ul>
+          <li>类与对象：
+            <ul>
+              <li>类是描述一类事物的一个总称，是具有相同特征特性的该类事物的一个通用名字（称呼）；</li>
+              <li>比如人就是一个类（人类），狗也是一个类（狗类），它们又属于一个更大的类（哺乳类），桌子，手机，书都是一个类；</li>
+              <li>对象是一个明确的具体的“物体”，是某个类中的一个“实物”（相对来说，类就是一种抽象的泛称）。对象离不开类，或者说，对象一定隶属于某个类——有类才有对象，先有类再有对象。</li>
+              <li>比如“黄晓明”就是“人”这个类的一个具体对象，“阿黄”是“狗”这个类的一个具体对象。</li>
+              <li>一个类决定了一个对象所具有的所有特征特性信息，比如我是人类，则我有：姓名，性别，年龄，我还能吃饭，走路，说话。</li>
+              <li>一个对象的所有特征特性信息，都是由其所属的类决定的，但每个对象又很有可能有自己不同的特征特性信息，比如有个对象的名字叫吴六奇，性别男，会写程序，另一个对象可能叫章子怡，性别女，会演戏。</li>
+              <li>语法上，一个类内部可以具有自己的“变量”和“函数”，但此时在技术术语上就对应地称为“属性”和“方法”。一个类也可以有自己的常量。这些属性，方法和常量就都称为“类”的“成员”。</li>
+            </ul>
+          </li>
+          <li>类的定义：</li>
+          <li>类中属性property：</li>
+          <li>类中方法method：</li>
+          <li>对象的创建：就是由一个类“创建”出一个具体的“物体”——专业说法就是对象。创建对象的语法可以有：
+            <ul>
+              <li>new 类名();</li>
+              <li>new 变量名(); //该变量的内容是一个表示类名的字符串。</li>
+              <li>new 对象名（）;//创建该对象所属类的一个新对象</li>
+              <li>new self; //用于在类的方法内部创建一个该类对象。</li>
+              <li>类名::getNew();//定义类的一个静态方法用于获取该类的一个对象</li>
+            </ul>
+          </li>
+          <li>对象的使用：要么使用其属性，要么使用其方法。使用属性，就可以当作一个变量看待。使用方法，就可以当作一个函数看待。</li>
+          <li>对象的传值：</li>
+        </ul>
+      </li>
+      <li>类中成员member：
+        <ul>
+          <li>一个类中能且只能包含如下3种成员（代码）：变量（称为属性），函数（称为方法），常量（称为类常量）。</li>
+          <li>一般属性：
+            <ul>
+              <li>属性就是定义在类中的变量，需要使用public或var来修饰（定义），也可以使用protected或private来修饰（见后续知识）。</li>
+              <li>定义的时候可以不赋值，也可以赋（初）值，但只能是一个“直接值”（常量值）或常量，不能是变量值或计算值或函数调用返回值等。</li>
+              <li>属性的使用形式：对象名-&gt;属性名；</li>
+              <li>属性是可读可写的（可取值赋值）。</li>
+            </ul>
+          </li>
+          <li>一般方法：
+            <ul>
+              <li>方法就是定义在类中的函数，但函数前可以使用public，protected, private修饰（见后续知识），也可以省略。</li>
+              <li>但该方法的调用（使用）不能独立进行，而是需要通过对象来调用。</li>
+              <li>方法中$this关键字具有特定含义：表示调用该方法的对象。</li>
+              <li>获取$this的所属类：get_class($this)</li>
+            </ul>
+          </li>
+          <li>静态属性：
+            <ul>
+              <li>一个仅仅隶属于（依附于）类的属性，其是通过类名直接来取用的。</li>
+              <li>定义形式：[访问修饰符] static $静态属性名 [ = 初值]；//访问修饰符省略则默认为public，初值也应该是直接值或常量</li>
+              <li>使用形式：类名::$静态属性名；//可取值可赋值；</li>
+            </ul>
+          </li>
+          <li>静态方法：
+            <ul>
+              <li>一个仅仅隶属于（依附于）类的方法，其是通过类名直接调用的（不过新版php已经可以使用该类的对象名来调用了）</li>
+              <li>定义形式：[访问修饰符] static function $静态方法名(...){ ...... }</li>
+              <li>使用形式：类名::静态方法名(...)；其中类名也可以用该类的对象名，一个内容为该类名的字符串变量名，self等来代替。</li>
+              <li>self关键字：用在方法中，表示该方法所在的类。</li>
+              <li>static关键字：代替self关键字的位置，除了具有self作用外，还具有更灵活的作用，那就是所谓“后期静态绑定”。</li>
+              <li>注意1：$this在静态方法中不能使用。</li>
+              <li>注意2：静态方法中不应调用非静态方法。</li>
+            </ul>
+          </li>
+          <li>类常量：
+            <ul>
+              <li>一个仅仅隶属于（依附于）类的常量，其是通过类名直接来取用的（不过新版php已经可以使用该类的对象名来调用了）</li>
+              <li>定义形式：const 常量名 = 初值；//必须赋初值</li>
+              <li>使用形式：类名::常量名；其中类名也可以用该类的对象名，一个内容为该类名的字符串变量名，self等来代替。</li>
+            </ul>
+          </li>
+          <li>构造方法（函数）：
+            <ul>
+              <li>构造方法是一个类在进行实例化（new一个对象出来）的时候，会首先自动调用的方法。</li>
+              <li>构造方法适用于创建对象时（使用对象前）对该对象做一些初始化工作。</li>
+              <li>定义形式：[访问修饰符] function __construct(...){ ...... }；//访问修饰符通常总是需要public（或省略）。</li>
+              <li>调用形式：实际上，没有直接的调用形式，而是在new一个对象的时候就调用了：new C1(&quot;小花&quot;,18,&quot;女&quot;);</li>
+              <li>如果一个类中定义了构造方法，则实例化该类时就会调用该方法，且实例化时的参数需要跟构造方法的参数匹配。</li>
+              <li>如果一个类中没有定义构造方法，则会自动调用其父类的构造方法（如果有），则实例化时的参数需跟父类的构造方法的参数匹配。</li>
+              <li>也可以在当前类的构造方法中调用父类的构造方法：parent::__construct();</li>
+            </ul>
+          </li>
+          <li>析构方法（函数）：
+            <ul>
+              <li>析构方法是在一个对象被销毁的时候会自动调用（执行）的方法；对象销毁的几种情况：
+                <ul>
+                  <li>脚本程序运行结束，自动销毁；</li>
+                  <li>明确地unset()一个对象变量，则被销毁；</li>
+                  <li>改变对象变量的值，被销毁；</li>
+                </ul>
+              </li>
+              <li>析构方法适用于销毁对象时对对象中使用的一些资源进行清理（销毁）——不过实际上现代PHP已经内具了垃圾回收机制，一般无需清理。。</li>
+              <li>定义形式：function __destruct(){ ...... }；//注意：只能是public的，且不能有参数</li>
+              <li>调用形式：无需在代码中手工调用，而是在代码运行结束时自动被调用（执行）。</li>
+              <li>如果一个类中定义了析构方法，则销毁对象时就会调用该方法。</li>
+              <li>如果一个类中没有定义析构方法，则销毁对象时就会调用其父类的析构方法（如果有）</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>类的继承：
+        <ul>
+          <li>基本含义：类是用来描述现实世界中同一种事物的共有特性的抽象模型。但现实世界中，不同种类的事物之间有往往有一些上下级或大小范围的关系。比如，动物是一个“类”，具有某些特性。但脊椎动物也是一个类，也具有一些特性，且同时具有动物类的所有特性。哺乳动物还是一个类，具有一些特性，并同时具有脊椎动物的所有特性。如此等等，则面向对象编程中，我们定义的类也同样可以具有类似的关系特征，这就是类的继承。</li>
+          <li>基本语法：extends</li>
+          <li>基本概念：
+            <ul>
+              <li>继承：一个类从另一个已有的类获得其特性，称为继承。</li>
+              <li>派生：从一个已有的类产生一个新的类，称为派生。</li>
+              <li>父类/子类：已有类为父类，新建类为子类。</li>
+              <li>单继承：一个类只能从一个上级类继承其特性信息。PHP和大多数面向对象的语言都是单继承模式。C++是多继承。</li>
+              <li>扩展：在子类中再来定义自己的一些新的特有的特性信息（属性，方法和常量）。没有扩展，继承也就没有意义了。</li>
+            </ul>
+          </li>
+          <li>访问控制修饰符：
+            <ul>
+              <li>public公共的：在所有位置都可访问（使用）。</li>
+              <li>protected受保护的：只能再该类内部和该类的子类或父类中访问（使用）。</li>
+              <li>private私有的：只能在该类内部访问（使用）。</li>
+            </ul>
+          </li>
+          <li>parent关键字：在类的内部用来表示（代表）该类的父类。可以用来访问父类的属性或方法或常量。</li>
+          <li>构造和析构方法中的调用上级同样方法的问题：
+            <ul>
+              <li>子类中没有定义构造方法时，会自动调用父类的构造方法。因此实例化子类时，需按照父类的构造方法的形式进行。</li>
+              <li>子类定义了自己的构造方法，则不会自动调用父类的构造方法，但可以手动调用：parent::__construct();</li>
+              <li>子类中没有定义析构方法时，会自动调用父类的析构方法。</li>
+              <li>子类定义了自己的析构方法，则不会自动调用父类的析构方法，但可以手动调用：parent::__destruct()</li>
+            </ul>
+          </li>
+          <li>重写override
+            <ul>
+              <li>什么是重写？重写又叫“覆盖”，就是将从父类继承下来的属性或方法重新定义。只有保护的或公有的属性或方法能够被覆盖。</li>
+              <li>为什么要重写？因为父类的某个属性可能对于子类来说不够具体或详细，子类想要同样特性或功能的更准确或详细信息。</li>
+              <li>重写的基本要求：访问控制权限，方法的参数形式。</li>
+              <li>私有属性和私有方法的重写问题：私有属性和方法都不能覆盖，但其实子类可以定义跟父类私有的同名属性或方法。只是当作一个自身的新的属性或方法来看待而已。不过方法的参数必须一致。</li>
+              <li>构造方法的重写问题：构造方法不但可以像其他普通方法一样重写，而且，比普通方法更宽松：重写的时候参数可以不一致。</li>
+            </ul>
+          </li>
+          <li>最终类final class：</li>
+          <li>最终方法final method：</li>
+        </ul>
+      </li>
+      <li>设计模式：
+        <ul>
+          <li>工厂模式：一种专门用于“生产”其他各种类的对象的一个类</li>
+          <li>单例模式：一种只能从中实例化出来一个对象的类</li>
+        </ul>
+      </li>
+      <li>类的“扩大化”技术：
+        <ul>
+          <li>抽象类，抽象方法：
+            <ul>
+              <li>一个类可以使用关键字abstract声明为抽象类；抽象类是不能实例化的类，只用作其他类的父类。</li>
+              <li>一个方法可以使用关键字abstract声明为抽象方法；抽象方法只需要声明方法头，不需要大括号部分的方法体。</li>
+              <li>一个类中有抽象方法，则该类必须声明为抽象类。</li>
+              <li>子类继承自一个抽象类，则子类必须实现父类中的所有抽象方法，除非子类也继续作为抽象类。</li>
+              <li>子类实现抽象父类的方法时，访问控制修饰符的范围不能降低，且方法的参数也须一致。</li>
+            </ul>
+          </li>
+          <li>重载技术overloading：
+            <ul>
+              <li>属性重载：__set(), __get(), __isset(), __unset()</li>
+              <li>方法重载：__call(), __callstatic();</li>
+            </ul>
+          </li>
+          <li>接口interface：
+            <ul>
+              <li>什么是接口？</li>
+              <li>为什么需要接口？</li>
+              <li>接口的定义形式：</li>
+              <li>接口的实现：使用接口被称为接口的“实现”（implements)，其实就是类似“继承”</li>
+              <li>接口的多实现：</li>
+              <li>接口常量：</li>
+              <li>接口继承：</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>有关类或对象的其他相关技术：
+        <ul>
+          <li>类的自动加载：__autoload(), spl_autoload_register();</li>
+          <li>对象的复制（克隆）：</li>
+          <li>对象的遍历：</li>
+          <li>PHP内置标准类：</li>
+          <li>对象的类型转换：
+            将得到一个标准类stdClass的对象
+            <ul>
+              <li>对象转换为对象：没有变化；</li>
+              <li>数组转换为对象：数组的键名当作属性名，值为对应值；</li>
+              <li>null转换为对象：空对象；</li>
+              <li>其他标量数据转换为对象：属性名为固定的“scalar”，值为该变量的值</li>
+            </ul>
+          </li>
+          <li>类型约束：可以对函数（或方法）的参数设定必须使用的类型。只能对对象，接口，数组进行约束，如下所示：
+            <ul>
+              <li>function f1(类名 $p1){....}：要求该参数只能使用该类的对象；</li>
+              <li>function f1(接口名 $p1){....}：要求该参数只能使用实现该接口的对象；</li>
+              <li>function f1(array $p1){....}：要求该参数只能使用数组；</li>
+              <!--li>function f1(callable $p1){....}：要求该参数只能是一个函数或方法，此时称之为回调函数（方法）</li-->
+              <li>其他的类型不能，比如：function f1(int $p1){...}, function f1(string $p1){...}都是错的。</li>
+            </ul>
+          </li>
+          <li>与类有关的魔术常量：__CLASS__, __METHOD__</li>
+          <li>与类有关的其他魔术方法：
+            <ul>
+              <li>已学过的魔术方法：__construct, __destruct, __set(), __get(), __isset(), __unset(), __call(), __callstatic()</li>
+              <li>__sleep()和__wakeup(): 序列化操作的时候，会先调用__sleep()方法，反序列化操作的时候会先调用__wakeup()方法。</li>
+              <li>__tostring():将对象当作字符串来使用的时候，会自动调用该方法，以此来作为对象转换为字符串的结果数据。</li>
+              <li>__invoke():将对象当作函数来使用的时候，会自动调用该方法。</li>
+            </ul>
+          </li>
+          <li>与类有关的系统函数：class_exists(), interface_exists(), get_class(),get_parent_class(), get_class_methods(), get_class_vars(),  get_declared_classes()</li>
+          <li>与对象有关的系统函数：is_object()，get_object_vars()</li>
+          <li>与类有关的运算符：new，instanceof</li>
+          <li>面向对象编程思想的3个特征：封装，继承，多态。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>MVC框架与应用
+    <ul>
+      <li>项目开发流程介绍</li>
+      <li>显示与逻辑相分离
+        <ul>
+          <li>原始做法：显示与逻辑混合</li>
+          <li>高级做法：显示与逻辑分离</li>
+          <li>实现方式：模板技术</li>
+        </ul>
+      </li>
+      <li>MVC框架原理
+        <ul>
+          <li>MVC思想简单演示1
+            <ul>
+              <li>数据生产文件</li>
+              <li>数据显示文件</li>
+              <li>逻辑（功能）控制文件</li>
+            </ul>
+          </li>
+          <li>MVC思想框架结构图</li>
+          <li>MVC思想演示（常规带数据库操作)
+            <ul>
+              <li>视图文件</li>
+              <li>模型文件</li>
+              <li>控制器文件</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>模型层（Model）的典型实现
+        <ul>
+          <li>功能：用于处理数据的存取操作，比如表的增删改查。</li>
+          <li>模型层的典型代码模式</li>
+          <li>控制器调用模型方法以获取数据</li>
+          <li>基础模型类</li>
+          <li>实现模型类的单例（模型工厂）</li>
+          <li>整个模型层的类库结构图</li>
+        </ul>
+      </li>
+      <li>控制器层（Controller）的典型实现
+        <ul>
+          <li>控制器的作用
+            <ul>
+              <li>获取请求数据</li>
+              <li>调用模型获取数据</li>
+              <li>载入视图文件以显示数据</li>
+            </ul>
+          </li>
+          <li>控制器类
+            <ul>
+              <li>功能：用于获取用户的请求数据并（或）获取模型数据以显示到视图中</li>
+              <li>划分：通常按应用的模块（功能组）进行划分，一个控制器对应一个模块（页面）的不同功能/操作。</li>
+              <li>区别：与模型层相比，模型层通常严格按照表来进行划分，一个模型处理一个表的数据操作</li>
+              <li>动作：通常一个控制器是为了完成一个模块（页面）上的一些相关操作（功能），每个操作（功能）都对应一个控制器的动作（方法）。</li>
+            </ul>
+          </li>
+          <li>基础控制器类
+            <ul>
+              <li>用于将控制器功能中的一些常见操作集中处理，比如设定文档编码，实现页面跳转。</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>视图层（View）的典型实现
+        <ul>
+          <li>功能：展示页面的静态内容，以及相关的变量数据。</li>
+          <li>数据分为：普通标量数据，数组数据， 对象数据。</li>
+        </ul>
+      </li>
+      <li>有关MVC项目的其他常见做法
+        <ul>
+          <li>请求分发器</li>
+          <li>平台的区分</li>
+          <li>目录结构设定</li>
+          <li>基础常量设定</li>
+          <li>自动加载的实现</li>
+          <li>禁止其他目录中文件的直接访问</li>
+        </ul>
+      </li>
+      <li>使用MVC框架模拟实现ECShop后台登录
+        <ul>
+          <li>数据库的准备</li>
+          <li>文件结构分析</li>
+          <li>登录流程分析</li>
+          <li>视图所需相关文件（css，js，图片等）</li>
+          <li>跳转的实现</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>PDO：PHP数据对象
+    <ul>
+      <li>PDO介绍：</li>
+      <li>连接MySQL数据库：
+        <ul>
+          <li>DSN = &quot;mysql：host=服务器地址/名称；port=端口号；dbname=数据库名&quot;;</li>
+          <li>Options = array(PDO::MYSQL_ATTR_INIT_COMMAND=&gt;’set  names  utf8’);</li>
+          <li>$pdo = new pdo(DSN, &quot;用户名&quot;, &quot;密码&quot;, Options);</li>
+        </ul>
+      </li>
+      <li>执行sql语句
+        <ul>
+          <li>执行所有sql语句：query(sql)</li>
+          <li>执行无返回数据集的sql语句：exec(sql)</li>
+        </ul>
+      </li>
+      <li>释放资源：
+        <ul>
+          <li>$pdo = null;</li>
+          <li>$result-&gt;closecursor();</li>
+        </ul>
+      </li>
+      <li>pdo对象的其他常见操作
+        <ul>
+          <li>$pdo-&gt;lastInsertId();</li>
+          <li> $pdo-&gt;beginTransaction(); </li>
+          <li> $pdo-&gt;commit()</li>
+          <li> $pdo-&gt;rollBack();</li>
+          <li> $pdo-&gt;inTransaction();</li>
+          <li> $pdo-&gt;setAttribute(属性名，属性值）;</li>
+        </ul>
+      </li>
+      <li>pdo的错误处理
+        <ul>
+          <li>错误模式：这是pdo的默认模式，可以获取pdo最后一次发生的错误信息。
+            <ul>
+              <li>$pdo-&gt;errorCode();</li>
+              <li>$pdo-&gt;errorInfo();</li>
+            </ul>
+          </li>
+          <li>异常模式：
+            <ul>
+              <li>$pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>PDOStatement（PDO结果集）对象
+        <ul>
+          <li>PDO结果集对象常用方法：
+            <ul>
+              <li>$stmt = $pdo-&gt;query(“select  ...... ”);//这是获得结果集</li>
+              <li>$stmt-&gt;rowCount() ; </li>
+              <li> $stmt-&gt;columnCount() ;</li>
+              <li>$stmt-&gt;fetch( [返回类型] ); //返回类型常用的有：<br />
+PDO::FETCH_ASSOC：表示关联数组<br />
+PDO::FETCH_NUM：表示索引数组<br />
+PDO::FETCH_BOTH：表示前二者皆有，这是默认值<br />
+PDO::FETCH_OBJ：表示对象</li>
+              <li> $stmt-&gt;fetchAll([返回类型]);</li>
+              <li> $stmt-&gt;fetchColumn( [$i] ); </li>
+              <li> $stmt-&gt;fetchObject();</li>
+              <li> $stmt-&gt;errorCode();</li>
+              <li> $stmt-&gt;errorInfo();</li>
+              <li> $stmt-&gt;closeCursor();</li>
+            </ul>
+          </li>
+          <li>PDOStatement对象的预处理语句
+            <ul>
+              <li>语法一：$sql = &quot;select  * from tab1 where f1 = :val1 and f2 &gt;:val2&quot;; //命名参数形式</li>
+              <li>语法二：$sql = &quot;select  * from tab1 where f1 = ？ and f2 &gt;？&quot;; //占位符形式</li>
+              <li>预处理：$stmt = $pdo-&gt;prepare($sql)；//也就是“编译”该sql语句，这样就可以多次反复使用该语句</li>
+              <li>绑定值：$stmt-&gt;bindValue(命名参数或占位符序号， 值，[类型]）；</li>
+              <li>绑定变量：$stmt-&gt;bindParam(命名参数或占位符序号， 变量，[类型]）； //类型为可选项，包括：<br />
+                PDO::PARAM_BOOL, <br />
+                PDO::PARAM_NULL, <br />
+                PDO::PARAM_INT, <br />
+                PDO::PARAM_STR, <br />
+                PDO::PARAM_BLOB, <br />
+              PARAM_INPUT_OUTPUT：表示参数是“可传出值的”。</li>
+              <li>执行方式一：$stmt-&gt;excute(); //前提是前面进行的“绑定”操作</li>
+              <li>执行方式二：$stmt-&gt;excute(arry(&quot;:val1&quot;=&gt;值1，&quot;:val2&quot;=&gt;值2)); //对应命名参数形式</li>
+              <li>执行方式三：$stmt-&gt;excute(arry(值1，值2)); //对应占位符形式</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>异常
+    <ul>
+      <li>基本理解：
+        <ul>
+          <li>错误：是程序出现问题时面向过程的处理方式，就是使用特定函数来捕获（取得）错误信息并进行处理；</li>
+          <li>异常：是程序出现问题时面向对象的处理方式，就是使用特定语法来捕获（取得）错误信息并进行处理。</li>
+        </ul>
+      </li>
+      <li>基本使用形式:</li>
+      <li>异常的抛出（创建）</li>
+      <li>自定义异常类：<br />
+        class myException extends Exception{<br />
+      　　function __construct($message, $code = 0){<br />
+      　　　　parent::__construct($message, $code);<br />
+      　　}<br />
+      }</li>
+      <li>将常见的错误转换为异常：<br />
+        class ErrorException extends Exception {<br />
+          　　        function __construct($errMsg, $errCode, $errSeverity, $errFile, $errNo){}<br />
+        }<br />
+        set_error_handler(&quot;MyErrorHanler&quot;);<br />
+        function MyErrorHandler($errCode, $errMsg, $errFile, $errLine{<br />
+        　　throw new ErrorException($errMsg, $errCode, $errCode, $errFile, $errLine);<br />
+      }</li>
+    </ul>
+  </li>
+  <li></li>
+</ul>
+</body>
+</html>

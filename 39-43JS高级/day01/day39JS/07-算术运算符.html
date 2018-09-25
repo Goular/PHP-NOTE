@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //四种JS的输出方式
+    //1.console.log();
+    //2.alert()
+    //3.document.write()
+    //4.window.prompt
+
+    var age = 20;
+    //在非赋值的状态下，运行结果都是+1的操作
+    //age++
+    //age++;
+    //console.log(age);
+
+    //++age
+    //++age;
+    //console.log(age);
+
+    //但是在赋值的时候++i和i++ 就会出现差异
+    var score = 90;
+    var new_score = score++;
+    console.log(new_score + "---" + score);
+
+    var new_score = ++score;
+    console.log(new_score + "---" + score);
+
+</script>
+</body>
+</html>

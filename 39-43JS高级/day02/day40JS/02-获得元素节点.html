@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>获得元素节点(对象)</h2>
+<input type="text" id="username" value="jack"/><br/>
+<input type="text" id="useremail" value="jack@163.com"/><br/>
+</body>
+<script>
+    //② document.getElementsByTagName(tag标签名称);
+    //   该方式获得一个“集合列表”(数组)对象(无视对象个数)，可以通过以下方式获得具体对象:
+    //   集合[下标]  或  集合.item(下标)
+    var it = document.getElementsByTagName('input');
+    console.log(it);
+    console.log(it['username']);//对象使用username进行获取
+    console.log(it.useremail);//数组以对象属性进行获取
+    console.log(it.item(0));//item方法为dom方法
+
+
+    var hh = document.getElementsByTagName('h2');
+    console.log(hh[0]);
+</script>
+</html>

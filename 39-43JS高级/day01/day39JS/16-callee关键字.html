@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    //callee作用，降低耦合度
+    //原因是，使用递归的时候，如果外部函数名变更，但函数体内部调用函数自身的时候，函数名还是原来的方法，此时就会很容易报错不能继续执行
+    //此时我们就要使用callee来解决这一系列问题
+
+    /*利用callee降低代码的耦合度
+     求n的阶乘：
+     !n = n*!(n-1)
+     !5 = 5*4*3*2*1
+     !4 = 4*3*2*1
+     !3 = 3*2*1
+     !2 = 2*1
+     !1 = 1*/
+
+    //这种就是旧的写法，函数内部体的耦合度很大，变更了函数的名字就不能继续使用了
+    //    function jiecheng(n) {
+    //        if (n == 1)return 1;
+    //        return jiecheng(n - 1) * n;
+    //    }
+    //
+    //    var n_jiecheng = jiecheng;
+    //    jiecheng = null;//删除了jiecheng的函数对象引用
+    //    console.log(n_jiecheng(3));//直接报错，找不到jiecheng的对象引用
+
+    //新的写法就是使用关键字callee
+    function jiecheng(n) {
+        if (n == 1) return 1;
+        return arguments.callee(n - 1) * n;
+    }
+    var n_jiecheng = jiecheng;
+    jiecheng = null;//删除了jiecheng的函数对象引用
+    console.log(n_jiecheng(4));//直接报错，找不到jiecheng的对象引用
+
+
+</script>
+
+</body>
+</html>

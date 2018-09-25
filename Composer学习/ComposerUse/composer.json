@@ -1,0 +1,5 @@
+{
+    "require":{
+        "goulart/testjson":"^1.0"
+    }
+}

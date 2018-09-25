@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //给form表单设置提交事件
+        window.onload = function () {
+            var fm = document.getElementsByTagName("form")[0];
+            fm.onsubmit = function (event) {
+                //获得用户输入的信息
+                var email = document.getElementById('useremail').value;  //node.getAttribute('value')
+                var reg = /^\w{5,15}@[a-z0-9]+(\.[a-z]+)+$/;//匹配邮箱的正则
+
+
+                if (email.match(reg) === null) {
+                    alert('邮箱格式不正确.');
+                    //return false;
+                    event.preventDefault();
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form method="post" action="08.php">
+    <p>用户名:<input type="text" id="username"/></p>
+
+    <p>密码:<input type="text" id="userpwd"/></p>
+
+    <p>邮箱:<input type="text" id="useremail"/></p>
+
+    <p><input type="submit" value="注册"/></p>
+</form>
+</body>
+</html>

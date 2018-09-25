@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //特别字符集
+        //在没有特殊限制的时候就是“单次”匹配
+        //从左往右匹配到第一个符合模式的内容即可
+        //^ (托字符) : 匹配输入字符串的开始位置(托字符)
+        //$  : 匹配输入字符串的结尾位置。
+
+        var str = "Tomorrow is Sunday day";
+        var reg = /Sunday/;
+        var reg = /^Sunday/;
+        var reg = /^Tomorrow/;
+
+        var reg = /Sunday$/;
+        var reg = /day$/;
+
+        var str = "13912345876";
+        var reg = /^13[0-9]{9}$/;//{9}为固定出现次数
+
+
+        var result = str.match(reg);
+        console.log(result);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

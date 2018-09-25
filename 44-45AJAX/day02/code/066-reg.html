@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //JavaScript本身并不支持访问本地的文件，并进行提交的，但是借助HTML5的FormData的表单连接能从表单获取文件路径并操作
+        window.onload = function(){
+            var fm = document.getElementsByTagName("form")[0];
+            //表单提交事件
+            fm.onsubmit = function (evt) {
+
+                //使用formdata不需要使用setRequestHeader，不需要编码，在上传文件的时候，form也不需要使用multi-part/form-data
+
+                //1.收集用户信息
+                var fd = new FormData(fm);
+                //创建ajax
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        alert(xhr.responseText);
+                    }
+                };
+                xhr.upload.onprogress = function(evt){
+                    //该事件每间隔100ms左右就执行一次，
+                    //并可以通过事件对象感知附件信息
+                    //附件已经上传大小
+                    //console.log(evt);
+                    var lod = evt.loaded;
+                    var tal = evt.total;
+                    var per = Math.floor((lod/tal)*100)+"%";
+                    //给son的div设置宽度百分比
+                    document.getElementById("son").innerHTML = per;
+                    document.getElementById("son").style.width = per;
+                };
+                xhr.open("post","./06.php");
+                xhr.send(fd);
+                //记住阻止提交当前表单
+                evt.preventDefault();
+            }
+        };
+    </script>
+
+    <style type="text/css">
+        #pat {
+            width: 460px;
+            height: 40px;
+            border: 4px solid blue;
+        }
+
+        #son {
+            width: 0;
+            height: 100%;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h2>用户注册(无刷新方式附件上传)</h2>
+
+<form method="post" action="./1001.php">
+    <p>用户名：<input type="text" id="mingzi" name="username"/></p>
+
+    <p>密码：<input type="password" id="mima" name="userpwd"/></p>
+
+    <p>邮箱：<input type="text" id="youxiang" name="useremail"/></p>
+
+    <div id="pat">
+        <div id="son"></div>
+    </div>
+    <p>头像：<input type="file" id="touxiang" name="userpic"/></p>
+
+    <p><input type="submit" value="注册"/></p>
+</form>
+</body>
+</html>

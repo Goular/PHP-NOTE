@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //$('li').css('color','red');
+
+            //① :first  :last 第一个/最有一个节点
+            //$('li:first').css('color','blue');
+            //$('li:last').css('color','green');
+
+            //② :eq(索引值)  equal等于 节点的下标等于条件索引值
+            //$('li:eq(4)').css('color','red');
+            //$('li:eq(2)').css('c olor','yellow');
+
+            //③ :gt(索引值) greate than 根据范围寻找 节点的下标"大于"索引值
+            //   :lt(索引值) less than 根据范围寻找 节点的下标"小于"索引值
+            //$('li:gt(4)').css('background-color','gold');
+            //$('li:lt(3)').css('background-color','orange');
+
+            //④ :even偶数下标节点   :odd奇数下标节点
+            //$('li:even').css('background-color','gold');
+            //$('li:odd').css('color','green');
+
+            //⑤ :not(选择器)  排除指定选择器节点
+            $('li:not(#fei)').css('background-color','blue');
+
+            //⑥ :header   h1/h2/h3/h4/h5/h6标题标签选择器
+            $(':header').css('color','red');
+        }
+
+        //选择器内容
+        //:first,:last
+        //eq
+        //gt lt
+        //not()
+        //header
+    </script>
+
+</head>
+<body>
+<h1>jquery并且选择器1</h1>
+<h2>jquery并且选择器2</h2>
+<h3>jquery并且选择器3</h3>
+<ul>
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>诸葛亮</li>
+    <li id="fei">张飞</li>
+    <li>赵云</li>
+    <li>马超</li>
+    <li>黄忠</li>
+    <li>魏延</li>
+</ul>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

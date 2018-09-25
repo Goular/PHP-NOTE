@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //声明函数
+
+    //① 传统方式
+    //   该函数声明特点：有 预加载。
+    //   预加载：函数可以"先调用、后声明"
+    //           其原理是全部代码在没有执行之前，先把函数的声明放到内存
+    //           本质是函数的“声明在前、调用在后”
+
+    //   预加载条件：函数调用 和 声明必须在同一个script标记里边
+    //               (因为每个script标记都是独立完成运行的)
+
+    getInfo();
+
+    function getInfo() {
+        console.log('Today is Money!');
+    }
+
+
+</script>
+</body>
+</html>

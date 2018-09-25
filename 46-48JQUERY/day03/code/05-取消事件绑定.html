@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //隐藏 slideUp([速度(默认速度)，回调函数])
+            $('div').slideUp(3000);
+        }
+
+        function f2(){
+            //显示  slideDown([速度(默认速度)，回调函数])
+            $('div').slideDown(3000);
+        }
+
+        function f3(){
+            //开关效果  slideToggle([速度(默认速度)，回调函数])
+            $('div').slideToggle(2000);
+        }
+
+        $(function(){
+            //页面加载完毕，间隔调用f3执行(有汽车气缸效果)
+            //下面两个延时器的效果基本上是一样的
+            //setInterval(f3,2000);
+            //setInterval('f3()',2000);
+        });
+
+    </script>
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:green;}
+    </style>
+</head>
+<body>
+    <h2>垂直动画效果</h2>
+    <div>this is autumn</div>
+    <input type="button" value="隐藏" onclick="f1()" />
+    <input type="button" value="显示" onclick="f2()" />
+    <input type="button" value="开关" onclick="f3()" />
+</body>
+</html>

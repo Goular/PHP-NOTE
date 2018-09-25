@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //return 对实例化对象的影响
+        //对创建出来的结果没有影响，任然是一个对象
+        //不过return后续代码不给执行，有成员的丢失情况
+        function Animal() {
+            this.age = 5;
+            this.color = "gray";
+            return "小黑";
+            this.hobby = "吃骨头";//这部分会被忽略
+            this.act = "散步";//这部分会被忽略
+        }
+
+        var dog = new Animal();
+        console.log(dog);
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

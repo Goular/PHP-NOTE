@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //获取
+            //html()获取内容：普通字符串、html标签
+            console.log($('div').html());
+
+            //text()获取内容：普通字符串
+            console.log($('div').text());//this classname is php0710
+        }
+
+        //JQuery的html()方法直接覆盖
+        function f2(){
+            //设置
+            //html(内容)设置内容：普通字符串、html标签(被浏览器解析)
+            //$('div').html("传智播客-<a href='http://php.itcast.cn'>请访问</a>");
+
+            //标签符号直接使用
+            //text(内容)设置内容：普通字符串内容、html标签(不被解析，把标签的<>变为"符号实体")
+            //< ====== &lt;    > ======= &gt;
+            $('div').text("搜索引擎-<a href='http://www.baidu.com'>百度</a>");
+        }
+    </script>
+    <style></style>
+</head>
+<body>
+    <h2>标签包含内容操作&lt;div&gt;</h2>
+    <div>this classname is <span>p<span>h</span>p</span>0710</div>
+    <input type="button" value="获取" onclick="f1()" />
+    <input type="button" value="设置" onclick="f2()" />
+</body>
+</html>

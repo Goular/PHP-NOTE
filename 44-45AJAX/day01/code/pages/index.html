@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //ajax无刷新方式获得第n页信息
+        function showpage(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                }
+            }
+            xhr.open('get', url);//获取分页信息
+            xhr.send(null);
+        }
+
+        window.onload = function () {
+            showpage('./data.php?page=1');
+        }
+
+    </script>
+    <style type="text/css">
+        h2 {
+            width: 700px;
+            margin: auto;
+            background-color: pink;
+            text-align: center;
+        }
+    </style>
+<body>
+<h2>ajax无刷新分页效果</h2>
+
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    //在函数内部不使用var声明的变量就是全局的
+    function f1() {
+        var week = 'Monday';
+        weather = 'sunshine';
+    }
+    f1();
+    console.log(weather);
+    console.log(week);//Uncaught ReferenceError: week is not defined
+
+</script>
+</body>
+</html>

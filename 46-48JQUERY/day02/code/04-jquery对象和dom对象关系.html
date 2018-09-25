@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            $('#one')[0].style.color = 'red';
+            //$('#one')如何封装的js底层代码:document.getElementById('one')
+
+            //console.log($('div'));
+            //$('div')如何封装的js底层代码：document.getElementsByTagName('div');
+
+            //jquery对象变为dom对象后可以调用对方的成员
+            $('div')[1].style.color = 'blue';
+        }
+
+    </script>
+</head>
+<body>
+    <h2>jquery对象 和 dom对象关系</h2>
+    <div id="one">today is Saturday</div>
+    <div id="two">tomorrow is Sunday</div>
+    <input type="button" value="触发1" onclick="f1()" />
+</body>
+</html>

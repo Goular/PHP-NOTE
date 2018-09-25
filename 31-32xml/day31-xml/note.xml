@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE note[
+        <!ELEMENT note (from,to,heading,body,br,any+)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT heading (#PCDATA)>
+        <!ELEMENT body (#PCDATA|strong)*>
+        <!ELEMENT strong (#PCDATA)>
+        <!ELEMENT br EMPTY>
+        <!ELEMENT any ANY>
+        <!ENTITY company "传智播客">
+        ]>
+<note>
+    <from>牛郎</from>
+    <to>织女</to>
+    <heading>思念</heading>
+    <body>
+        &company;车到山前必有路，<strong>你好</strong>人到七夕倍
+    </body>
+    <br/>
+    <!--<br></br>-->
+    <any>dsfdsf
+        <strong></strong>
+    </any>
+    <any>dsfdsf
+        <strong></strong>
+    </any>
+</note>

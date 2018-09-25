@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //静态成员,静态的好处就是我们的内容的备份有一份，同时我们的内容不会经常变化，这样能够进行统一处理，但是值得注意static的变量是不能被对象所访问的，仅仅只能使用相关的的类来进行访问
+        function Animal() {
+            this.age = 5;
+            this.leg = 4;
+        }
+        //给[Animal函数对象]设置成员
+        Animal.color = "black";
+        Animal.run = function () {
+            console.log("在后院奔跑");
+        }
+        var wangcai = new Animal();
+
+        console.log(Animal.color);
+        Animal.run();
+
+        console.log(wangcai.age);
+        console.log(wangcai.leg);
+
+        //注意两种对象那个的成员不能交叉访问
+        console.log(wangcai.color);
+        console.log(Animal.age);
+        wangcai.run();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

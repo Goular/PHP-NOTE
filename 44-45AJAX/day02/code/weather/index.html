@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function f1() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    eval("var jn_info=" + xhr.responseText);
+                    var s = "城市:" + jn_info.weatherinfo.city + "--风向：" + jn_info.weatherinfo.WD;
+                    document.getElementById("result").innerHTML = s;
+                }
+            };
+
+            //ajax不能跨域请求，但是仅能请求本域名地址
+            xhr.open("get", "./data.php");
+            xhr.send(null);
+        }
+    </script>
+</head>
+<body>
+<h2>ajax获取天气预报并显示</h2>
+<input type="button" value="获取" onclick="f1()"/>
+
+<div id="result"></div>
+<hr/>
+
+
+<iframe width="450" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=1&icon=1&py=huinong&wind=1&num=2"></iframe>
+
+<hr/>
+
+<iframe width="130" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=4&icon=1&py=huinong&wind=1&num=6"></iframe></body>
+</html>

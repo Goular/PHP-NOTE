@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function showxml() {
+            //ajax负责获得服务端xml信息
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    var xmldom = xhr.responseXML;
+                    var messages = xhr.responseXML.firstChild;
+                    console.log(messages);
+
+                    var msgs = xmldom.getElementsByTagName('msg');
+                    var s = '';
+                    for (var i = 0; i < msgs.length; i++) {
+                        var sder = msgs[i].getElementsByTagName('sender')[0].firstChild.nodeValue;
+                        var jie = msgs[i].getElementsByTagName('jie')[0].firstChild.nodeValue;
+                        var cnt = msgs[i].getElementsByTagName('content')[0].firstChild.nodeValue;
+                        s += "发送者:" + sder + ",接收者:" + jie + ",消息:" + cnt+"<br/>";
+                    }
+                    document.getElementById("result").innerHTML = s;
+                }
+            }
+            xhr.open("post", './09.xml');
+            xhr.send(null);
+        }
+    </script>
+</head>
+<body>
+<h2>实现对xml的接收处理</h2>
+<input type="button" value="请求" onclick="showxml()"/>
+
+<div id="result"></div>
+</body>
+</html>

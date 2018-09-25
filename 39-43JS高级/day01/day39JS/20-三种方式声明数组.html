@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //数组声明
+    //javascript数组元素下标都是"数字的"
+    //          如果下标为非数字的(关联类型的)，则其为对象的"成员属性"
+    //① var arr = [元素，元素，元素。。。]
+    var color = ['green', 'blue', 'red', 'pink'];
+    color[4] = 'yellow';
+    console.log(color);
+    console.log(color[1]);
+    console.log(color[2]);
+
+    //② var arr = new Array(元素，元素，元素。。。);
+    var animal = new Array('dog', 'cat', 'pig');
+    console.log(animal);
+    console.log(animal[1]);
+
+    //③ var arr = new Array();
+    //   给数组丰富元素： 数组[下标] = 元素值;
+    //   数组访问元素：数组[下标]
+    //   对象访问成员：对象[成员名称] / 对象.成员名称
+
+    var city = new Array();
+    city[0] = 'beijing';
+    city[1] = 'shanghai';
+    city[2] = 'guangzhou';
+    city['shandong'] = 'jinan';
+    city['zhejiang'] = 'hangzhou';
+
+    console.log(city);
+
+    console.log(city[1]);
+    console.log(city['shandong']);
+    console.log(city.zhejiang);
+
+</script>
+</body>
+</html>

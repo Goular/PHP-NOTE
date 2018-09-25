@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //主动
+            //append() 后置
+            //$('#shu').append('<li>赵云</li>');
+            //append() 前置
+            //$('#shu').prepend('<li>诸葛亮</li>');
+
+
+            //被动
+            //appendTo()    后置
+            //$('<li>黄忠</li>').appendTo($('#shu'));
+            //prependTo()   前置
+            //$("<li>马超</li>").prependTo($('#shu'));
+
+            ///已有节点追加(发生节点物理位置移动现象)
+            $('#shu').append($('#yu'));//主动
+            $('#quan').appendTo($('#shu'));//被动
+        }
+
+    </script>
+</head>
+<body>
+<h2>节点追加(父子)</h2>
+<ul id="shu">
+    <li>刘备</li>
+    <li>关羽</li>
+    <li>张飞</li>
+</ul>
+<ul id="wu">
+    <li id="quan">孙权</li>
+    <li id="yu">周瑜</li>
+    <li>小乔</li>
+</ul>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

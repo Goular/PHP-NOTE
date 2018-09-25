@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var f1 = function () {
+        console.log('Today is Monday');
+    }
+
+    f1();
+
+    //匿名函数自调用
+    //特点：代码不会发生停顿，立即执行
+    //好处：可以避免变量污染
+    //(function(形参){})(实参);
+    //① 没有参数
+    (function () {
+        console.log('Tomorrow is Tuesday.');
+    })();
+
+    //② 有参数
+    (function (week) {
+        console.log('Today is ' + week);
+    })('Sunday ,off-day');
+
+</script>
+</body>
+</html>

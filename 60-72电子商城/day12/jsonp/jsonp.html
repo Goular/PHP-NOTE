@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="<?php echo C('HOME_JS_URL');?>/jquery-1.8.3.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+jsonp
+<div class="info"></div>
+</body>
+</html>
+<script>
+    function abc(obj) {
+        $('.info').text(obj);
+        console.dir(obj);
+    }
+
+</script>
+<script src="http://localhost:8081"></script>
+
+<!--<script>-->
+    <!--$.ajax({-->
+        <!--url: "http://localhost:8081",-->
+        <!--dataType: "jsonp",-->
+        <!--method: 'GET',-->
+        <!--jsonpCallBack: "abc",-->
+        <!--success: function () {-->
+        <!--}-->
+    <!--});-->
+<!--</script>-->

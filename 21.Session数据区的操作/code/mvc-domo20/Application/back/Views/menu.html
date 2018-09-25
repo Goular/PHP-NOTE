@@ -1,0 +1,282 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>ECSHOP Menu</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link type="text/css" rel="stylesheet" href="styles/general.css">
+
+<style type="text/css">
+body {
+  background: #80BDCB;
+}
+#tabbar-div {
+  background: #278296;
+  padding-left: 10px;
+  height: 21px;
+  padding-top: 0px;
+}
+#tabbar-div p {
+  margin: 1px 0 0 0;
+}
+.tab-front {
+  background: #80BDCB;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 4px 15px 4px 18px;
+  border-right: 2px solid #335b64;
+  cursor: hand;
+  cursor: pointer;
+}
+.tab-back {
+  color: #F4FAFB;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+}
+.tab-hover {
+  color: #F4FAFB;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  cursor: hand;
+  cursor: pointer;
+  background: #2F9DB5;
+}
+#top-div
+{
+  padding: 3px 0 2px;
+  background: #BBDDE5;
+  margin: 5px;
+  text-align: center;
+}
+#main-div {
+  border: 1px solid #345C65;
+  padding: 5px;
+  margin: 5px;
+  background: #FFF;
+}
+#menu-list {
+  padding: 0;
+  margin: 0;
+}
+#menu-list ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: #335B64;
+}
+#menu-list li {
+  padding-left: 16px;
+  line-height: 16px;
+  cursor: hand;
+  cursor: pointer;
+}
+#main-div a:visited, #menu-list a:link, #menu-list a:hover {
+  color: #335B64
+  text-decoration: none;
+}
+#menu-list a:active {
+  color: #EB8A3D;
+}
+.explode {
+  background: url(images/menu_minus.gif) no-repeat 0px 3px;
+  font-weight: bold;
+}
+.collapse {
+  background: url(images/menu_plus.gif) no-repeat 0px 3px;
+  font-weight: bold;
+}
+.menu-item {
+  background: url(images/menu_arrow.gif) no-repeat 0px 3px;
+  font-weight: normal;
+}
+#help-title {
+  font-size: 14px;
+  color: #000080;
+  margin: 5px 0;
+  padding: 0px;
+}
+#help-content {
+  margin: 0;
+  padding: 0;
+}
+.tips {
+  color: #CC0000;
+}
+.link {
+  color: #000099;
+}
+</style>
+
+</head>
+<body style="cursor: auto;">
+<div id="tabbar-div">
+<p><span style="float:right; padding: 3px 5px;"><a href="javascript:toggleCollapse();"><img width="9" border="0" height="9" alt="闭合" src="images/menu_minus.gif" id="toggleImg"></a></span>
+  <span id="menu-tab" class="tab-front">菜单</span>
+</p>
+</div>
+<div id="main-div">
+<div id="menu-list">
+<ul id="menu-ul">
+  <li name="menu" key="02_cat_and_goods" class="explode">
+    商品管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="goods.php?act=list">商品列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods.php?act=add">添加新商品</a></li>
+          <li class="menu-item"><a target="main-frame" href="category.php?act=list">商品分类</a></li>
+          <li class="menu-item"><a target="main-frame" href="comment_manage.php?act=list">用户评论</a></li>
+          <li class="menu-item"><a target="main-frame" href="brand.php?act=list">商品品牌</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_type.php?act=manage">商品类型</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods.php?act=trash">商品回收站</a></li>
+          <li class="menu-item"><a target="main-frame" href="picture_batch.php">图片批量处理</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_batch.php?act=add">商品批量上传</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_export.php?act=goods_export">商品批量导出</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_batch.php?act=select">商品批量修改</a></li>
+          <li class="menu-item"><a target="main-frame" href="gen_goods_script.php?act=setup">生成商品代码</a></li>
+          <li class="menu-item"><a target="main-frame" href="tag_manage.php?act=list">标签管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods.php?act=list&amp;extension_code=virtual_card">虚拟商品列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods.php?act=add&amp;extension_code=virtual_card">添加虚拟商品</a></li>
+          <li class="menu-item"><a target="main-frame" href="virtual_card.php?act=change">更改加密串</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_auto.php?act=list">商品自动上下架</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="03_promotion" class="explode">
+    促销管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="snatch.php?act=list">夺宝奇兵</a></li>
+          <li class="menu-item"><a target="main-frame" href="bonus.php?act=list">红包类型</a></li>
+          <li class="menu-item"><a target="main-frame" href="pack.php?act=list">商品包装</a></li>
+          <li class="menu-item"><a target="main-frame" href="card.php?act=list">祝福贺卡</a></li>
+          <li class="menu-item"><a target="main-frame" href="group_buy.php?act=list">团购活动</a></li>
+          <li class="menu-item"><a target="main-frame" href="topic.php?act=list">专题管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="auction.php?act=list">拍卖活动</a></li>
+          <li class="menu-item"><a target="main-frame" href="favourable.php?act=list">优惠活动</a></li>
+          <li class="menu-item"><a target="main-frame" href="wholesale.php?act=list">批发管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="package.php?act=list">超值礼包</a></li>
+          <li class="menu-item"><a target="main-frame" href="exchange_goods.php?act=list">积分商城商品</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="04_order" class="explode">
+    订单管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=list">订单列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=order_query">订单查询</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=merge">合并订单</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=templates">订单打印</a></li>
+          <li class="menu-item"><a target="main-frame" href="goods_booking.php?act=list_all">缺货登记</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=add">添加订单</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=delivery_list">发货单列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="order.php?act=back_list">退货单列表</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="05_banner" class="explode">
+    广告管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="ads.php?act=list">广告列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="ad_position.php?act=list">广告位置</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="06_stats" class="explode">
+    报表统计        <ul>
+          <li class="menu-item"><a target="main-frame" href="flow_stats.php?act=view">流量分析</a></li>
+          <li class="menu-item"><a target="main-frame" href="guest_stats.php?act=list">客户统计</a></li>
+          <li class="menu-item"><a target="main-frame" href="order_stats.php?act=list">订单统计</a></li>
+          <li class="menu-item"><a target="main-frame" href="sale_general.php?act=list">销售概况</a></li>
+          <li class="menu-item"><a target="main-frame" href="users_order.php?act=order_num">会员排行</a></li>
+          <li class="menu-item"><a target="main-frame" href="sale_list.php?act=list">销售明细</a></li>
+          <li class="menu-item"><a target="main-frame" href="searchengine_stats.php?act=view">搜索引擎</a></li>
+          <li class="menu-item"><a target="main-frame" href="sale_order.php?act=goods_num">销售排行</a></li>
+          <li class="menu-item"><a target="main-frame" href="visit_sold.php?act=list">访问购买率</a></li>
+          <li class="menu-item"><a target="main-frame" href="adsense.php?act=list">站外投放JS</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="07_content" class="explode">
+    文章管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="articlecat.php?act=list">文章分类</a></li>
+          <li class="menu-item"><a target="main-frame" href="article.php?act=list">文章列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="article_auto.php?act=list">文章自动发布</a></li>
+          <li class="menu-item"><a target="main-frame" href="vote.php?act=list">在线调查</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="08_members" class="explode">
+    会员管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="users.php?act=list">会员列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="users.php?act=add">添加会员</a></li>
+          <li class="menu-item"><a target="main-frame" href="user_rank.php?act=list">会员等级</a></li>
+          <li class="menu-item"><a target="main-frame" href="integrate.php?act=list">会员整合</a></li>
+          <li class="menu-item"><a target="main-frame" href="user_msg.php?act=list_all">会员留言</a></li>
+          <li class="menu-item"><a target="main-frame" href="user_account.php?act=list">充值和提现申请</a></li>
+          <li class="menu-item"><a target="main-frame" href="user_account_manage.php?act=list">资金管理</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="10_priv_admin" class="explode">
+    权限管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="privilege.php?act=list">管理员列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="admin_logs.php?act=list">管理员日志</a></li>
+          <li class="menu-item"><a target="main-frame" href="role.php?act=list">角色管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="agency.php?act=list">办事处列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="suppliers.php?act=list">供货商列表</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="11_system" class="explode">
+    系统设置        <ul>
+          <li class="menu-item"><a target="main-frame" href="shop_config.php?act=list_edit">商店设置</a></li>
+          <li class="menu-item"><a target="main-frame" href="reg_fields.php?act=list">会员注册项设置</a></li>
+          <li class="menu-item"><a target="main-frame" href="payment.php?act=list">支付方式</a></li>
+          <li class="menu-item"><a target="main-frame" href="shipping.php?act=list">配送方式</a></li>
+          <li class="menu-item"><a target="main-frame" href="shop_config.php?act=mail_settings">邮件服务器设置</a></li>
+          <li class="menu-item"><a target="main-frame" href="area_manage.php?act=list">地区列表</a></li>
+          <li class="menu-item"><a target="main-frame" href="cron.php?act=list">计划任务</a></li>
+          <li class="menu-item"><a target="main-frame" href="friend_link.php?act=list">友情链接</a></li>
+          <li class="menu-item"><a target="main-frame" href="captcha_manage.php?act=main">验证码管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="check_file_priv.php?act=check">文件权限检测</a></li>
+          <li class="menu-item"><a target="main-frame" href="filecheck.php">文件校验</a></li>
+          <li class="menu-item"><a target="main-frame" href="flashplay.php?act=list">首页主广告管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="navigator.php?act=list">自定义导航栏</a></li>
+          <li class="menu-item"><a target="main-frame" href="license.php?act=list_edit">授权证书</a></li>
+          <li class="menu-item"><a target="main-frame" href="sitemap.php">站点地图</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="12_template" class="explode">
+    模板管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="template.php?act=list">模板选择</a></li>
+          <li class="menu-item"><a target="main-frame" href="template.php?act=setup">设置模板</a></li>
+          <li class="menu-item"><a target="main-frame" href="template.php?act=library">库项目管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="edit_languages.php?act=list">语言项编辑</a></li>
+          <li class="menu-item"><a target="main-frame" href="template.php?act=backup_setting">模板设置备份</a></li>
+          <li class="menu-item"><a target="main-frame" href="mail_template.php?act=list">邮件模板</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="13_backup" class="explode">
+    数据库管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="database.php?act=backup">数据备份</a></li>
+          <li class="menu-item"><a target="main-frame" href="database.php?act=optimize">数据表优化</a></li>
+          <li class="menu-item"><a target="main-frame" href="sql.php?act=main">SQL查询</a></li>
+          <li class="menu-item"><a target="main-frame" href="convert.php?act=main">转换数据</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="14_sms" class="explode">
+    短信管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="sms.php?act=display_send_ui">发送短信</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="15_rec" class="explode">
+    推荐管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="affiliate.php?act=list">推荐设置</a></li>
+          <li class="menu-item"><a target="main-frame" href="affiliate_ck.php?act=list">分成管理</a></li>
+        </ul>
+      </li>
+  <li name="menu" key="16_email_manage" class="explode">
+    邮件群发管理        <ul>
+          <li class="menu-item"><a target="main-frame" href="attention_list.php?act=list">关注管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="email_list.php?act=list">邮件订阅管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="magazine_list.php?act=list">杂志管理</a></li>
+          <li class="menu-item"><a target="main-frame" href="view_sendlist.php?act=list">邮件队列管理</a></li>
+        </ul>
+      </li>
+
+<li id="20_yun" key="20_yun" name="menu" class="explode">
+    云服务中心        <ul><li class="menu-item"><a target="main-frame" href="cloud.php?act=check_ver&amp;ent_id&amp;admin_url&amp;shop_url&amp;certificate_id&amp;sess_id&amp;release&amp;token">查看最新版本及激活</a></li><li class="menu-item"><a target="main-frame" href="cloud.php?act=sms&amp;ent_id&amp;ent_ac&amp;t&amp;admin_url&amp;sess_id&amp;certificate_id&amp;token">短信服务</a></li><li class="menu-item"><a target="main-frame" href="cloud.php?act=tools&amp;shop_url">商家工具</a></li></ul>
+    </li></ul>
+</div>
+<div style="display:none" id="help-div">
+<h1 id="help-title"></h1>
+<div id="help-content"></div>
+</div>
+</div>
+
+</body></html>

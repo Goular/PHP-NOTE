@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //javascript + ajax无刷新方式form表单提交
+        window.onload = function () {
+            var fm = document.getElementsByTagName('form')[0];
+            //表单提交事件
+            fm.onsubmit = function (evt) {
+                //1.收集用户输入的表单域信息
+                var nm = document.getElementById('mingzi').value;
+                var mi = document.getElementById('mima').value;
+                var yu = document.getElementById('youxiang').value;
+                var info = "name=" + nm + "&pwd=" + mi + "&email=" + yu;
+                //2.并把收集起来的信息提交到服务器
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        alert(xhr.responseText);
+                    }
+                };
+                xhr.open("post", './05.php');
+                xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                xhr.send(info);
+                //阻止form表单的提交动作
+                evt.preventDefault();
+            };
+        };
+
+    </script>
+
+</head>
+<body>
+<h2>用户注册</h2>
+
+<form method="post" action="./1001.php">
+    <p>用户名：<input type="text" id="mingzi" name="username"/></p>
+
+    <p>密码：<input type="password" id="mima" name="userpwd"/></p>
+
+    <p>邮箱：<input type="text" id="youxiang" name="useremail"/></p>
+
+    <p>头像：<input type="file" id="touxiang" name="userpic"/></p>
+
+    <p><input type="submit" value="注册"/></p>
+</form>
+</body>
+</html>

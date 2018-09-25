@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //透明度设置 fadeTo(速度，透明度(多0-1少) [，回调函数])
+            $('#one').fadeTo(1000,0.5);
+        }
+
+    </script>
+
+    <style type="text/css">
+        #one{width:300px; height:200px; background-color:green;
+            position:absolute;left:140px; top:80px;
+        }
+        #two{width:300px; height:200px; background-color:blue; font-size:35px;}
+    </style>
+</head>
+<body>
+    <h2>元素透明度设置</h2>
+    <div id="two">this is autumn</div>
+    <div id="one"></div>
+    <input type="button" value="透明度" onclick="f1()" />
+</body>
+</html>

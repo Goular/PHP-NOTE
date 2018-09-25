@@ -1,0 +1,233 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0044)http://www.cnblogs.com/saneri/p/5391821.html -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="zh-cn"><HEAD><META content="IE=10.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="utf-8"> 
+<META name="viewport" content="width=device-width, initial-scale=1"> 
+<TITLE>nginx使用ssl模块配置支持HTTPS访问 - 梦徒 - 博客园</TITLE> <LINK href="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/blog-common.css" 
+rel="stylesheet" type="text/css"> <LINK id="MainCss" href="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/bundle-darkgreentrip.css" 
+rel="stylesheet" type="text/css"> <LINK id="mobile-style" href="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/bundle-darkgreentrip-mobile.css" 
+rel="stylesheet" type="text/css" media="only screen and (max-width: 768px)"> 
+<LINK title="RSS" href="http://www.cnblogs.com/saneri/rss" rel="alternate" type="application/rss+xml"> 
+<LINK title="RSD" href="http://www.cnblogs.com/saneri/rsd.xml" rel="EditURI" 
+type="application/rsd+xml"> <LINK href="http://www.cnblogs.com/saneri/wlwmanifest.xml" 
+rel="wlwmanifest" type="application/wlwmanifest+xml"> 
+<SCRIPT src="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/jquery.js" type="text/javascript"></SCRIPT>
+  
+<SCRIPT type="text/javascript">var currentBlogApp = 'saneri', cb_enable_mathjax=false;var isLogined=true;</SCRIPT>
+ 
+<SCRIPT src="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/blog-common.js" type="text/javascript"></SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY><A name="top"></A> <!--done--> 
+<DIV id="home">
+<DIV id="header">
+<DIV id="blogTitle"><A id="lnkBlogLogo" 
+href="http://www.cnblogs.com/saneri/"><IMG id="blogLogo" alt="返回主页" src="nginx使用ssl模块配置支持HTTPS访问%20-%20梦徒%20-%20博客园_files/logo.gif"></A>			
+		<!--done--> 
+<H1><A class="headermaintitle" id="Header1_HeaderTitle" href="http://www.cnblogs.com/saneri/">梦徒</A></H1>
+<H2></H2></DIV><!--end: blogTitle 博客的标题和副标题 -->	 
+<DIV id="navigator">
+<UL id="navList">
+  <LI><A class="menu" id="blog_nav_sitehome" 
+  href="http://www.cnblogs.com/">博客园</A></LI>
+  <LI><A class="menu" id="blog_nav_myhome" 
+  href="http://www.cnblogs.com/saneri/">首页</A></LI>
+  <LI><A class="menu" id="blog_nav_newpost" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" 
+  rel="nofollow">新随笔</A></LI>
+  <LI><A class="menu" id="blog_nav_contact" href="https://msg.cnblogs.com/send/%E6%A2%A6%E5%BE%92" 
+  rel="nofollow">联系</A></LI>
+  <LI><A class="menu" id="blog_nav_rss" 
+  href="http://www.cnblogs.com/saneri/rss">订阅</A> <!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/saneri/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></LI>
+  <LI><A class="menu" id="blog_nav_admin" href="https://i.cnblogs.com/" rel="nofollow">管理</A></LI></UL>
+<DIV class="blogStats">
+<DIV id="blog_stats"><SPAN id="stats_post_count">随笔 - 112&nbsp; </SPAN> <SPAN 
+id="stats_article_count">文章 - 0&nbsp; </SPAN> <SPAN id="stats-comment_count">评论 
+- 3</SPAN> </DIV></DIV><!--end: blogStats -->	 </DIV><!--end: navigator 博客导航栏 --> 
+</DIV><!--end: header 头部 --> 
+<DIV id="main">
+<DIV id="mainContent">
+<DIV class="forFlow">
+<DIV id="post_detail"><!--done--> 
+<DIV id="topics">
+<DIV class="post">
+<H1 class="postTitle"><A class="postTitle2" id="cb_post_title_url" href="http://www.cnblogs.com/saneri/p/5391821.html">nginx使用ssl模块配置支持HTTPS访问</A>
+		 </H1>
+<DIV class="clear"></DIV>
+<DIV class="postBody">
+<DIV id="cnblogs_post_body">
+<P>默认情况下ssl模块并未被安装，如果要使用该模块则需要在编译nginx时指定–with-http_ssl_module参数.</P>
+<P>需求：<BR>	做一个网站域名为 www.localhost.cn 要求通过https://www.localhost.cn进行访问.</P>
+<P>10.10.100.8 www.localhost.cn<BR><BR>实验步骤:</P>
+<P>1.首先确保机器上安装了openssl和openssl-devel</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">#yum install openssl
+#yum install openssl-devel
+</PRE></DIV>
+<P>2.创建服务器私钥，命令会让你输入一个口令：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">openssl genrsa -des3 -out server.key 1024<BR>													//生成私钥 
+#因为以后要给nginx使用。每次reload nginx配置时候都要你验证这个PAM密码的.由于生成时候必须输入密码,你可以输入后 再删掉。
+</PRE></DIV>
+<P>3.创建签名请求的证书（CSR）：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">openssl req -new -key server.key -out server.csr								//生成证书颁发机构,用于颁发公钥 
+</PRE></DIV>
+<P>4.在加载SSL支持的Nginx并使用上述私钥时除去必须的口令：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">cp server.key server.key.org
+openssl rsa -in server.key.org -out server.key									//除去密码以便reload询问时不需要密码
+</PRE></DIV>
+<P>5.配置nginx<BR>最后标记证书使用上述私钥和CSR：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</PRE></DIV>
+<P>6.修改Nginx配置文件，让其包含新标记的证书和私钥：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">#vim /usr/local/nginx/conf/nginx.conf 
+http {
+
+        include server/*.cn;
+}
+</PRE></DIV>
+<P>7.修改Nginx配置文件，让其包含新标记的证书和私钥：</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">#vim /usr/local/nginx/server/www.localhost.cn
+server { 
+        listen       443;  																		//监听端口为443 
+        server_name  www.localhost.cn; 
+ 
+        ssl                  on;  		　　　　　　　　　　//开启ssl 
+        ssl_certificate      /etc/pki/tls/certs/server.crt;  	 //证书位置 
+        ssl_certificate_key  /etc/pki/tls/certs/server.key;  	 //私钥位置 
+        ssl_session_timeout  5m; 
+        ssl_protocols  SSLv2 SSLv3 TLSv1;  		　　　　 //指定密码为openssl支持的格式 
+        ssl_ciphers  HIGH:!aNULL:!MD5; 				//密码加密方式 
+        ssl_prefer_server_ciphers   on; 			//依赖SSLv3和TLSv1协议的服务器密码将优先于客户端密码 
+ 
+        location / { 
+            root   html;    					//根目录的相对位置 
+            index  index.html index.htm; 
+        } 
+    } 
+</PRE></DIV>
+<P>8.启动nginx服务器.</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">#/usr/local/nginx/sbin/nginx -s reload //如果环境允许的话直接杀掉进程在启动nginx
+</PRE></DIV>
+<P>如果出现“[emerg] 10464#0: unknown directive "ssl" in 
+/usr/local/nginx-0.6.32/conf/nginx.conf:74”则说明没有将ssl模块编译进nginx，在configure的时候加上“--with-http_ssl_module”即可</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">如:[root@localhost nginx-1.4.4]# ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_stub_status_module --with-http_ssl_module
+</PRE></DIV>
+<P>9.测试网站是否能够通过https访问</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">https://www.localhost.cn
+</PRE></DIV>
+<P>另外还可以加入如下代码实现80端口重定向到443</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">server {
+listen 80;
+server_name www.localhost.cn;
+#rewrite ^(.*) https://$server_name$1 permanent;
+rewrite ^(.*)$  https://$host$1 permanent;
+}
+</PRE></DIV>
+<P>过以下配置，可以设置一个虚拟主机同时支持HTTP和HTTPS</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">listen 80;
+listen 443 default ssl;</PRE></DIV>
+<P class="title"><STRONG>同时支持80和443同时访问配置:</STRONG></P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">server {
+    listen      80 default backlog=2048;
+    listen      443 ssl;
+    server_name  www.localhost.com;
+   
+    #ssl on;  //注释掉
+    ssl_certificate   /usr/local/https/www.localhost.com.crt;
+    ssl_certificate_key  /usr/local/https/www.localhost.com.key;
+    ssl_session_timeout 5m;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;
+    ssl_prefer_server_ciphers on;</PRE></DIV>
+<P class="title"><STRONG>Nginx 
+设置忽略favicon.ico文件的404错误日志(关闭favicon.ico不存在时记录日志)</STRONG></P>
+<P class="title">在 server { … }内添加如下信息.</P>
+<DIV class="cnblogs_Highlighter">
+<PRE class="brush:csharp;gutter:true;">location = /favicon.ico {
+log_not_found off;
+access_log off;
+}
+</PRE></DIV>
+<P>　</P>
+<P>参考文档：<A href="http://dreamfire.blog.51cto.com/418026/1141302/" target="_blank">http://dreamfire.blog.51cto.com/418026/1141302/</A></P>
+<P>　　　　<A href="http://www.nginx.cn/265.html" 
+target="_blank">http://www.nginx.cn/265.html</A></P>
+<P>　</P></DIV>
+<DIV id="MySignature"></DIV>
+<DIV class="clear"></DIV>
+<DIV id="blog_post_info_block">
+<DIV id="BlogPostCategory"></DIV>
+<DIV id="EntryTag"></DIV>
+<DIV id="blog_post_info"></DIV>
+<DIV class="clear"></DIV>
+<DIV id="post_next_prev"></DIV></DIV></DIV>
+<DIV class="postDesc">posted @ <SPAN id="post-date">2016-04-14 17:09</SPAN> <A 
+href="http://www.cnblogs.com/saneri/">梦徒</A> 阅读(<SPAN 
+id="post_view_count">...</SPAN>) 评论(<SPAN id="post_comment_count">...</SPAN>)  
+<A href="https://i.cnblogs.com/EditPosts.aspx?postid=5391821" 
+rel="nofollow">编辑</A> <A onclick="AddToWz(5391821);return false;" href="http://www.cnblogs.com/saneri/p/5391821.html#">收藏</A></DIV></DIV>
+<SCRIPT type="text/javascript">var allowComments=true,cb_blogId=251902,cb_entryId=5391821,cb_blogApp=currentBlogApp,cb_blogUserGuid='1a48e5ea-1081-e511-9fc1-ac853d9f53cc',cb_entryCreatedDate='2016/4/14 17:09:00';loadViewCount(cb_entryId);</SCRIPT>
+	 </DIV><!--end: topics 文章、评论容器--> </DIV><A name="!comments"></A>
+<DIV id="blog-comments-placeholder"></DIV>
+<SCRIPT type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</SCRIPT>
+ 
+<DIV class="commentform" id="comment_form"><A name="commentform"></A> 
+<DIV id="divCommentShow"></DIV>
+<DIV id="comment_nav"><SPAN id="span_refresh_tips"></SPAN><A id="lnk_RefreshComments" 
+onclick="return RefreshCommentList();" href="javascript:void(0);" clientidmode="Static" 
+runat="server">刷新评论</A><A onclick="return RefreshPage();" href="http://www.cnblogs.com/saneri/p/5391821.html#">刷新页面</A><A 
+href="http://www.cnblogs.com/saneri/p/5391821.html#top">返回顶部</A></DIV>
+<DIV id="comment_form_container"></DIV>
+<DIV class="ad_text_commentbox" id="ad_text_under_commentbox"></DIV>
+<DIV id="ad_t2"></DIV>
+<DIV id="opt_under_post"></DIV>
+<DIV class="c_ad_block" id="cnblogs_c1"></DIV>
+<DIV id="under_post_news"></DIV>
+<DIV class="c_ad_block" id="cnblogs_c2"></DIV>
+<DIV id="under_post_kb"></DIV>
+<DIV class="c_ad_block" id="HistoryToday"></DIV>
+<SCRIPT type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</SCRIPT>
+ </DIV></DIV><!--end: forFlow -->	 </DIV><!--end: mainContent 主体内容容器-->	 
+<DIV id="sideBar">
+<DIV id="sideBarMain"><!--done--> 
+<DIV class="newsItem">
+<H3 class="catListTitle">公告</H3>
+<DIV id="blog-news"></DIV>
+<SCRIPT type="text/javascript">loadBlogNews();</SCRIPT>
+ </DIV>
+<DIV id="blog-calendar" style="display: none;"></DIV>
+<SCRIPT type="text/javascript">loadBlogDefaultCalendar();</SCRIPT>
+						 
+<DIV id="leftcontentcontainer">
+<DIV id="blog-sidecolumn"></DIV>
+<SCRIPT type="text/javascript">loadBlogSideColumn();</SCRIPT>
+			 </DIV></DIV><!--end: sideBarMain -->	 </DIV><!--end: sideBar 侧边栏容器 -->	 
+<DIV class="clear"></DIV></DIV><!--end: main -->	 
+<DIV class="clear"></DIV>
+<DIV id="footer"><!--done--> Copyright ©2017 梦徒	 </DIV><!--end: footer --> 
+</DIV><!--end: home 自定义的最大容器 --> </BODY></HTML>

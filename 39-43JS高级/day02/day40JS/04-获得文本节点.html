@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>获得文本节点(对象)</h2>
+<input type="text" id="username" name="mingzi" value="jack"/><br/>
+<input type="text" id="useremail" name="youxiang" value="jack@163.com"/><br/>
+</body>
+<script>
+    //首先获得元素的节点
+    var hh = document.getElementsByTagName('h2')[0];
+    //获得元素内容的第一子节点，在此文档中就是文本节点
+    console.log(hh.firstChild);
+    //获得文本几点的内部文本信息
+    console.log(hh.lastChild.nodeValue);
+    console.log(hh.firstChild.nodeType);
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //除了很多的选择器，这里还有一个重要的选择器就是属性选择器
+            //① $([name])
+            $('[id]').css('color','red');//存在此属性的就选择，没有此属性不选择
+            //② $([name=value]) ,全等于
+            $('[id=usertel]').css('width','400px');
+            //③ $([name^=value]) ,前置属性名
+            $('[id^=us]').css('background-color','pink');
+            //④ $([name$=value]) ,后置等属性名
+            $('[value$=52]').css('font-size','30px');
+            //⑤ $([name*=value]) ,任意位置匹配
+            $('[class*=an]').css('border','2px solid green');
+
+            //⑥ $([name!=value])
+            //获得的节点：
+            //① 没有name属性的
+            //② 有name属性的并且属性值不等于value
+            //缺点，会包含没有class属性的元素
+            //$('[class!=apple]').css('background-color','gray');
+
+
+            //节点必须有name属性，并且属性值不等于value
+            //⑦ $([name][name!=value])
+            //$('[class][class!=apple]').css('color','blue');
+
+            $('input[class][class*=p]').css('background-color','lightgreen');
+        }
+
+    </script>
+</head>
+<body>
+<h2>属性选择器</h2>
+<input type="text" class="banana" value="jim"/><br />
+<input type="text" id="one" value="jim@163.com" class="apple"/><br />
+<input type="text" id="usertel" value="13452674352"/><br />
+<input type="text" id="userqq" value="23877823" class="orange"/><br />
+<input type="text" id="useraddr" value="xisanqi652" class="fireguo"/><br />
+<input type="button" value="触发" onclick="f1()" class="apple"/>
+<p class="grape">this is fruit</p>
+</body>
+</html>

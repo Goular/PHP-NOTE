@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        //封装特性
+        function Dog() {
+            this.color = "gray";
+            this.leg = 4;
+            //声明私有成员(属性/方法)
+            var weight = 110;
+            var run = function () {
+                console.log("每天跑步5公里");
+            };
+
+            //对外公开方法
+            this.fight = function () {
+                console.log("我的体重是:" + weight);
+                console.log("我还需要锻炼身体");
+                //run();
+                console.log("我要把对方打倒");
+            }
+        }
+
+        var wangcai = new Dog();
+        wangcai.fight();
+        wangcai.run();
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

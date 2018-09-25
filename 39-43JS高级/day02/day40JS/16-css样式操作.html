@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+        div {
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<h2>css样式操作</h2>
+<!--样式分类：行内样式、内部样式、外部样式-->
+<div style="width:300px; height:200px; background-color:lightblue;">Today is Wednesday</div>
+<input type="button" value="获取" onclick="f1()"/><br/>
+<input type="button" value="设置" onclick="f2()"/><br/>
+</body>
+</html>
+
+<script>
+    //首先先获得对应的元素节点对象
+    var dv = document.getElementsByTagName("div")[0];
+
+    function f1() {
+        //获取样式(只能获取行内样式)
+        console.log(dv.style.width);//300px
+        console.log(dv.style.height);//200px
+        console.log(dv.style.backgroundColor);//lightblue
+        console.log(dv.style.color);//不能获取"内部样式"
+    }
+
+    function f2() {
+        dv.style.width = "500px";
+        dv.style.color = "green";
+    }
+</script>

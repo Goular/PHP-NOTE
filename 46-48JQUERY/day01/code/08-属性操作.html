@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //获取属性信息$().attr(属性名称);
+            console.log($("input:first").attr('type'));
+            console.log($("input:first").attr('class'));
+            console.log($("input:first").attr('id'));
+            console.log($("input:first").attr('name'));
+            console.log($("input:first").attr('value'));
+            console.log($("input:first").attr('address'));
+
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>属性操作</h2>
+<input type="text" class="apple" id="username" name="username" value="tom" address="beijing"  />
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

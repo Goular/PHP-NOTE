@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         ajax对象可以访问的成员
+         属性：
+         responseText: 以字符串形式接收服务器端返回的信息
+         readyState:ajax对象状态
+         0: 创建ajax对象
+         1: 有调用open方法
+         2: 有调用send方法
+         3: 只返回一部分数据
+         4: 数据返回完整
+         onreadystatechange:
+         是ajax的"事件"，在readyState状态发生变化的时候被触发
+         为了感知最多的状态信息，要设置在对象创建完毕之后
+         最多可以感知"1/2/3/4"标志状态信息
+
+         方法：
+         open()创建新的http协议(请求方式、地址)
+         send()发送请求(post请求数据)
+         */
+        function f1() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                //获得readyState状态变化消息
+                //console.log(xhr.readyState);
+                //可以随时感知ajax对象状态的变化
+                if (xhr.readyState == 4) {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                }
+            }
+
+
+            xhr.open("get", "./03.php");
+            xhr.send(null);
+        }
+
+    </script>
+</head>
+<body>
+<h2>ajax接收服务器端返回的信息</h2>
+<input type="button" value="触发" onclick="f1();"/>
+
+<div id="result"></div>
+</body>
+</html>

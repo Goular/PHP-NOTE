@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //对象在内存的分配
+        function Person() {
+            this.name = "JIM";
+            this.age = 20;
+            this.study = function () {
+                console.log("在学习各种技能");
+            }
+        }
+
+        var per1 = new Person();
+        var jack = per1;
+        jack.age = 25;
+        console.log(per1.age);//25
+
+        var per2 = new Person();
+        console.log(per2.age);//20
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

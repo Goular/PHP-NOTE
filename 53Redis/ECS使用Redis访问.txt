@@ -1,0 +1,17 @@
+ECS不允许直接访问6379端口，必须在ECS中设置6379端口的开放访问才可以  
+安全组规则
+
+1 阿里云ECS有安全组防火墙.默认只开了ICMP,22,3389. 在服务器控制台找到 安全组-配置规则-添加安全组规则
+
+
+
+2 如果是用root登录MySQL,在登陆后use mysql, user表root对应的localhost改为%
+
+3 mysql默认只能自本机访问,在 /etc/mysql/mysql.conf.d/mysqld.cnf 里注释bind-address : #bind-address = 127.0.0.1
+操作完成后重启mysql服务: service mysql restart
+
+4 netstat -ntpl |grep 3306  检查是不是在监听状态
+
+5 防火墙是否对 mysql 端口限制,设置防火墙
+
+有以上5步应该没问题了

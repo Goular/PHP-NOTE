@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区三级联动</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var xmlDom = null;
+        $(function () {
+            //加载省份的的数据，并且添加显示
+            $.get('./ChinaArea.xml', function (msg) {
+                //为全局变量xmlDom
+                xmlDom = msg;
+                //打印省份的内容
+                showProvinces();
+            }, 'xml');
+
+            //添加选中省份后的触发
+            $("#province").change(function (evt) {
+                //获取省份的ID
+                var provinceId = $(this).val();
+                //执行显示城市的内容
+                showcity(provinceId);
+            });
+            $('#city').change(function(evt){
+                //获取城市的ID
+                var cityID = $(this).val();
+                //显示区域内容
+                showDistrict(cityID);
+            });
+        });
+
+        function showProvinces() {
+            $('#province').empty();
+            $(xmlDom).find('province').each(function (key, value) {
+                //封装省份的DOM对象为JQuery对象
+                var id = $(value).attr('provinceID');
+                var name = $(value).attr('province');
+                $('#province').append("<option value=" + id + ">" + name + "</option>");
+            });
+        }
+
+        function showcity(provinceId) {
+            $('#city').empty();
+            $(xmlDom).find("province[provinceID=" + provinceId + "]").find('City').each(function (key, value) {
+                var cityID = $(this).attr('CityID');
+                var cityName = $(this).attr('City');
+                $('#city').append("<option value="+cityID+">"+cityName+"</option>");
+            });
+        }
+
+        function showDistrict(cityID) {
+            $('#diqu').empty();
+            $(xmlDom).find("City[CityID=" + cityID + "]").find('Piecearea').each(function (key, value) {
+                var districtID = $(this).attr('PieceareaID');
+                var districtName = $(this).attr('Piecearea');
+                $('#diqu').append("<option value="+districtID+">"+districtName+"</option>");
+            });
+        }
+    </script>
+</head>
+<body>
+<h2>地区三级联动</h2>
+省份：<select id="province"></select>
+城市：<select id="city">
+    <option value='0'>-请选择-</option>
+</select>
+地区：<select id="diqu">
+    <option value='0'>-请选择-</option>
+</select>
+</body>
+</html>

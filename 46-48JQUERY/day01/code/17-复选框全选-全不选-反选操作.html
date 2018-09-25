@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <!--<script src="jquery-1.4.4.js"></script>-->
+    <script>
+        function selAll(){
+            //全选  $('li').css('color','red');
+            //jquery内部大部分方法本身有“遍历”机制，可以为每个元素节点对象进行相关的功能操作
+            $('.hby').attr("checked",true);
+        }
+
+        function selNotAll(){
+            //全部不选
+            $('.hby').attr('checked',false);
+        }
+
+        function selFan(){
+            //反选
+            //遍历全部的复选框，查看每个项目的选中状态，并做处理(选中就取消，否则设置选中)
+
+            for(var i=0;i<$('.hby').length;i++){
+//                $('.hby:eq('+i+')').attr('checked',!flag);
+
+                //jquery3写法
+                var flag = $('.hby:eq('+i+')').is(':checked');
+                console.log(flag);
+                $('.hby:eq('+i+')').attr('checked',!flag);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h2>复选框选中操作</h2>
+爱好(复选框):
+<input type="checkbox" class="hby" name="hobby[]" value="1" />篮球
+<input type="checkbox" class="hby" name="hobby[]" value="2" />看书
+<input type="checkbox" class="hby" name="hobby[]" value="3" />上网
+<input type="checkbox" class="hby" name="hobby[]" value="4" />听音乐
+<br /><br />
+<input type="button" value="全选" onclick="selAll()" />
+<input type="button" value="全不选" onclick="selNotAll()" />
+<input type="button" value="反选" onclick="selFan()" />
+</body>
+</html>

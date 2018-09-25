@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //组合字符集
+        //\d :表示数字[0-9]
+        //\D :表示非数字[^0-9]
+        var str = "2015/9/13";
+        var reg = /\d+/;//数字
+        var reg = /\D/g;//非数字
+        var reg = /[^0-3]+/;
+        //在中括号中使用 ^ 表示为非后面的字符的意思
+
+
+        //\w :表示字母、数字、下划线其中一个[a-zA-Z0-9_]
+        //\W :非字母、数字、下划线 [^a-zA-Z0-9_]
+        var str = "aobama2015_USA@whitehouce.com";
+        var reg = /\w+/;
+        var reg = /[a-zA-Z0-9_]+/;//记住，是没有中线的
+        var reg = /\W/g;
+
+        //\s:表示空格
+        //\S:表示非空格
+        var str = "hello       beijing";
+        var reg = /[a-z]+\s\s\s\s\s\s\s[a-z]+/;//["hello beijing"]
+
+        //\b :表示单词边界
+        //\B :表示非单词边界(单词内部)
+        var str = "this is a computer";
+        //字符串替换为：this was a computer
+        // var newstr = 被替换字符串.replace(被替换内容[sting/reg正则]，替换内容)
+        var reg = /\bis\b/;
+        var newStr = str.replace(reg,'was');
+        console.log(newStr);
+
+
+        var result = str.match(reg);
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>获得元素节点(对象)</h2>
+<input type="text" id="username" name="mingzi" value="jack"/><br/>
+<input type="text" id="useremail" name="youxiang" value="jack@163.com"/><br/>
+</body>
+<script>
+    //③ document.getElementsByName(name属性值);
+    //   该方法同②也返回一个集合列表
+    //   该方式不推荐使用,存在浏览器兼容性问题
+    //   原因：有的浏览器要求被处理的节点必须是form表单的表单域信息
+    var name = document.getElementsByName('mingzi');
+    console.log(name);
+
+    //通过集合列表获取具体对象
+    //chorme不能直接使用，原因是不能直接读取到标签数组的内容，因为name的父节点并不是form
+    console.log(name[0]);
+    console.log(name.item(0));
+</script>
+</html>

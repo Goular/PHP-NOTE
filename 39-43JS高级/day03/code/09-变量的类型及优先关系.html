@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //变量类型及优先关系
+        //优先级：内部变量>>>内部函数>>>形参>>>外部变量(变量/函数/形参)
+
+        //同名的变量和函数同时存在，"变量"会"覆盖"函数
+        var yuyan = "PHP";
+
+        function f1() {
+
+            function f2(yuyan) {
+                //var yuyan = "html";
+                console.log("语言::" + yuyan);
+            }
+
+            f2("java");
+        }
+        f1();
+
+    </script>
+</head>
+<body>
+<h2>变量类型及优先关系</h2>
+</body>
+</html>

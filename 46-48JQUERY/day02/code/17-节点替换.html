@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //replaceWith()被动    replaceAll()主动
+            //关羽  被 周瑜 替换掉
+            //$('#guan').replaceWith($('#yu'));
+
+            //孙权 主动 替换  刘备
+            $('#quan').replaceAll($('li:first'));
+        }
+
+    </script>
+</head>
+<body>
+<h2>节点替换</h2>
+<ul id="shu">
+    <li>刘备</li>
+    <li id="guan">关羽</li>
+    <li>张飞</li>
+</ul>
+<ul id="wu">
+    <li id="quan">孙权</li>
+    <li id="yu">周瑜</li>
+    <li>小乔</li>
+</ul>
+<input type="button" value="替换" onclick="f1()" />
+</body>
+</html>

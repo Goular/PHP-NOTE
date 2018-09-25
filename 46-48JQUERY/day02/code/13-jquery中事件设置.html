@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //页面加载完毕就给h2设置事件
+        $(document).ready(function(){
+            $('form').submit(function(e){
+                alert('表单要进行提交！');
+                //e.preventDefault();
+                //e.stopPropagation();
+            });
+        });
+
+        function f1(){
+            console.log('1234');
+            //使得form表单进行提交（间接使得form表单提交）
+            $('form').submit();
+        }
+
+    </script>
+</head>
+<body>
+<h2>jquery事件设置</h2>
+<form method="post" action="./13.php">
+    用户名：<input type="text" name="username">
+    <input type="submit" value="注册" />
+</form>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

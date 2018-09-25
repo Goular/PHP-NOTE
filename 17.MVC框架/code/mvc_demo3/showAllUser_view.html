@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .t1 {
+            color: red;
+        }
+
+        .t2 {
+            background: #cccccc
+        }
+    </style>
+</head>
+<body>
+用户列表：
+
+<?php
+//我们一般不这么做：
+//以前建议这样写，但是现在不应该这样写
+/*
+echo "<table border='1'>";
+foreach( $result as $key => $rec ){
+echo "
+<tr>";
+    echo "
+    <td>" . $rec['user_name'] . "</td>
+    ";
+    echo "
+    <td>" . $rec['age'] . "</td>
+    ";
+    echo "
+    <td>{$rec['edu']}</td>
+    ";
+    echo "
+    <td>{$rec['xingqu']}</td>
+    ";
+    echo "
+    <td>{$rec['from']}</td>
+    ";
+    echo "
+    <td>{$rec['reg_time']}</td>
+    ";
+    echo "
+    <td>";
+        echo "<a href='?id={$rec[' user_id']}' onclick='return queren()'>删除</a>";
+        echo "
+    </td>
+    ";
+    echo "
+</tr>
+";
+}
+echo "</table>";
+*/
+//而是如下做法：
+?>
+
+<table border="1" rules="all" cellpadding="5" cellspacing="0">
+    <?php
+        foreach($data1 as $key=>$rec){
+
+    ?>
+    <tr>
+        <td><?php echo $rec['user_name']; ?></td>
+        <td class='t1'><?php echo $rec['age']; ?></td>
+        <td><?php echo $rec['edu']; ?></td>
+        <td class='t2'><?php echo $rec['xingqu']; ?></td>
+        <td><?php echo $rec['from']; ?></td>
+        <td><?php echo $rec['reg_time']; ?></td>
+        <td>
+            <a href='?act=del&id=<?php echo $rec[' user_id']; ?>' onclick='return queren()'>删除</a>
+            <a href='?act=detail&id=<?php echo $rec[' user_id']; ?>' >详细</a>
+        </td>
+    </tr>
+    <?php
+    }
+    ?>
+</table>
+
+<br/>
+当前的用户总数是：<?php echo $data2;?>
+
+
+</body>
+</html>
+<script>
+    function queren() {
+        return window.confirm("你真的要删除吗？");
+    }
+</script>

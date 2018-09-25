@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //① 给jquery对象丰富成员
+
+        //② 给$对象丰富成员
+        //注意：这个仅仅对的是$的内容
+        $.hello = 'world';
+        console.log($.hello);
+
+        //通过json对象进行成员丰富
+        //这个是JQuery库的拓展，并不单单是$对象的控制
+        $.extend({
+            should:function(str){
+                console.log(this);
+                console.log(str);
+            }
+        });
+
+        $.should.call(this,"GuiZhou");
+
+    </script>
+</head>
+<body>
+    <h2></h2>
+</body>
+</html>

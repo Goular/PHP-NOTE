@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        console.log("11111");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                console.log("44444");
+            }
+        }
+
+
+
+        //同步请求 1-2-4-3
+        //xhr.open('get', "./08.php", false);
+
+        //异步请求 1-2-3-4
+        xhr.open('get', "./08.php", true);
+
+        console.log("22222");
+
+        //发送请求
+        xhr.send(null);
+
+        console.log("33333");
+
+    </script>
+</head>
+<body>
+<h2>ajax study</h2>
+</body>
+</html>

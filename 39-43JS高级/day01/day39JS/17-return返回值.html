@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function f1() {
+        var week = "Monday";
+        var weather = 'sunshine';
+        var date = 7;
+        var is_refresh = false;
+
+        function f2() {
+            console.log('this is f2');
+        }
+
+        return f2;
+    }
+
+    var ff = f1();
+    ff();
+
+
+</script>
+</body>
+</html>

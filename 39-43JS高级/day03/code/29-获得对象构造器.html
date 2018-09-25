@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //获得对象构造器
+        function Animal() {
+            this.age = 5;
+            this.color = "gray";
+        }
+        var dog = new Animal();
+        console.log(dog.constructor);
+
+        function getInfo() {
+            console.log("hello");
+        }
+
+        //打印getInfo的构造器
+        console.log(getInfo.constructor);
+
+        //实例化一个函数的对象
+        var f1 = new Function("name", "age", "console.log(name+'---'+age)");
+        f1('tom', 24);
+        console.log(f1);
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

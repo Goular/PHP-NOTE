@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //① 遍历数组
+        //$.each(数组,function(k下标变量, v值变量){});
+        var color = ['gold','yellow','orange','gray'];
+        jQuery.each(color,function(key,value){
+            console.log(key+"------"+value);
+        });
+
+        //② 遍历对象
+        //$.each(对象,function(k成员名称, v成员值){});
+        var cat = {name:'kitty',age:5,climb:function(){console.log('在爬树')}};
+        $.each(cat,function(key,value){
+            console.log(key+"======"+value);
+        });
+    </script>
+</head>
+<body>
+<h2>each遍历方法</h2>
+<input type="button" value="触发1" onclick="f1()" />
+</body>
+</html>

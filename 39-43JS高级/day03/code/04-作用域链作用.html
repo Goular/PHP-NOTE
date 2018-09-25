@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //作用域链作用
+        //2.内部环境可以访问外部环境的变量，反之亦然
+        var week = "Thursday";
+
+        function f1() {
+            var tomorrow = "Friday";
+            console.log("Today is " + week);
+        }
+        f1();
+
+        console.log("明天" + tomorrow);
+
+    </script>
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

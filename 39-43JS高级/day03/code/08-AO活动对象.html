@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //作用域链,反正记住一点就是，就近原则
+        var weather = "rain";
+        var week = "Thursday";
+        var date = "0910";
+        console.log("now::" + window.weather);
+
+        function f1() {
+            console.log("f1::" + weather);
+            function f2() {
+                var weather = "snow";
+                var subject = "PHP Language";
+                console.log("f2::" + weather);
+                function f3() {
+                    var week = "Sunday";
+                    console.log("f3::" + weather + "--星期::" + week + "--日期::" + date + "--科目::" + subject);
+                }
+
+                f3();
+            }
+
+            f2();
+        }
+        f1();
+
+
+    </script>
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

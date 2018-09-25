@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //使用POST方式来校验用户名的正确性
+        function checkname() {
+            //获得用户名信息,并传递给服务端
+            var nm = document.getElementById("username").value;
+
+            nm = encodeURIComponent(nm);
+
+            var info = 'name=' + nm + "&color=yellow";
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4){
+                    alert(xhr.responseText);
+                }
+            }
+
+            xhr.open("post", "./06.php");
+
+            //以下setRequestHeader()方法必须在open之后设置
+            //普通的ajax post请求必须添加setRequestHeader，html5中的Formdata是不需要的
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+            xhr.send(info);
+        }
+    </script>
+</head>
+<body>
+<h2>ajax之post方式请求(ajax版用户名校验)</h2>
+
+<p>用户名：<input type="text" id="username" onblur="checkname();"/><br/></p>
+
+<p>密码：<input type="text" id="userpwd"/><br/></p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+
+    <script>
+
+        function f1() {
+            //① $("#id") id属性值获得元素节点
+            $('#username').css('background-color','gray');
+            $('#useremail').css('width','400px');
+
+            //② $("tag标签名称") 通过标签名称获得元素节点
+            $('h2').css('color','orange');
+            $('input').css('color','red');
+
+            //③ $(".class属性值")  通过class属性值获得元素节点
+            $('.apple').css('font-size','25pt');
+
+            //④ $("*") 通配符选择器 (页面上所有节点)
+            $('*').css('background-color','lightgreen');
+
+            //⑤ $("s1,s2,s3..") 联合选择器，只要符合"其中一个"条件即可
+            $('#usermail,h2,p').css('color','blue');
+
+        }
+    </script>
+
+    <style>
+        /*css选择器*/
+        input{}
+        #username{}
+        .apple{}
+        *{}/*通配符选择器初始化*/
+        #useremail,h2{}
+    </style>
+
+</head>
+<body>
+<h2>jquery基本选择器(灵感来之css样式选择器)</h2>
+<input type="text" id="username" class="apple" value="xiaoming"/><br/>
+<input type="text" id="useremail" value="xiaoming@163.com"/><br/>
+<input type="text" id="addr" class="apple" value="北京海淀"/><br/>
+
+<p>Today is Friday</p>
+<input type="button" value="触发" onclick="f1();"/>
+</body>
+</html>

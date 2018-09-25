@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages>
+	<msg>
+		<sender>tom</sender>
+		<jie>mary</jie>
+		<content>晚上一起吃饭吧</content>
+	</msg>
+	<msg>
+		<sender>mary</sender>
+		<jie>tom</jie>
+		<content>不吃了，这个时间要去打球</content>
+	</msg>
+</messages>

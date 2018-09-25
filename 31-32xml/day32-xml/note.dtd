@@ -1,0 +1,9 @@
+<!ELEMENT note (from,to,heading,body)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT heading (#PCDATA)>
+        <!ELEMENT body (#PCDATA)>
+        <!ENTITY company "传智播客">
+        <!ENTITY % company1 "少林寺">
+        <!ENTITY copy "%company1;有限公司">
+        <!ATTLIST body id ID #REQUIRED>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //获取  获得选中项目(唯一)的value属性值
+            console.log($(".sx:checked").val());
+        }
+
+        function f2(){
+            //设置默认选中项目
+            //$(单选按钮).val([元素]);//参数元素就是被选中项目的value属性值
+            $(".sx").val(['c']);
+        }
+
+    </script>
+
+</head>
+<body>
+    <h2>单选按钮操作</h2>
+    性别(单选按钮):
+    <input type="radio" class="sx" name="sex" value="a" />男
+    <input type="radio" class="sx" name="sex" value="b" />女
+    <input type="radio" class="sx" name="sex" value="c" />保密
+    <br /><br />
+    <input type="button" value="获取" onclick="f1()" />
+    <input type="button" value="设置" onclick="f2()" />
+</body>
+</html>

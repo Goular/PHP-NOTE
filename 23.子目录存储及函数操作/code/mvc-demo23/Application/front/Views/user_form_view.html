@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=User&a=UpdateUser" method="post">
+	 <h1>添加数据</h1>
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="id" value='<?php echo $user['user_id']; ?>'>
+	 
+	 用户名：<input type="text" name="username" value='<?php echo $user['user_name']; ?>'><br/>
+	 密码:<input type="password" name="password" ><br/>
+	 年龄：<input type="text" name="age" value='<?php echo $user['age']; ?>'><br/>
+	 学历：<select name="xueli">
+		<option value="小学" <?php if($user['edu'] == '小学'){echo "selected";} ?>>小学</option>
+		<option value="中学" <?php if($user['edu'] == '中学'){echo "selected";} ?>>中学</option>
+		<option value="大学" <?php if($user['edu'] == '大学'){echo "selected";} ?>>大学</option>
+		<option value="硕士" <?php if($user['edu'] == '硕士'){echo "selected";} ?>>硕士</option>
+		<option value="博士" <?php if($user['edu'] == '博士'){echo "selected";} ?>>博士</option>
+	 </select><br/>
+	 兴趣爱好：
+	 <input type="checkbox" name="aihao[]" value="排球" <?php if( in_array('排球', $aihao) ){echo "checked";} ?>>排球
+	 <input type="checkbox" name="aihao[]" value="篮球" <?php if( in_array('篮球', $aihao) ){echo "checked";} ?>>篮球
+	 <input type="checkbox" name="aihao[]" value="足球" <?php if( in_array('足球', $aihao) ){echo "checked";} ?>>足球
+	 <input type="checkbox" name="aihao[]" value="中国足球" <?php if( in_array('中国足球', $aihao) ){echo "checked";} ?>>中国足球
+	 <input type="checkbox" name="aihao[]" value="地球" <?php if( in_array('地球', $aihao) ){echo "checked";} ?>>地球<br/>
+
+	 来自：
+	 <input type="radio" name='from' value="东北" <?php if($user['from'] == '东北'){echo "checked";} ?>>东北
+	 <input type="radio" name='from' value="华北" <?php if($user['from'] == '华北'){echo "checked";} ?>>华北
+	 <input type="radio" name='from' value="西北" <?php if($user['from'] == '西北'){echo "checked";} ?>>西北
+	 <input type="radio" name='from' value="华东" <?php if($user['from'] == '华东'){echo "checked";} ?>>华东
+	 <input type="radio" name='from' value="华北" <?php if($user['from'] == '华北'){echo "checked";} ?>>华北
+	 <input type="radio" name='from' value="华西" <?php if($user['from'] == '华西'){echo "checked";} ?>>华西<br/>
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

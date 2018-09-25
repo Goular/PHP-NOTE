@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //① 获取选中的复选框
+            console.log($('input:lt(4):checked'));
+            //② 获得选中的单选按钮
+            console.log($('.sx:checked'));
+            //③ 获得选中的下拉框项目
+            console.log($('option:selected'));
+        }
+
+        //:checked
+        //:selected
+    </script>
+
+</head>
+<body>
+<h2 class="orange">jquery表单域选中选择器</h2>
+爱好(复选框):
+<input type="checkbox" class="hby" name="hobby[]" value="1" />篮球
+<input type="checkbox" class="hby" name="hobby[]" value="2" />看书
+<input type="checkbox" class="hby" name="hobby[]" value="3" />上网
+<input type="checkbox" class="hby" name="hobby[]" value="4" />听音乐
+<br />
+性别(单选按钮):
+<input type="radio" class="sx" name="sex" value="a" />男
+<input type="radio" class="sx" name="sex" value="b" />女
+<input type="radio" class="sx" name="sex" value="c" />保密
+<br />
+城市(下拉列表):
+<select>
+    <option value="0">请选择</option>
+    <option value="1">哈尔滨</option>
+    <option value="2">长春</option>
+    <option value="3">沈阳</option>
+    <option value="4">石家庄</option>
+</select>
+
+<br /><br />
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

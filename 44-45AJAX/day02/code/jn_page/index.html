@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //ajax无刷新方式获得第N页信息
+        function showpage(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    eval("var jn_info=" + xhr.responseText);
+
+                    console.log(jn_info);
+
+                    var s = "<table><tr style=\"font-weight:bold;\"><td>序号</td><td>名称</td><td>数量</td></tr>";
+                    for (var m = 0; m < jn_info.length - 1; m++) {
+//                        console.log(jn_info[m].i);
+//                        console.log(jn_info[m].n);
+//                        console.log(jn_info[m].p);
+                        s += "<tr><td>" + jn_info[m].i + "</td>";
+                        s += "<td>" + jn_info[m].n + "</td>";
+                        s += "<td>" + jn_info[m].p + "</td></tr>";
+                    }
+                    s += "<tr><td colspan='5'>" + jn_info[jn_info.length - 1] + "</td> </tr>";
+                    s += "</table>";
+
+
+                    document.getElementById('result').innerHTML = s;
+                }
+            };
+            xhr.open('get', url);
+            xhr.send(null);
+        }
+
+        window.onload = function(){
+            showpage("./data.php?page=1");
+        };
+
+    </script>
+    <style>
+        h2 {
+            width: 700px;
+            margin: auto;
+            background-color: pink;
+            text-align: center;
+        }
+
+        table {
+            width: 700px;
+            border: 1px solid black;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h2>ajax无刷新分页效果</h2>
+
+<div id="result"></div>
+</body>
+</html>

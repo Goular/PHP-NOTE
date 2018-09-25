@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //复制继承
+        function Animal() {
+            this.color = "black";
+            this.leg = 4;
+        }
+
+        //添加复制继承
+        Animal.prototype.extend = function (obj) {
+            //遍历对象
+            for (var k in obj) {
+                if (this.hasOwnProperty(k) === false) {
+                    this[k] = obj[k];
+                }
+            }
+        }
+
+        var wolf = {
+            tail: '笔直的尾巴'
+        };
+
+        var tiger = {
+            say: '狐假虎威'
+        };
+
+        var dog = {
+            hobby: '散步'
+        };
+
+        //cat1/cat2/cat3 每个对象按照自己的需求，复制成员到本身内部
+        var cat1 = new Animal();
+        var cat2 = new Animal();
+        var cat3 = new Animal();
+
+        cat1.extend(wolf);
+        cat2.extend(tiger);
+        cat3.extend(dog);
+
+        console.log(cat1);
+        console.log(cat2);
+        console.log(cat3);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--方法一:全属性编写-->
+<!--<!DOCTYPE users [-->
+<!--<!ELEMENT users (user)*>-->
+<!--<!ELEMENT user (name,password,email)>-->
+<!--<!ELEMENT name (#PCDATA)>-->
+<!--<!ELEMENT password (#PCDATA)>-->
+<!--<!ELEMENT email (#PCDATA)>-->
+<!--<!ATTLIST user id ID #REQUIRED>-->
+<!--<!ATTLIST user gender (男|女)  '男'>-->
+<!--<!ATTLIST name nationality CDATA #FIXED '中国'>-->
+<!--]>-->
+<!--方法二:属性缩写-->
+<!DOCTYPE users [
+        <!ELEMENT users (user)*>
+        <!ELEMENT user (name,password,email)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT password (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ATTLIST user id ID #REQUIRED
+                gender (男|女)  '男'>
+        <!ATTLIST name nationality CDATA #FIXED '中国'>
+        ]>
+
+<users>
+    <user id="u1" gender="女">
+        <name nationality="中国">michael jordan</name>
+        <password>jordan</password>
+        <email>jordan@163.com</email>
+    </user>
+    <user id="u2">
+        <name>David beckham</name>
+        <password>beckham</password>
+        <email>beckham@qq.com</email>
+    </user>
+    <user id="u3">
+        <name>michael jackson</name>
+        <password>jackson</password>
+        <email>jackson@sohu.com</email>
+    </user>
+</users>

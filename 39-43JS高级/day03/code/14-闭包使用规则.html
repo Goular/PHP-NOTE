@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //闭包使用规则
+        //同一个闭包机制创建的多个闭包函数，彼此独立、没有关系
+        //而且f1的参数会一直在内存中保留，不会执行完马上从内存上消失
+        function f1(num) {
+            function f2() {
+                console.log('数字:' + (num++));
+            }
+
+            return f2;
+        }
+
+        var fa = f1(200);
+        var fb = f1(55);
+
+        fa();
+        fa();
+        fa();
+        fa();
+
+        fb();
+        fb();
+        fb();
+        fb();
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

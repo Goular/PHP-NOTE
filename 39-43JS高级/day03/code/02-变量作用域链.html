@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //作用域链
+        var weather = "rain";
+
+        console.log("now:" + weather);//rain
+
+        function f1() {
+            console.log("f1:" + weather);
+
+            function f2() {
+                var abc = 123;
+                console.log("f2:" + weather);
+                function f3() {
+                    console.log("f3:" + weather);
+                }
+
+                f3();//rain
+            }
+
+            f2();//rain
+        }
+        f1();//rain
+
+
+    </script>
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

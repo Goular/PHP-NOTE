@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //执行删除
+            $('input:first').removeAttr('class');
+            $('input:first').removeAttr('id');
+            $('input:first').removeAttr('name');
+            $('input:first').removeAttr('value');
+            $('input:first').removeAttr('address');
+        }
+
+        //type属性禁止"删除、修改"操作
+        $("input:first").removeAttr('type');//容易出错，基本是不能使用的
+    </script>
+
+</head>
+<body>
+<h2>属性操作</h2>
+<input type="text" class="apple" id="username" name="username" value="tom" address="beijing"  />
+<input type="button" value="删除" onclick="f1()" />
+</body>
+</html>

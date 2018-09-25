@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<newspaper>
+    <article author="" editor="" date="" edition="">
+        <heading></heading>
+        <byline></byline>
+        <lead></lead>
+        <body></body>
+        <notes>&copyright;</notes>
+    </article>
+</newspaper>

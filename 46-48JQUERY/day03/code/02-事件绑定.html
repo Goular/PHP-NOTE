@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //①简单事件绑定
+        //页面加载完毕 给div设置事件
+        $(function(){
+            //$('div').bind(事件类型，处理函数);
+            $('div').bind('mouseover',function(evt){
+                //当前的this对象指的是dom对象
+                $(this).css('background-color','orange');
+            });
+            $('div').bind('mouseout',function(){
+                $(this).css('background-color','');
+            });
+        });
+        
+    </script>
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:pink;}
+    </style>
+</head>
+<body>
+<h2>事件绑定(简单使用)</h2>
+<div>this is autumn</div>
+</body>
+</html>

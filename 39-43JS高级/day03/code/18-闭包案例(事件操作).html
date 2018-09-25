@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < 4; i++) {
+                //利用闭包，创建多个事件函数，他们都是独立的
+                //并且可以访问到"各自的li元素节点"
+                lis[i].onmouseover = over(i);
+                lis[i].onmouseout = out(i);
+            }
+
+            function over(num) {
+                return function () {
+                    lis[num].style.backgroundColor = "lightgreen";
+                }
+            }
+
+            function out(num) {
+                return function () {
+                    lis[num].style.backgroundColor = "";
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+<ul>
+    <li>student</li>
+    <li>teacher</li>
+    <li>farmer</li>
+    <li>workman</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //声明一个简单的闭包
+        function f1() {
+            var banji = "php0710";
+
+            function f2() {
+                console.log("this is " + banji);
+            }
+
+            return f2;
+        }
+
+        var ff = f1();
+        ff();
+
+        //以上程序代码的意思：外部环境试图访问内部环境的banji变量
+        //结果是有访问到
+        //疑问：外部环境怎么就访问到内部环境的bianji变量？
+        //答：function函数本身有两个名字f2和ff
+        //    这两个名字都可以调用function执行，函数调用的时候，内部的banji变量
+        //    不是外部的，其就是“我们AO本身的成员信息banji”
+        //    所以只要function能发生调用，则一定会访问到banji变量(无视变量的环境)
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //① 给"jquery对象""丰富成员
+        function f1(){
+            //丰富单一成员
+            $.fn.addr = function(){
+                console.log("西三旗");
+            }
+
+            $.fn.extend({
+                abcd:function(){
+                    console.log(1234);
+                }
+            });
+
+            //通过json丰富成员
+            $('h2').addr();
+            $('h2').abcd();
+        }
+
+    </script>
+</head>
+<body>
+<h2></h2>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

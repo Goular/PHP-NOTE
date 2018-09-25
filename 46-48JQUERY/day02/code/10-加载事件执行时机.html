@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //jquery加载事件执行时机：全部内容在内存绘制好就执行
+        //执行完内存加载DOM树后，执行JQuery的加载事件
+        //与onload的全部加载完成后才执行不同，onContentLoaded是jquery的事件执行时机，该事件是在DOM树在在内存中创建完成后就会被触发
+
+        $(function(){
+            alert('abcd');
+        });
+
+        //$().ready(function(){});
+
+        //$(document).ready(function(){});
+    </script>
+</head>
+<body>
+<h2>jquery加载事件执行时机</h2>
+<!--图片4s后显示-->
+<img src="./09.php" alt="" />
+</body>
+</html>

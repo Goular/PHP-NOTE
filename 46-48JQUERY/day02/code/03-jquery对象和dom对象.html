@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //jquery对象在调用本身的成员方法css实现效果
+            $('h2').css('color','red');
+            //$('h2')对JS的封装为:document.getElementByTagName('h2');
+
+            //① dom对象 调用 jquery对象 的成员【失败】
+            //document.getElementsByTagName('h2')[0].css('background-color','blue');
+
+            //   dom对象 变为 jquery对象 后再调用对方成员
+            //   dom对象 是jquery的一个“选择器”
+            var hh = document.getElementsByTagName('h2')[0];
+            $(hh).css('background-color','green');
+        }
+
+
+        function f2(){
+            //dom对象 调用本身的 style成员实现效果
+            document.getElementsByTagName('h2')[0].style.backgroundColor = "lightgreen";
+
+            //② jquery对象 调用 dom对象 的成员【失败】
+            //$('h2').style.color = "blue";
+            //  jquery对象 变为 dom对象 再调用对方成员
+            $('h2')[0].style.color = 'blue';
+        }
+
+    </script>
+</head>
+<body>
+<h2>jquery对象和dom对象关系</h2>
+<input type="button" value="触发1" onclick="f1()" />
+<input type="button" value="触发2" onclick="f2()" />
+</body>
+</html>

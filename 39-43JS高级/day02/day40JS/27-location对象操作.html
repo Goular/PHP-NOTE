@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            //获取地址栏的信息
+            console.log(window.location.href);
+        }
+
+        function f2() {
+            //window.location.href = "./25-register.html";
+            location.href = location.href;//"刷新当前的页面"
+        }
+
+    </script>
+</head>
+<body>
+<h2>location对象操作地址栏信息</h2>
+<input type="button" value="获取" onclick="f1()"/>
+<input type="button" value="设置" onclick="f2()"/>
+</body>
+</html>

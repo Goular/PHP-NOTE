@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<!-- saved from url=(0037)http://www.jb51.net/article/47953.htm -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="zh-CN"><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="gb2312"> 
+<META name="applicable-device" content="pc"> 
+<META name="viewport" content="width=device-width, initial-scale=1"> 
+<META http-equiv="Cache-Control" content="no-siteapp"> 
+<META http-equiv="Cache-Control" content="no-transform"> 
+<TITLE>nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家</TITLE> 
+<META http-equiv="X-UA-Compatible" content="IE=EDGE"> 
+<META name="keywords" content="nginx调用php-fpm,nginx配置详"> 
+<META name="description" content="这篇文章介绍了nginx调用php-fpm出错的解决方法，最后给出了nginx配置方法,需要的朋友可以参考下"> 
+<LINK href="http://m.jb51.net/article/47953.htm" rel="alternate" media="only screen and(max-width: 640px)"> 
+<META http-equiv="mobile-agent" content="format=html5; url=http://m.jb51.net/article/47953.htm"> 
+<META http-equiv="mobile-agent" content="format=xhtml; url=http://m.jb51.net/article/47953.htm"> 
+<SCRIPT type="text/javascript">
+var tougao="zxhpj";var lmname="服务器";
+(function(){var reWriteUrl=function(url){if(url){var Splits=url.split("/"),siteName=window.location.pathname;if(typeof siteName!=="undefined"){return "http://m.jb51.net"+siteName}}};if(/Android|webOS|iPhone|iPad|Windows Phone|iPod|BlackBerry|SymbianOS|Nokia|Mobile/i.test(navigator.userAgent)){var url=window.location.href;var pathname=window.location.pathname;if(url.indexOf("?pc")<0){try{window.location.href=reWriteUrl(url)}catch(e){}}}})();
+</SCRIPT>
+ <LINK href="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/base.css" rel="stylesheet" 
+type="text/css"> <LINK href="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/common.css" 
+rel="stylesheet" type="text/css"> 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/jquery.min.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/function.js" type="text/javascript"></SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY><!--head Star --> 
+<DIV id="head">
+<DIV class="toolBar">
+<DIV class="main"><!--topNav Star -->     
+<DIV class="topNav clearfix">
+<UL class="navList fl">
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/" 
+  target="_blank">脚本之家</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/softs/" target="_blank">软件下载<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"><A href="http://www.jb51.net/softs/android.html" target="_blank">android软件</A><A 
+  href="http://www.jb51.net/softs/mac.html" target="_blank">MAC软件</A><A href="http://www.jb51.net/qudong/" 
+  target="_blank">驱动下载</A><A href="http://www.jb51.net/fonts/" 
+  target="_blank">字体下载</A><A href="http://www.jb51.net/dll/" 
+  target="_blank">DLL下载</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/codes/" target="_blank">源码下载<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"><A href="http://www.jb51.net/codes/asp.html" 
+  target="_blank">asp源码</A><A href="http://www.jb51.net/codes/php.html" target="_blank">php源码</A><A 
+  href="http://www.jb51.net/codes/aspnet.html" target="_blank">asp.net源码</A><A 
+  href="http://www.jb51.net/codes/jsp.html" target="_blank">jsp源码</A><A href="http://www.jb51.net/codes/editor.html" 
+  target="_blank">网页编辑器</A><A href="http://www.jb51.net/codes/list123_1.html" 
+  target="_blank">数据库管理</A><A href="http://www.jb51.net/codes/list124_1.html" 
+  target="_blank">常用组件</A><A href="http://www.jb51.net/jiaoben/" 
+  target="_blank">脚本下载</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://tools.jb51.net/" target="_blank">在线工具<I 
+  class="icon"></I></A></DIV>
+  <DIV class="two"><A href="http://www.jb51.net/shouce/" 
+  target="_blank">在线手册</A><A href="http://www.jb51.net/tools/cssyasuo.shtml" 
+  target="_blank">CSS格式化</A><A href="http://tools.jb51.net/code/js" target="_blank">JS格式化</A><A 
+  href="http://www.jb51.net/tools/html-js.htm" target="_blank">Html转化为Js</A><A 
+  href="http://tools.jb51.net/regex/javascript" 
+  target="_blank">js正则表达式</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://www.jb51.net/w3school/" 
+  target="_blank">网页教程基础</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://s.jb51.net/" 
+  target="_blank">服务器常用软件</A></DIV></LI>
+  <LI>
+  <DIV class="one"><A href="http://m.jb51.net/" target="_blank">手机版</A></DIV>
+  <DIV class="two"><IMG src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/m.jb51.net.png" 
+  data-baiduimageplus-ignore=""></DIV></LI>
+  <LI class="watch">
+  <DIV class="one"><A href="http://www.jb51.net/about.htm" target="_blank" rel="nofollow"><I 
+  class="icon"></I>关注微信</A></DIV>
+  <DIV class="two"><IMG src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/weixin_200.gif" 
+  data-baiduimageplus-ignore=""></DIV></LI></UL>
+<DIV class="navUser mt5 fr" id="jb51_topbar"></DIV></DIV><!--topNav End -->   
+</DIV></DIV>
+<DIV class="main clearfix">
+<DIV class="mtb10 clearfix">
+<DIV class="logo"><A href="http://www.jb51.net/"><IMG title="脚本之家" alt="脚本之家" 
+src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/logo.gif"></A></DIV>
+<DIV class="logom fl"><SPAN class="jbTestPos" id="logo_m"></SPAN></DIV>
+<DIV class="logor fr"><SPAN class="jbTestPos" id="logo_r"></SPAN></DIV></DIV><!-- 导航--> 
+<DIV class="nav_top clearfix">
+<UL>
+  <LI><A href="http://www.jb51.net/web/">网页制作</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_1.htm">网络编程</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_96.htm">脚本专栏</A></LI>
+  <LI><A href="http://www.jb51.net/jiaoben/">脚本下载</A></LI>
+  <LI><A href="http://www.jb51.net/list/index_104.htm">数据库</A></LI>
+  <LI><A href="http://www.jb51.net/cms/">CMS教程</A></LI>
+  <LI><A href="http://www.jb51.net/books/">电子书籍</A></LI>
+  <LI><A href="http://www.jb51.net/pingmian/">平面设计</A></LI>
+  <LI><A href="http://www.jb51.net/media/">媒体动画</A></LI>
+  <LI><A href="http://www.jb51.net/os/">操作系统</A></LI>
+  <LI><A href="http://www.jb51.net/yunying/">网站运营</A></LI>
+  <LI><A href="http://www.jb51.net/hack/">网络安全</A></LI>
+  <LI class="last"><A href="http://www.jb51.net/shouce/">在线手册</A></LI></UL></DIV><!--导航结束--> 
+<DIV class="subnav clearfix">
+<UL>
+  <LI><A title="星外虚拟主机" 
+  href="http://www.jb51.net/list/list_192_1.htm">星外虚拟主机</A></LI> 
+  <LI><A title="华众虚拟主机" 
+  href="http://www.jb51.net/list/list_193_1.htm">华众虚拟主机</A></LI> 
+  <LI><A title="Linux" 
+  href="http://www.jb51.net/list/list_203_1.htm">Linux</A></LI> 
+  <LI><A title="win服务器" 
+  href="http://www.jb51.net/list/list_204_1.htm">win服务器</A></LI> 
+  <LI><A title="FTP服务器" 
+  href="http://www.jb51.net/list/list_218_1.htm">FTP服务器</A></LI> 
+  <LI><A title="DNS服务器" 
+  href="http://www.jb51.net/list/list_219_1.htm">DNS服务器</A></LI> 
+  <LI><A title="Tomcat " href="http://www.jb51.net/list/list_223_1.htm">Tomcat 
+  </A></LI> 
+  <LI><A title="nginx" 
+  href="http://www.jb51.net/list/list_226_1.htm">nginx</A></LI> 
+  <LI><A title="zabbix" 
+  href="http://www.jb51.net/list/list_247_1.htm">zabbix</A></LI> 
+  <LI><A title="云和虚拟化" 
+  href="http://www.jb51.net/list/list_255_1.htm">云和虚拟化</A></LI> 
+  <LI><A title="服务器其它" 
+  href="http://www.jb51.net/list/list_220_1.htm">服务器其它</A></LI> </UL></DIV>
+<DIV class="NavBar clearfix ptb10">
+<DIV class="fl w690">
+<DIV class="box mb15 mt10"><I class="icon"></I>您的位置：<A href="http://www.jb51.net/">首页</A> 
+→ <A title="网站技巧" href="http://www.jb51.net/list/index_27.htm">网站技巧</A> → <A 
+title="服务器" href="http://www.jb51.net/list/list_82_1.htm">服务器</A> → <A title="nginx" 
+href="http://www.jb51.net/list/list_226_1.htm">nginx</A> → 正文内容 
+nginx配置详解</DIV></DIV>
+<DIV class="fr w300">
+<DIV class="search">
+<FORM action="http://so.jb51.net/cse/search" 
+target="_blank"><INPUT name="s" type="hidden" value="10520733385329581432">     
+<INPUT name="ie" type="hidden" value="gbk">     <INPUT name="q" class="key_input" type="text" placeholder="请输入关键词" value=""> 
+    <INPUT class="c_btn" type="submit" value="搜索"> 
+</FORM></DIV></DIV></DIV></DIV><!--head End --> 
+<DIV class="main mb10 clearfix">
+<DIV class="clearfix"><SPAN class="jbTestPos" id="tonglan1"></SPAN></DIV></DIV><!--content Star --> 
+<DIV id="contents">
+<DIV class="main clearfix">
+<DIV class="w690 fl">
+<DIV class="article-content border">
+<DIV class="title">
+<H1 class="YaHei">nginx调用php-fpm出错解决方法和nginx配置详解</H1>
+<P>作者：  字体：[<A href="javascript:turnbig()">增加</A> <A href="javascript:turnsmall()">减小</A>] 
+类型：转载 时间：2014-03-11<A 
+href="http://www.jb51.net/article/47953.htm#comments">我要评论</A></P></DIV>
+<DIV class="art_desc mt10">
+<DIV 
+id="art_demo">这篇文章介绍了nginx调用php-fpm出错的解决方法，最后给出了nginx配置方法,需要的朋友可以参考下</DIV></DIV>
+<DIV class="lbd clearfix"><SPAN class="jbTestPos" id="art_up"></SPAN></DIV>
+<DIV id="content">
+<P>装完了nginx和php-5.5，配置好了nginx调用php后，就开始启动php-fpm。</P>
+<P>使用下面的命令<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut63315" style="cursor: pointer;" 
+onclick="doCopy('code63315')" data="63315"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code63315"><BR>/usr/local/php/sbin/php-fpm 
+<BR></DIV><BR>就可以启动了。
+<P></P>
+<P>在nginx的目录中创建个php的检测脚本index.php</P>
+<P>结果在打开http://localhost/index.php</P>
+<P>悲剧的发现居然无法打开 。查看日志文件，看了下报错原因<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut55030" style="cursor: pointer;" 
+onclick="doCopy('code55030')" data="55030"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code55030"><BR>2013/07/01 22:34:26 [error] 3214#0: *64 
+FastCGI sent in stderr: "Primary script unknown" while reading response header 
+from upstream, client: 192.168.168.19, server: localhost, request: "GET 
+/index.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: 
+"192.168.168.140"<BR></DIV><BR>查看下端口 
+。看到php-fpm的9000端口已经打开了，说明php-fpm是没什么问题的，问题出在了nginx上了。可能是我的配置文件有问题。
+<P></P>
+<P>找到nginx加载php配置的那块。另外参考了下网上nginx的配置文件。</P>
+<P>在第69行有一个调用脚本路径<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut33003" style="cursor: pointer;" 
+onclick="doCopy('code33003')" data="33003"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code33003"><BR>fastcgi_param&nbsp; 
+SCRIPT_FILENAME&nbsp; 
+/scripts$fastcgi_script_name;<BR></DIV><BR>我把路径改下，改成下面的就可以了。<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut72524" style="cursor: pointer;" 
+onclick="doCopy('code72524')" data="72524"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code72524"><BR>&nbsp;fastcgi_param&nbsp; 
+SCRIPT_FILENAME&nbsp; $document_root$fastcgi_script_name;<BR></DIV>
+<P></P>
+<P>http://localhost/index.php</P>
+<P>可以出现php的版本信息了。<BR><BR>大家还可以参考下面的配置方法</P>
+<P>php-fpm不用再依赖其它的fastcgi启动器，比如lighttpd的spawn-fcgi。<BR>php-fpm的使用非常方便,配置都是在php-fpm.ini的文件内<BR>而启动,重启都可以从php/sbin/php-fpm中进行<BR>更方便的是修改php.ini后可以直接使用php-fpm 
+reload进行加载 
+无需杀掉进程就可以完成php.ini的修改加载<BR>结果显示使用php-fpm可以使php有不小的性能提升<BR>php-fpm控制的进程.cpu回收的速度比较慢.内存分配的很均匀<BR>而spawn-cgi控制的进程CPU下降的很快.而内存分配的比较不均匀.<BR>有很多进程似乎未分配到,而另外一些却占用很高.<BR>可能是由于进程任务分配的不均匀导致的.而这也导致了总体响应速度的下降<BR>而php-fpm合理的分配.导致总体响应的提到以及任务的平均<BR>使用php-fpm需要在php源码上打补丁，然后重新编译php</P>
+<P>一.下载php-fpm<BR>wget 
+http://cn.php.net/get/php-5.2.8.tar.gz/from/www.php.net/mirror<BR>wget 
+http://php-fpm.anight.org/downloads/head/php-5.2.8-fpm-0.5.10.diff.gz<BR>与php-5.2.9在同一级目录<BR>gzip 
+-cd php-5.2.8-fpm-0.5.10.diff.gz | patch -d php-5.2.9 
+-p1<BR>补丁打好以后，编译php的时候增加了下面几个参数：<BR>–enable-fpm 
+激活fastcgi模式的fpm支持<BR>–with-fpm-conf 
+php-fpm的配置文件（默认是PREFIX/etc/php-fpm.conf）<BR>–with-fpm-log 
+php-fpm的日志文件（默认是PREFIX/logs/php-fpm.log）<BR>–with-fpm-pid 
+php-fpm的pid文件（默认是PREFIX/logs/php-fpm.pid）<BR>./configure --prefix=/EBS/php 
+\<BR>--with-config-file-path=/EBS/php/etc \<BR>--enable-fastcgi 
+\<BR>--enable-fpm \<BR>--OTHERS<BR>注：--enable-fastcgi \ 需要在--enable-fpm 
+\的前面，否则，fpm不能编译上。</P>
+<P>二.编译好php后，修改配置文件<BR><BR>vi 
+/EBS/php/etc/php-fpm.conf<BR>需要注意下面几处配置<BR>&lt;value 
+name="listen_address"&gt;127.0.0.1:9000&lt;/value&gt;<BR>这个表示php的fastcgi进程监听的ip地址以及端口<BR>&lt;value 
+name="user"&gt;nobody&lt;/value&gt;<BR>&lt;value 
+name="group"&gt;nobody&lt;/value&gt;<BR>表示php的fastcgi进程以什么用户以及用户组来运行，默认该行是注释掉的，需要打开<BR>&lt;value 
+name="display_errors"&gt;0&lt;/value&gt;<BR>是否显示php错误信息<BR>&lt;value 
+name="max_children"&gt;5&lt;/value&gt;<BR>最大的子进程数目<BR>运行php-fpm：<BR>php-fpm用一个程序来控制fastcgi进程，这个文件在$PREFIX/sbin/php-fpm<BR>/usr/local/php/sbin/php-fpm<BR>该程序有如下参数：<BR>start 
+启动php的fastcgi进程<BR>stop 强制终止php的fastcgi进程<BR>quit 平滑终止php的fastcgi进程<BR>restart 
+重启php的fastcgi进程<BR>reload 重新加载php的php.ini<BR>logrotate 
+重新启用log文件<BR>也就是说，在修改了php.ini之后，我们可以使用<BR>/usr/local/php/sbin/php-fpm 
+reload<BR>这样，就保持了在php的fastcgi进程持续运行的状态下，又重新加载了php.ini。</P>
+<P>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut53961" style="cursor: pointer;" 
+onclick="doCopy('code53961')" data="53961"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code53961"><BR>user www www;<BR>worker_processes 
+10;<BR>error_log logs/error.log notice;<BR>pid logs/nginx.pid;<BR>#Specifies the 
+value for maximum file descriptors that can be opened by this 
+process.<BR>worker_rlimit_nofile 51200;<BR>events<BR>{<BR>&nbsp;&nbsp; use 
+epoll;<BR>&nbsp;&nbsp; worker_connections 
+51200;<BR>}<BR>http<BR>{<BR>&nbsp;&nbsp; include mime.types;<BR>&nbsp;&nbsp; 
+default_type application/octet-stream;<BR>&nbsp;&nbsp; charset 
+gb2312;<BR>&nbsp;&nbsp; server_names_hash_bucket_size 128;<BR>&nbsp;&nbsp; 
+#sendfile on;<BR>&nbsp;&nbsp; #tcp_nopush on;<BR>&nbsp;&nbsp; keepalive_timeout 
+60;<BR>&nbsp;&nbsp; tcp_nodelay on;<BR>&nbsp;&nbsp; gzip on;<BR>&nbsp;&nbsp; 
+gzip_min_length 1k;<BR>&nbsp;&nbsp; gzip_buffers 4 8k;<BR>&nbsp;&nbsp; 
+gzip_http_version 1.1;<BR>&nbsp;&nbsp; gzip_types text/plain 
+application/x-javascript text/css text/html application/xml;<BR>&nbsp;&nbsp; 
+{<BR>&nbsp;&nbsp; listen 80;<BR>&nbsp;&nbsp; server_name 
+192.168.1.2;<BR>&nbsp;&nbsp; index index.html index.htm 
+index.php;<BR>&nbsp;&nbsp; root /EBS/www;<BR>&nbsp;&nbsp; if (-d 
+$request_filename)<BR>&nbsp;&nbsp; {<BR>&nbsp;&nbsp; rewrite ^/(.*)([^/])$ 
+http://$host/$1$2/ permanent;<BR>&nbsp;&nbsp; }<BR>&nbsp;&nbsp; location ~ 
+.*\.php?$<BR>&nbsp;&nbsp; {<BR>&nbsp;&nbsp; include fcgi.conf
+<P></P>
+<P>&nbsp;&nbsp; fastcgi_pass 127.0.0.1:9000;<BR>&nbsp;&nbsp; fastcgi_index 
+index.php;<BR>&nbsp;&nbsp; }<BR>&nbsp;&nbsp; log_format access '$remote_addr - 
+$remote_user [$time_local] "$request" '<BR>&nbsp;&nbsp; '$status 
+$body_bytes_sent "$http_referer" '<BR>&nbsp;&nbsp; '"$http_user_agent" 
+$http_x_forwarded_for';<BR>&nbsp;&nbsp; access_log logs/access.log 
+access;<BR>&nbsp;&nbsp; }<BR>}<BR></P></DIV>
+<P></P>
+<P>新建配置文件<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut36208" style="cursor: pointer;" 
+onclick="doCopy('code36208')" data="36208"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" 
+id="code36208"><BR>/usr/local/nginx/conf/fcgi.conf<BR></DIV><BR>注：nginx自带了一个配置文件，/usr/local/nginx/conf/fastcgi_params，该配置文件缺少粗体字体的部分，会造成访问php文件时报404错误。
+<P></P>
+<P>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut62911" style="cursor: pointer;" 
+onclick="doCopy('code62911')" data="62911"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code62911"><BR>fastcgi_param GATEWAY_INTERFACE 
+CGI/1.1;<BR>fastcgi_param SERVER_SOFTWARE nginx;<BR>fastcgi_param QUERY_STRING 
+$query_string;<BR>fastcgi_param REQUEST_METHOD $request_method;<BR>fastcgi_param 
+CONTENT_TYPE $content_type;<BR>fastcgi_param CONTENT_LENGTH 
+$content_length;<BR>fastcgi_param SCRIPT_FILENAME 
+$document_root$fastcgi_script_name;<BR>fastcgi_param SCRIPT_NAME 
+$fastcgi_script_name;<BR>fastcgi_param REQUEST_URI 
+$request_uri;<BR>fastcgi_param DOCUMENT_URI $document_uri;<BR>fastcgi_param 
+DOCUMENT_ROOT $document_root;<BR>fastcgi_param SERVER_PROTOCOL 
+$server_protocol;<BR>fastcgi_param REMOTE_ADDR $remote_addr;<BR>fastcgi_param 
+REMOTE_PORT $remote_port;<BR>fastcgi_param SERVER_ADDR 
+$server_addr;<BR>fastcgi_param SERVER_PORT $server_port;<BR>fastcgi_param 
+SERVER_NAME $server_name;<BR># PHP only, required if PHP was built with 
+--enable-force-cgi-redirect<BR>#fastcgi_param REDIRECT_STATUS 200;<BR></DIV>
+<P></P>
+<P>四 
+配置XCache<BR><BR>1、安装xcache模块<BR>wgethttp://xcache.lighttpd.net/pub/Releases/1.2.2/xcache-1.2.2.tar.gz<BR>tar 
+-xvzf xcache-1.2.2.tar.gz<BR>cd 
+xcache-1.2.2<BR>/usr/local/php/bin/phpize<BR>./configure 
+--with-php-config=/usr/local/php/bin/php-config --enable-xcache 
+--enable-xcache-optimizer<BR>make<BR>make install<BR>2、计算密码的md5值<BR>echo -n 
+"password"|md5sum<BR>5f4dcc3b5aa765d61d8327deb882cf99<BR>3、配置XCache<BR>;注：zend_extension,用来加载zend的扩展，是绝对路径, 
+extension是相对路径，相对于extension_dir的相对路径，非zend扩展<BR>如果你更改路径以后，一定要apachectl 
+stop后再start，而不要restart。<BR>vi /usr/local/php/etc/php.ini</P>
+<P>添加：</P>
+<P>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut82801" style="cursor: pointer;" 
+onclick="doCopy('code82801')" data="82801"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code82801"><BR>[xcache-common]<BR>zend_extension = 
+/usr/local/php/lib/php/extensions/no-debug-non-zts-20060613/xcache.so<BR>[xcache.admin]<BR>; 
+Change xcache.admin.user to your preferred login name<BR>xcache.admin.user = 
+"admin"<BR>; Change xcache.admin.pass to the MD5 fingerprint of your 
+password<BR>; Use md5 -s "your_secret_password" to find the 
+fingerprint<BR>xcache.admin.pass = 
+"5f4dcc3b5aa765d61d8327deb882cf99"<BR>[xcache]<BR>; Change xcache.size to tune 
+the size of the opcode cache<BR>xcache.size = 24M<BR>xcache.shm_scheme = 
+"mmap"<BR>xcache.count = 2<BR>xcache.slots = 8K<BR>xcache.ttl = 
+0<BR>xcache.gc_interval = 0<BR>; Change xcache.var_size to adjust the size of 
+variable cache<BR>xcache.var_size = 8M<BR>xcache.var_count = 
+1<BR>xcache.var_slots = 8K<BR>xcache.var_ttl = 0<BR>xcache.var_maxttl = 
+0<BR>xcache.var_gc_interval = 300<BR>xcache.test = 
+Off<BR>xcache.readonly_protection = On<BR>xcache.mmap_path = 
+"/tmp/xcache"<BR>xcache.coredump_directory = ""<BR>xcache.cacher = 
+On<BR>xcache.stat = On<BR>xcache.optimizer = 
+Off<BR>[xcache.coverager]<BR>xcache.coverager = 
+On<BR>xcache.coveragedump_directory = ""<BR></DIV>
+<P></P>
+<P>5、重启PHP模块<BR><BR>正常load之后,<BR>在phpinfo显出的信息内<BR>Zend这快应该会加上XCache的内容<BR><BR><IMG 
+id="theimg" onclick="window.open(this.src)" src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/20140311103002.jpg"></P>
+<P>6、另外两种加速模块：<BR>在我们的测试中，效果都要好于xcache，这3中加速不能同时存在两种，有冲突。<BR>6.1 apc<BR>
+<DIV class="codetitle"><SPAN><A class="copybut" id="copybut49689" style="cursor: pointer;" 
+onclick="doCopy('code49689')" data="49689"><U>复制代码</U></A></SPAN> 代码如下:</DIV>
+<DIV class="codebody" id="code49689"><BR>wget 
+http://pecl.php.net/get/APC-3.0.19.tgz<BR>cd 
+APC-3.0.19<BR>/usr/local/php/bin/phpize<BR>./configure --enable-apc 
+--enable-apc-mmap --with-apxs=/EBS/apache/bin/apxs 
+--with-php-config=/EBS/php/bin/php-config<BR>make<BR>make install<BR>6.2 
+eaccelerator<BR>wget 
+http://bart.eaccelerator.net/source/0.9.5.3/eaccelerator-0.9.5.3.zip<BR>cd 
+eaccelerator-0.9.5.3<BR>/usr/local/php/bin/phpize<BR>./configure 
+--enable-eaccelerator=shared 
+--with-php-config=/EBS/php/bin/php-config<BR>make<BR>make install<BR>vi 
+php.ini<BR>zend_extension="/usr/local/php/lib/php/extensions/no-debug-non-zts-20060613/eaccelerator.so"<BR>eaccelerator.shm_size="16"<BR>eaccelerator.cache_dir="/tmp/eaccelerator"<BR>eaccelerator.enable="1"<BR>eaccelerator.optimizer="1"<BR>eaccelerator.check_mtime="1"<BR>eaccelerator.debug="0"<BR>eaccelerator.filter=""<BR>eaccelerator.shm_max="0"<BR>eaccelerator.shm_ttl="0"<BR>eaccelerator.shm_prune_period="0"<BR>eaccelerator.shm_only="0"<BR>eaccelerator.compress="1"<BR>eaccelerator.compress_level="9"<BR></DIV>
+<P></P>
+<P>五、使用nginx对应多台facgi服务器<BR><BR>思路：前端一台nginx，用于做为负载均衡和处理静态页面。利用nginx的upstream模块来将php请求分发到后段的php-fpm服务器上。<BR>后端多台php-fpm的服务器，只起php-fpm服务来处理php。<BR>这样做减少了php-fpm上的nginx服务，相当于少了一层。</P></DIV><!--endmain--> 
+<DIV class="art_xg">
+<H4>您可能感兴趣的文章:</H4>
+<UL>
+  <LI><A title="Nginx报403 forbidden错误 (13: Permission denied)的解决办法" href="http://www.jb51.net/article/102777.htm" 
+  target="_blank">Nginx报403 forbidden错误 (13: Permission denied)的解决办法</A></LI>
+  <LI><A title="解决nginx报错信息 client intended to send too large body: 1331696 bytes" 
+  href="http://www.jb51.net/article/104624.htm" target="_blank">解决nginx报错信息 
+  client intended to send too large body: 1331696 bytes</A></LI>
+  <LI><A title="nginx提示：500 Internal Server Error错误的解决方法" href="http://www.jb51.net/article/35675.htm" 
+  target="_blank">nginx提示：500 Internal Server Error错误的解决方法</A></LI>
+  <LI><A title="NGINX下配置404错误页面的方法分享" href="http://www.jb51.net/article/32213.htm" 
+  target="_blank">NGINX下配置404错误页面的方法分享</A></LI>
+  <LI><A title="为Nginx自定义404，502错误页面的方法" href="http://www.jb51.net/article/25688.htm" 
+  target="_blank">为Nginx自定义404，502错误页面的方法</A></LI>
+  <LI><A title="实现Nginx中使用PHP-FPM时记录PHP错误日志的配置方法" href="http://www.jb51.net/article/49645.htm" 
+  target="_blank">实现Nginx中使用PHP-FPM时记录PHP错误日志的配置方法</A></LI>
+  <LI><A title="Linux服务器nginx访问日志里出现大量http 400错误的请求分析" href="http://www.jb51.net/article/58451.htm" 
+  target="_blank">Linux服务器nginx访问日志里出现大量http 400错误的请求分析</A></LI>
+  <LI><A title="Nginx静态文件响应POST请求 提示405错误的解决方法" href="http://www.jb51.net/article/36257.htm" 
+  target="_blank">Nginx静态文件响应POST请求 提示405错误的解决方法</A></LI>
+  <LI><A title="Nginx中报错：Permission denied与Connection refused的解决" href="http://www.jb51.net/article/112252.htm" 
+  target="_blank">Nginx中报错：Permission denied与Connection 
+refused的解决</A></LI></UL></DIV>
+<DIV class="lbd clearfix"><SPAN class="jbTestPos" id="art_down"></SPAN> </DIV>
+<DIV id="shoucang"></DIV>
+<DIV class="tags mt10"><STRONG>Tags：</STRONG><A title="搜索关于nginx的文章" href="http://common.jb51.net/tag/nginx/1.htm" 
+target="_blank">nginx</A> <A title="搜索关于php-fpm的文章" href="http://common.jb51.net/tag/php-fpm/1.htm" 
+target="_blank">php-fpm</A> <A title="搜索关于php的文章" href="http://common.jb51.net/tag/php/1.htm" 
+target="_blank">php</A> </DIV>
+<DIV class="relatedarticle clearfix mt5">
+<H2>相关文章</H2>
+<UL>
+  <LI><SPAN>2015-06-06</SPAN><A title="配置Nginx服务器防止Flood攻击的方法" href="http://www.jb51.net/article/68484.htm" 
+  target="_blank">配置Nginx服务器防止Flood攻击的方法</A></LI>
+  <LI><SPAN>2017-03-03</SPAN><A title="Nginx 多站点配置实例详解" href="http://www.jb51.net/article/109459.htm" 
+  target="_blank">Nginx 多站点配置实例详解</A></LI>
+  <LI><SPAN>2013-02-02</SPAN><A title="nginx 平滑重启与升级的实现方法" href="http://www.jb51.net/article/34041.htm" 
+  target="_blank">nginx 平滑重启与升级的实现方法</A></LI>
+  <LI><SPAN>2014-06-06</SPAN><A title="Nginx对某个目录设置密码保护例子" href="http://www.jb51.net/article/50949.htm" 
+  target="_blank">Nginx对某个目录设置密码保护例子</A></LI>
+  <LI><SPAN>2016-07-07</SPAN><A title="Ubuntu上安装Nginx服务器程序及简单的环境配置小结" href="http://www.jb51.net/article/87927.htm" 
+  target="_blank">Ubuntu上安装Nginx服务器程序及简单的环境配置小结</A></LI>
+  <LI><SPAN>2016-01-01</SPAN><A title="Nginx服务器抵御CC攻击的相关配置讲解" href="http://www.jb51.net/article/77591.htm" 
+  target="_blank">Nginx服务器抵御CC攻击的相关配置讲解</A></LI>
+  <LI><SPAN>2016-08-08</SPAN><A title="nginx修改配置限制恶意爬虫频率" href="http://www.jb51.net/article/91229.htm" 
+  target="_blank">nginx修改配置限制恶意爬虫频率</A></LI>
+  <LI><SPAN>2017-03-03</SPAN><A title="如何将 Nginx 配置为Web服务器的方法" href="http://www.jb51.net/article/107975.htm" 
+  target="_blank">如何将 Nginx 配置为Web服务器的方法</A></LI>
+  <LI><SPAN>2013-10-10</SPAN><A title="nginx 502 Bad Gateway 错误解决办法" href="http://www.jb51.net/article/42163.htm" 
+  target="_blank">nginx 502 Bad Gateway 错误解决办法</A></LI>
+  <LI><SPAN>2017-06-06</SPAN><A title="详解nginx日志定时备份和删除" href="http://www.jb51.net/article/116709.htm" 
+  target="_blank">详解nginx日志定时备份和删除</A></LI></UL></DIV>
+<DIV class="lbd clearfix mt5"><SPAN class="jbTestPos" id="art_down2"></SPAN> 
+</DIV><A href="http://www.jb51.net/article/47953.htm#comments"></A> 
+<DIV id="comments">
+<H2>最新评论</H2>
+<DIV class="pd5">
+<DIV id="SOHUCS" sid="art_47953"></DIV></DIV></DIV></DIV><!--endborder-->       
+</DIV><!--end fl-->       
+<DIV class="w300 fr">
+<DIV class="r300 clearfix"><SPAN class="jbTestPos" id="side_up"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">大家感兴趣的内容</H4>
+<UL class="newsList newList-in">
+  <LI><EM class="no1">1</EM><A title="nginx 多站点配置方法集合" href="http://www.jb51.net/article/27533.htm" 
+  target="_blank">nginx 多站点配置方法集合</A></LI>
+  <LI><EM class="no2">2</EM><A title="nginx提示：500 Internal Server Error错误的解决方法" 
+  href="http://www.jb51.net/article/35675.htm" target="_blank">nginx提示：500 
+  Internal Server</A></LI>
+  <LI><EM class="no3">3</EM><A title="权限问题导致Nginx 403 Forbidden错误的解决方法" href="http://www.jb51.net/article/54190.htm" 
+  target="_blank">权限问题导致Nginx 403 Forbidde</A></LI>
+  <LI><EM class="no4">4</EM><A title="Nginx 403 forbidden的解决办法" href="http://www.jb51.net/article/47632.htm" 
+  target="_blank">Nginx 403 forbidden的解决办法</A></LI>
+  <LI><EM class="no5">5</EM><A title="nginx FastCGI错误Primary script unknown解决办法" 
+  href="http://www.jb51.net/article/47916.htm" target="_blank">nginx 
+  FastCGI错误Primary scrip</A></LI>
+  <LI><EM class="no6">6</EM><A title="Windows下Nginx+PHP5的安装与配置方法" href="http://www.jb51.net/article/23902.htm" 
+  target="_blank">Windows下Nginx+PHP5的安装与配置</A></LI>
+  <LI><EM class="no7">7</EM><A title="Nginx伪静态配置和常用Rewrite伪静态规则集锦" href="http://www.jb51.net/article/50899.htm" 
+  target="_blank">Nginx伪静态配置和常用Rewrite伪</A></LI>
+  <LI><EM class="no8">8</EM><A title="Nginx下301重定向域名的方法小结" href="http://www.jb51.net/article/24598.htm" 
+  target="_blank">Nginx下301重定向域名的方法小结</A></LI>
+  <LI><EM class="no9">9</EM><A title="nginx 作为反向代理实现负载均衡的例子" href="http://www.jb51.net/article/25643.htm" 
+  target="_blank">nginx 作为反向代理实现负载均衡</A></LI>
+  <LI><EM class="no10">10</EM><A title="一句简单命令重启nginx" href="http://www.jb51.net/article/22552.htm" 
+  target="_blank">一句简单命令重启nginx</A></LI></UL></DIV></DIV>
+<DIV class="r300 clearfix mt10"><SPAN class="jbTestPos" id="idctu"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">最近更新的内容</H4>
+<UL class="newsListA">
+  <UL>
+    <LI><A title="Windows下Nginx+PHP5的安装与配置方法" href="http://www.jb51.net/article/23902.htm" 
+    target="_blank">Windows下Nginx+PHP5的安装与配置方法</A></LI>
+    <LI><A title="详解Nginx配置文件" href="http://www.jb51.net/article/104297.htm" 
+    target="_blank">详解Nginx配置文件</A></LI>
+    <LI><A title="nginx location匹配实例详解" href="http://www.jb51.net/article/116564.htm" 
+    target="_blank">nginx location匹配实例详解</A></LI>
+    <LI><A title="Nginx防止直接用IP访问Web服务器的设置方法" href="http://www.jb51.net/article/31324.htm" 
+    target="_blank">Nginx防止直接用IP访问Web服务器的设置方</A></LI>
+    <LI><A title="实现自动定期删除Nginx日志的方法" href="http://www.jb51.net/article/69221.htm" 
+    target="_blank">实现自动定期删除Nginx日志的方法</A></LI>
+    <LI><A title="nginx强制使用https访问的方法(http跳转到https)" href="http://www.jb51.net/article/103625.htm" 
+    target="_blank">nginx强制使用https访问的方法(http跳转到</A></LI>
+    <LI><A title="使用google-perftools优化nginx在高并发时的性能的教程(完整版)" href="http://www.jb51.net/article/34016.htm" 
+    target="_blank">使用google-perftools优化nginx在高并发时</A></LI>
+    <LI><A title="Nginx启动常见错误及解决方法" href="http://www.jb51.net/article/90179.htm" 
+    target="_blank">Nginx启动常见错误及解决方法</A></LI>
+    <LI><A title="nginx设置上传目录无执行权限的方法" href="http://www.jb51.net/article/25253.htm" 
+    target="_blank">nginx设置上传目录无执行权限的方法</A></LI>
+    <LI><A title="Nginx启用GZIP压缩网页传输方法(推荐)" href="http://www.jb51.net/article/103645.htm" 
+    target="_blank">Nginx启用GZIP压缩网页传输方法(推荐)</A></LI></UL></UL></DIV></DIV>
+<DIV class="r300 clearfix mt10"><SPAN class="jbTestPos" 
+id="idctu1"></SPAN></DIV>
+<DIV class="tabTitleBar mt10 bgf borderTblue">
+<DIV class="borderTnone pb10 YaHei">
+<H4 class="blue">常用在线小工具</H4>
+<UL class="newsListA"><SPAN class="jbTestPos" 
+id="bctools"></SPAN></UL></DIV></DIV>
+<DIV class="r300 clearfix mt10" id="idctu2"><SPAN class="jbTestPos" 
+id="idctu2"></SPAN></DIV>
+<DIV class="mt10 rFixedBox"><SPAN class="jbTestPos" id="r_2"></SPAN> 
+</DIV></DIV><!--end fr-->       </DIV></DIV><!--end content--> 
+<DIV id="footer">
+<DIV class="main clearfix">
+<P><A href="http://www.jb51.net/about.htm" target="_blank">关于我们</A> -  <A href="http://www.jb51.net/support.htm" 
+target="_blank">广告合作</A> -  <A href="http://www.jb51.net/linkus.htm" target="_blank">联系我们</A> 
+-   <A href="http://www.jb51.net/sm.htm" target="_blank">免责声明</A> -   <A href="http://www.jb51.net/sitemap.htm" 
+target="_blank">网站地图</A> -  <A href="tencent://message/?uin=461478385&amp;Site=http://www.jb51.net" 
+target="_blank">投诉建议</A> -  <A href="http://www.jb51.net/up.htm" 
+target="_blank">在线投稿</A> </P>
+<P>&copy;CopyRight 2006-2017 JB51.Net Inc All Rights Reserved. 脚本之家 
+版权所有</P></DIV></DIV><!--end footer--> <LINK href="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/shCore.css" 
+rel="stylesheet" type="text/css"> <LINK href="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/shThemeDefault.css" 
+rel="Stylesheet" type="text/css"> 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/shCore.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/shAutoloader.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+if (top.location != self.location)top.location=self.location;
+$(function(){
+	$('#content').find('img').each(function(){
+        var img = this;
+        if (img.width >= 650){
+            img.style.width = "650px";
+            img.style.height = "auto";
+            //$(img).removeAttr('height');
+            var aTag = document.createElement('a');
+            aTag.href = img.src;
+			aTag.target="_blank";
+            $(aTag).addClass('bPic')
+            .insertAfter(img).append(img)
+          }
+    });
+	$(window).scroll(function()
+    {	
+    	//rFixedBox跟随滚动
+    	var h = $(window).height();
+        var top = $(window).scrollTop();
+    	var rFixedBox = $('.rFixedBox').prev().offset();
+        var fixedTop = rFixedBox.top;
+		
+        if(top>=fixedTop+344)
+        {
+			var h1 = parseInt($('#content').children('.main').height());
+			if(parseInt(top) + 340 < h1){
+				$('.rFixedBox').css({'position':'fixed','top': 0});
+			}else{
+				$('.rFixedBox').css({'position':'absolute','top': h1-510});
+			}
+        }
+        else
+        {
+            $('.rFixedBox').css({'position':'static', 'top':0});   
+        }	
+       /* return true;*/
+    });
+/*$(document).ready(function() {
+  $("#content img").unveil();
+});	*/
+SyntaxHighlighter.autoloader(
+	'applescript			/jslib/syntaxhighlighter/scripts/shBrushAppleScript.js',
+	'actionscript3 as3		/jslib/syntaxhighlighter/scripts/shBrushAS3.js',
+	'bash shell				/jslib/syntaxhighlighter/scripts/shBrushBash.js',
+	'coldfusion cf			/jslib/syntaxhighlighter/scripts/shBrushColdFusion.js',
+	'cpp c					/jslib/syntaxhighlighter/scripts/shBrushCpp.js',
+	'obj-c objc				/jslib/syntaxhighlighter/scripts/shBrushObjC.js',
+	'c# c-sharp csharp		/jslib/syntaxhighlighter/scripts/shBrushCSharp.js',
+	'css					/jslib/syntaxhighlighter/scripts/shBrushCss.js',
+	'delphi pascal			/jslib/syntaxhighlighter/scripts/shBrushDelphi.js',
+	'diff patch pas			/jslib/syntaxhighlighter/scripts/shBrushDiff.js',
+	'erl erlang				/jslib/syntaxhighlighter/scripts/shBrushErlang.js',
+	'groovy					/jslib/syntaxhighlighter/scripts/shBrushGroovy.js',
+	'haxe hx				/jslib/syntaxhighlighter/scripts/shBrushHaxe.js',
+	'java					/jslib/syntaxhighlighter/scripts/shBrushJava.js',
+	'jfx javafx				/jslib/syntaxhighlighter/scripts/shBrushJavaFX.js',
+	'js jscript javascript	/jslib/syntaxhighlighter/scripts/shBrushJScript.js',
+	'perl pl				/jslib/syntaxhighlighter/scripts/shBrushPerl.js',
+	'php					/jslib/syntaxhighlighter/scripts/shBrushPhp.js',
+	'text plain				/jslib/syntaxhighlighter/scripts/shBrushPlain.js',
+	'py python				/jslib/syntaxhighlighter/scripts/shBrushPython.js',
+	'ruby rails ror rb		/jslib/syntaxhighlighter/scripts/shBrushRuby.js',
+	'scala					/jslib/syntaxhighlighter/scripts/shBrushScala.js',
+	'sql					/jslib/syntaxhighlighter/scripts/shBrushSql.js',
+	'vb vbnet				/jslib/syntaxhighlighter/scripts/shBrushVb.js',
+	'ps powershell			/jslib/syntaxhighlighter/scripts/shBrushPowerShell.js',
+	'xml xhtml xslt html	/jslib/syntaxhighlighter/scripts/shBrushXml.js'
+);
+SyntaxHighlighter.all();
+});
+var ourl="";
+</SCRIPT>
+ 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/arc.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<SCRIPT>jbLoader();</SCRIPT>
+
+<SCRIPT class="closetag">jbLoader(true);</SCRIPT>
+ 
+<DIV id="tongji">
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/tongji.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/changyan.js" type="text/javascript" charset="utf-8"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+window.changyan.api.config({
+appid: 'cyrHH3dwi',
+conf: 'prod_1dc5dc80970106099d43fe242b7465fc'
+});
+</SCRIPT>
+ </DIV>
+<SCRIPT src="nginx调用php-fpm出错解决方法和nginx配置详解_nginx_脚本之家_files/pl.html" type="text/javascript"></SCRIPT>
+ </DIV></BODY></HTML><!-- published at 2017/7/3 17:41:52By dxycms qq:461478385  -->

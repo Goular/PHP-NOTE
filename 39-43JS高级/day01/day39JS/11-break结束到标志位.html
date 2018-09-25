@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //通过设置apple标志位，使得break的影响发生改变
+    var num = 1;
+    apple:
+            while (true) {
+                switch (num) {
+                    case 5:
+                        console.log(num);
+                        break;
+                    case 10:
+                        console.log(num);
+                        break;
+                    case 15:
+                        console.log(num);
+                        break apple;
+                }
+                num++;
+            }
+
+</script>
+</body>
+</html>

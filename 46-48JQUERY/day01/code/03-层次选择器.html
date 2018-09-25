@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        function f1(){
+            //① $(s1 s2) 派生选择器
+            $('div span').css('background-color','green');
+
+            //② $(s1 > s2) 直接子元素节点选择器
+            $('div > span').css('color','yellow');
+
+            //③ $(s1 + s2) 直接兄弟选择器
+            $('div + span').css('font-size','30px');
+
+            //④ $(s1 ~ s2) 后续全部兄弟关系选择器
+            $('div ~ span').css('background-color','purple');
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>jquery层次选择器</h2>
+
+<div>
+    <span>关羽</span>
+    <span>刘备</span>
+
+    <p>
+        <span>阿斗</span>
+    </p>
+    <span>张飞</span>
+</div>
+<span>曹操</span>
+
+<p>孙权</p>
+<span>董卓</span>
+
+<div>
+    <span>马超</span>
+</div>
+
+<input type="button" value="触发" onclick="f1()"/>
+</body>
+</html>

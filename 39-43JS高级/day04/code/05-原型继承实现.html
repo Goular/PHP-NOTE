@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //原型继承
+        function Tiger() {
+            this.color = "yellow";
+            this.leg = 4;
+            this.act = function () {
+                console.log("猛虎扑食");
+            };
+        }
+
+        //继承单一成员
+        Tiger.prototype.eat = function () {
+            console.log("吃一个狼");
+        };
+
+        Tiger.prototype.age = 5;
+        var north = new Tiger();
+        console.log(north);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

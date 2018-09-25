@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //声明一个简单的闭包
+        //彼此嵌套的两个函数，内部函数通过return返回出来就行程一个闭包(函数)
+        function f1() {
+            function f2() {
+                console.log("this is a good day.");
+            }
+
+            return f2;
+        }
+        var ff = f1();
+        console.log(ff);
+        ff();
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

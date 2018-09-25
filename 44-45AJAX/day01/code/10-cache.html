@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function f1() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    console.log("成功运行一次");
+                }
+            }
+            //方法一:随机数添加来禁止缓存
+            //xhr.open("get", "./10.php?" + Math.random());
+            xhr.open("get", "./10.php");
+            xhr.send(null);
+        }
+    </script>
+</head>
+<body>
+<h2>ajax发起对服务器端的请求(缓存效果)</h2>
+<input type="button" value="触发" onclick="f1()"/>
+</body>
+</html>

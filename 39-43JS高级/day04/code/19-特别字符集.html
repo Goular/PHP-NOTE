@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //特别字符集
+        //在没有特殊限制的时候就是“单次”匹配
+        //从左往右匹配到第一个符合模式的内容即可
+
+        //.点  : 匹配除换行符 \n 之外的任何单字符  .*
+        var str = "lksd23(*&*^&&^78923823\n}{PPO*&*&?>/,/,";
+        var reg = /.*/;
+
+        //|    : (或)指明两项之间的一个选择
+        var str = "xiaoqiang like eat banana";
+        var reg = /banana|apple/;
+
+        //\    : 这个符号是用来转义的
+        //       把符号的特殊意思去除，只保留符号的“最本质”意思
+        var str = "204.35.107.59ok+ok";
+        var reg = /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[a-z]+\+[a-z]+/;
+
+        var result = str.match(reg);
+        console.log(result);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

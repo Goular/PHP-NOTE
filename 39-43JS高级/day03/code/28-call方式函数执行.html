@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //对象调用其他函数或方法
+        var cat = {
+            mingzi: "波斯猫",
+            climb: function () {
+                console.log(this.mingzi + "在爬树");
+            }
+        };
+
+        var tiger = {
+            mingzi: "东北虎",
+            act: function () {
+                console.log("猛虎扑食");
+            }
+        };
+
+        //cat的climb方法执行的时候，内部this指引到tiger对象
+        cat.climb.call(tiger);
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<!ELEMENT cetsix (word)*>
+        <!ELEMENT word (name,mean,lx)>
+        <!ELEMENT name (#PCDATA)*>
+        <!ELEMENT mean (#PCDATA)*>
+        <!ELEMENT lx (#PCDATA)*>
+        <!ATTLIST word id ID #REQUIRED>
+        <!ATTLIST word bsnp CDATA #IMPLIED>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://www.cnblogs.com/sandea/p/5782192.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/bundle-darkgreentrip.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/bundle-darkgreentrip-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/sandea/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/sandea/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/sandea/wlwmanifest.xml">
+<script async="" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/analytics.js"></script><script src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'sandea', cb_enable_mathjax=false;var isLogined=true;</script>
+<script src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/sandea/"><img id="blogLogo" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/sandea/">sandea</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/sandea/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/sandea">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/sandea/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/sandea/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 736&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 9</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/sandea/p/5782192.html">CentOS 7 上安装 redis3.2.3安装与配置</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>前一段时间写过一篇codis集群的文章，写那篇文章主要是因为当时的项目不支持redis自身集群的功能。</p>
+<p>而现在最新的项目是需要redis集群的，这篇文章我们就来介绍下有关redis的安装与配置。</p>
+<h1 id="一、redis源码安装"><strong>一、redis源码安装</strong></h1>
+<p>截至到2016.8.11，redis最新稳定版本为3.2.3.本篇文章我们就以此版本为基础，进行相关的讲解。</p>
+<p>下载redis源码，并进行相关操作，如下：</p>
+<p>wget&nbsp;<a href="http://download.redis.io/releases/redis-3.2.3.tar.gz">http://download.redis.io/releases/redis-3.2.3.tar.gz</a></p>
+<p>tar -zxvf redis-3.2.3.tar.gz</p>
+<p>mv redis-3.2.3 redis</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223515312-1747132786.png" alt=""></p>
+<p>解压完毕后，现在开始安装，如下：</p>
+<p>cd redis</p>
+<p>make &amp;&amp; make install</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223555906-699341574.png" alt=""></p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223620265-1197504640.png" alt=""></p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223647671-797007971.png" alt=""></p>
+<p>通过上图，我们可以很容易的看出，redis安装到/usr/local,/usr/local/bin,/usr/local/share,/usr/local/include,/usr/local/lib,/usr/local/share/man目录下。</p>
+<p>然后再切换到utils目录下，执行redis初始化脚本install_server.sh，如下：</p>
+<p>cd utils/</p>
+<p>./install_server.sh</p>
+<p>Port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6379</p>
+<p>Config file&nbsp; : /etc/redis/6379.conf</p>
+<p>Log file&nbsp;&nbsp;&nbsp; : /var/log/redis_6379.log</p>
+<p>Data dir&nbsp;&nbsp;&nbsp; : /var/lib/redis/6379</p>
+<p>Executable&nbsp;&nbsp; : /usr/local/bin/redis-server</p>
+<p>Cli Executable : /usr/local/bin/redis-cli</p>
+<p>Copied /tmp/6379.conf =&gt; /etc/init.d/redis_6379</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223714640-1358247439.png" alt=""></p>
+<p>通过上图，我们可以看出redis初始化后redis配置文件为/etc/redis/6379.conf，日志文件为/var/log/redis_6379.log，数据文件dump.rdb存放到/var/lib/redis/6379目录下，启动脚本为/etc/init.d/redis_6379。</p>
+<p>现在我们要使用 systemd，所以在&nbsp;<code>/etc/systems/system</code>&nbsp;下创建一个单位文件名字为&nbsp;<code>redis_6379.service</code>。</p>
+<ol class="linenums">
+<li class="L0"><code><span class="kwd">vi<span class="pun">/<span class="pln">etc<span class="pun">/<span class="kwd">systemd<span class="pun">/<span class="pln">system<span class="pun">/<span class="pln">redis_6379<span class="pun">.<span class="pln">service</span></span></span></span></span></span></span></span></span></span></span></code></li>
+</ol>
+<p>填写下面的内容，详情可见 systemd.service。</p>
+<ol class="linenums">
+<li class="L0"><code><span class="pun">[<span class="typ">Unit<span class="pun">]</span></span></span></code></li>
+<li class="L1"><code><span class="typ">Description<span class="pun">=<span class="typ">Redis<span class="pln">&nbsp;on port&nbsp;<span class="lit">6379</span></span></span></span></span></code></li>
+<li class="L3"><code><span class="pun">[<span class="typ">Service<span class="pun">]</span></span></span></code></li>
+<li class="L4"><code><span class="typ">Type<span class="pun">=<span class="pln">forking</span></span></span></code></li>
+<li class="L5"><code><span class="typ">ExecStart<span class="pun">=<span class="str">/etc/<span class="kwd">init<span class="pun">.<span class="pln">d<span class="pun">/<span class="pln">redis_6379 start</span></span></span></span></span></span></span></span></code></li>
+<li class="L6"><code><span class="typ">ExecStop<span class="pun">=<span class="str">/etc/<span class="kwd">init<span class="pun">.<span class="pln">d<span class="pun">/<span class="pln">redis_6379 stop</span></span></span></span></span></span></span></span></code></li>
+<li class="L8"><code><span class="pun">[<span class="typ">Install<span class="pun">]</span></span></span></code></li>
+<li class="L9"><code><span class="typ">WantedBy<span class="pun">=<span class="pln">multi<span class="pun">-<span class="pln">user<span class="pun">.<span class="pln">target</span></span></span></span></span></span></span></code></li>
+</ol>
+<p>&nbsp;</p>
+<p>现在来查看redis版本使用redis-cli –version命令，如下：</p>
+<p>redis-cli –version</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223738343-1323625682.png" alt=""></p>
+<p>通过上图，我们可以看到redis版本是3.2.3。</p>
+<p>现在我们只要启动redis就可以使用redis了，到此源码方式安装redis就介绍完毕。</p>
+<h1 id="二、yum方式安装"><strong>二、yum方式安装</strong></h1>
+<p>源码安装redis介绍完毕后，我们再来通过yum方式安装redis，本文是以centos6.8为例。使用如下命令：</p>
+<p>rpm -Uvh&nbsp;<a href="http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm">http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</a></p>
+<p>rpm -Uvh&nbsp;<a href="http://rpms.famillecollet.com/enterprise/remi-release-6.rpm">http://rpms.famillecollet.com/enterprise/remi-release-6.rpm</a></p>
+<p>yum -y –enablerepo=remi,remi-test install redis</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223802375-16410399.png" alt=""></p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223822375-1877891439.png" alt=""></p>
+<p>redis安装完毕后，我们来查看下redis安装时创建的相关文件，如下：</p>
+<p>rpm -qa |grep redis</p>
+<p>rpm -ql redis</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223844843-66815325.png" alt=""></p>
+<p>通过上图，我们可以看出redis的配置文件是/etc/redis.conf，数据文件dump.rdb存放到/var/lib/redis/目录下，日志文件为 /var/log/redis/redis.log，其他的都是默认的。</p>
+<p>现在来查看redis版本使用redis-cli –version命令，如下：</p>
+<p>redis-cli –version</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223907968-635900874.png" alt=""></p>
+<p>通过上图，我们可以看到yum方式安装的确实是最新的redis版本。</p>
+<p>现在我们只要启动redis就可以使用redis了，到此yum方式安装redis就介绍完毕。</p>
+<h1 id="三、apt-get方式安装"><strong>三、apt-get方式安装</strong></h1>
+<p>yum方式安装redis介绍完毕后，我们现在来介绍下ubuntu14.04下通过apt-get方式安装redis。</p>
+<p>根据安装redis版本的新旧，我们又进行了区分。</p>
+<h2 id="3.1 apt-get安装最新版本"><strong>3.1 apt-get</strong><strong>安装最新版本</strong></h2>
+<p>先来介绍下安装最新版本的redis，首先要导入apt-get仓库验证密钥，如下：</p>
+<p>wget -q -O – http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add –</p>
+<p>或者</p>
+<p>wget http://www.dotdeb.org/dotdeb.gpg</p>
+<p>sudo apt-key add dotdeb.gpg</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817223932906-1560538600.png" alt=""></p>
+<p>验证文件安装完毕后，我们再来配置apt-get仓库，如下：</p>
+<p>vim /etc/apt/sources.list.d/redis.list</p>
+<p>deb http://packages.dotdeb.org wheezy all</p>
+<p>deb-src http://packages.dotdeb.org wheezy all</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817224002234-1561965808.png" alt=""></p>
+<p>注意：这个apt-get仓库，我们使用的是debian的apt-get仓库，因为经过多次测试发现只有使用这个apt-get仓库才能安装到最新的redis版本。</p>
+<p>apt-get仓库配置完毕后，我们现在来开始执行如下命令进行安装：</p>
+<p>sudo apt-get clean all</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get -y install redis-server</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817224027703-1202934299.png" alt=""></p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817224051468-1573446788.png" alt=""></p>
+<p>通过上图，我们可以很明显的看出redis的版本是3.2.3，最新版本。当然我们也可以通过redis-cli –version命令进行查看。如下：</p>
+<p>redis-cli –version</p>
+<p><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/149930-20160817224114937-425417620.png" alt=""></p>
+<p>通过上图，我们可以看到目前这种方式安装的redis是最新的版本。</p>
+<h2 id="3.2 apt-get非最新版本"><strong>3.2 apt-get</strong><strong>非最新版本</strong></h2>
+<p>上一章节我们使用的debian的apt-get仓库，安装的是redis最新版本，那么我们再来使用比较常见的PPA仓库安装redis看看。</p>
+<p>相关命令如下：</p>
+<p>sudo apt-get -y install python-software-properties software-properties-common</p>
+<p>sudo add-apt-repository -y ppa:chris-lea/redis-server</p>
+<p>sudo apt-get clean all</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get -y install redis-server</p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image014.png"><iframe id="iframe_0.282756822067473" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource.html" style="border: none; width: 633px; height: 108px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image015.png"><iframe id="iframe_0.7972027184750405" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(1).html" style="border: none; width: 532px; height: 162px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image016.png"><iframe id="iframe_0.371314955361848" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(2).html" style="border: none; width: 454px; height: 150px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p>通过上图，我们可以很明显的看出这样安装的redis是3.0.7版本，不是最新版本。</p>
+<p>以上方式，我们也可以通过直接添加apt-get仓库达到目的，因为sudo add-apt-repository -y ppa:chris-lea/redis-server这条命令其实就是在添加一个apt-get仓库。如下：</p>
+<p>cat /etc/apt/sources.list.d/chris-lea-redis-server-trusty.list</p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image017.png"><iframe id="iframe_0.74542715474723" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(3).html" style="border: none; width: 582px; height: 106px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p>添加apt-get仓库，使用如下命令：</p>
+<p>vim /etc/apt/sources.list.d/redis.list</p>
+<p>deb&nbsp;<a href="http://ppa.launchpad.net/chris-lea/redis-server/ubuntu">http://ppa.launchpad.net/chris-lea/redis-server/ubuntu</a>&nbsp;trusty main</p>
+<p>deb-src&nbsp;<a href="http://ppa.launchpad.net/chris-lea/redis-server/ubuntu">http://ppa.launchpad.net/chris-lea/redis-server/ubuntu</a>&nbsp;trusty main</p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image018.png"><iframe id="iframe_0.7846451505995742" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(4).html" style="border: none; width: 610px; height: 97px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p>然后再执行如下命令进行安装就ok了：</p>
+<p>sudo apt-get clean all</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get -y install redis-server</p>
+<p>到此通过apt-get方式安装redis就已经全部结束。</p>
+<h1 id="四、配置redis"><strong>四、配置redis</strong></h1>
+<p>redis安装完毕之后，我们再来配置redis。其实有关redis的安装，我这边的建议是直接通过源码进行安装。因为安装完毕后，redis配置文件是非常完整的。</p>
+<p>考虑到安全性，我们只需要启用redis的密码验证功能requirepass参数即可。</p>
+<p>最终redis配置文件如下：</p>
+<p>grep -Ev ‘^#|^$’ /etc/redis/6379.conf</p>
+<p><strong>bind 127.0.0.1</strong></p>
+<p>protected-mode yes</p>
+<p><strong>port 6379</strong></p>
+<p>tcp-backlog 511</p>
+<p>timeout 0</p>
+<p>tcp-keepalive 300</p>
+<p>daemonize yes</p>
+<p>supervised no</p>
+<p><strong>pidfile /var/run/redis_6379.pid</strong></p>
+<p>loglevel notice</p>
+<p><strong>logfile /var/log/redis_6379.log</strong></p>
+<p>databases 16</p>
+<p>save 900 1</p>
+<p>save 300 10</p>
+<p>save 60 10000</p>
+<p>stop-writes-on-bgsave-error yes</p>
+<p>rdbcompression yes</p>
+<p>rdbchecksum yes</p>
+<p><strong>dbfilename dump.rdb</strong></p>
+<p><strong>dir /var/lib/redis/6379</strong></p>
+<p>slave-serve-stale-data yes</p>
+<p>slave-read-only yes</p>
+<p>repl-diskless-sync no</p>
+<p>repl-diskless-sync-delay 5</p>
+<p>repl-disable-tcp-nodelay no</p>
+<p>slave-priority 100</p>
+<p><strong>requirepass ilanniredis</strong></p>
+<p>appendonly no</p>
+<p>appendfilename “appendonly.aof”</p>
+<p>appendfsync everysec</p>
+<p>no-appendfsync-on-rewrite no</p>
+<p>auto-aof-rewrite-percentage 100</p>
+<p>auto-aof-rewrite-min-size 64mb</p>
+<p>aof-load-truncated yes</p>
+<p>lua-time-limit 5000</p>
+<p>slowlog-log-slower-than 10000</p>
+<p>slowlog-max-len 128</p>
+<p>latency-monitor-threshold 0</p>
+<p>notify-keyspace-events “”</p>
+<p>hash-max-ziplist-entries 512</p>
+<p>hash-max-ziplist-value 64</p>
+<p>list-max-ziplist-size -2</p>
+<p>list-compress-depth 0</p>
+<p>set-max-intset-entries 512</p>
+<p>zset-max-ziplist-entries 128</p>
+<p>zset-max-ziplist-value 64</p>
+<p>hll-sparse-max-bytes 3000</p>
+<p>activerehashing yes</p>
+<p>client-output-buffer-limit normal 0 0 0</p>
+<p>client-output-buffer-limit slave 256mb 64mb 60</p>
+<p>client-output-buffer-limit pubsub 32mb 8mb 60</p>
+<p>hz 10</p>
+<p>aof-rewrite-incremental-fsync yes</p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image019.png"><iframe id="iframe_0.8469625944309109" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(5).html" style="border: none; width: 419px; height: 637px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p>有关配置文件里面的这些参数我们会在以后的文章中进行介绍，到此有关redis配置简单介绍完毕。</p>
+<h1 id="五、启动和使用redis"><strong>五、启动和使用redis</strong></h1>
+<p>redis配置文件配置完毕后，我们来启动redis并进行简单的操作。如下：</p>
+<p>redis-cli -h 127.0.0.1 -p 6379 -a ilanniredis</p>
+<p>keys *</p>
+<p>set ilanni testredis</p>
+<p>get ilanni</p>
+<p><a href="http://www.ilanni.com/wp-content/uploads/2016/08/clip_image020.png"><iframe id="iframe_0.6426928965747911" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/saved_resource(6).html" style="border: none; width: 496px; height: 140px;" frameborder="0" scrolling="no"></iframe></a></p>
+<p>我们来稍微讲解下以上命令的意思：</p>
+<p>redis-cli -h 127.0.0.1 -p 6379 -a ilanniredis</p>
+<p>这条命令是说要连接redis服务器，IP是127.0.0.1，端口是6379，密码是ilanniredis。</p>
+<p>keys *是查看redis所有的键值对。</p>
+<p>set ilanni testredis添加一个键值ilanni，内容为testredis。</p>
+<p>get ilanni查看ilanni这个键值的内容。</p>
+<p>redis的命令使用暂时我们就介绍这么多。</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/sandea/category/693598.html" target="_blank">Redis</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(5782192,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;0aa9267f-ba9c-df11-ba8f-001cf0cd104b&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/sandea/" target="_blank"><img src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/sandea/">sandea</a><br>
+            <a href="http://home.cnblogs.com/u/sandea/followees">关注 - 6</a><br>
+            <a href="http://home.cnblogs.com/u/sandea/followers">粉丝 - 22</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;0aa9267f-ba9c-df11-ba8f-001cf0cd104b&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(5782192,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(5782192,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/sandea/p/5769259.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/sandea/p/5769259.html" title="发布于2016-08-13 23:46">Rabbitmq Exchange Type 说明</a><br><a href="http://www.cnblogs.com/sandea/p/5782220.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/sandea/p/5782220.html" title="发布于2016-08-17 22:46">redis3.2 最新版本启动配置文件redis.conf详细说明</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-08-17 22:34</span> <a href="http://www.cnblogs.com/sandea/">sandea</a> 阅读(<span id="post_view_count">13067</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=5782192" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/sandea/p/5782192.html#" onclick="AddToWz(5782192);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=94435,cb_entryId=5782192,cb_blogApp=currentBlogApp,cb_blogUserGuid='0aa9267f-ba9c-df11-ba8f-001cf0cd104b',cb_entryCreatedDate='2016/8/17 22:34:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/sandea/p/5782192.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/sandea/p/5782192.html#top">返回顶部</a></div>
+<div id="comment_form_container">
+<div id="commentform_title">发表评论</div>
+<span id="tip_comment" style="color:Red"></span>
+<p>
+昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="暴走骑士">
+</p>
+<div class="commentbox_main">
+<div class="commentbox_title">
+<div class="commentbox_title_left">评论内容：</div>
+<div class="commentbox_title_right">
+<img id="ubb_quote" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/quote.gif" alt="引用" title="添加引用" onclick="insertUBB(&#39;tbCommentBody&#39;,&#39;quote&#39;)">
+<img id="ubb_bold" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/b.png" alt="粗体" title="添加粗体" onclick="insertUBB(&#39;tbCommentBody&#39;,&#39;b&#39;)">
+<img id="ubb_url" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/lk.png" alt="链接" title="添加链接" onclick="insertUbbUrl(&#39;tbCommentBody&#39;)">
+<img id="ubb_indent" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/indent.png" alt="缩进" title="添加首行缩进" onclick="insertIndent(&#39;tbCommentBody&#39;)">
+<img id="ubb_code" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/InsertCode.gif" alt="代码" title="添加代码" onclick="insertUbbCode()">
+<img id="ubb_img" class="comment_icon" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/img.gif" alt="图片" title="上传图片" onclick="OpenImageUploadWindow();">
+</div>
+</div>
+<div class="clear"></div>
+<textarea id="tbCommentBody" class="comment_textarea"></textarea>
+</div>
+<p id="commentbox_opt">
+<input id="btn_comment_submit" type="button" class="comment_btn" value="提交评论">
+<span id="span_comment_canceledit" style="display:none"><a href="javascript:void(0);" onclick="return CancelCommentEdit()">不改了</a></span>
+<a href="javascript:void(0);" onclick="return logout();">退出</a>
+        <a id="commentbox_opt_sub" href="javascript:void(0);" title="订阅后有新评论时会邮件通知您" onclick="commentManager.Subscribe()">订阅评论</a>
+</p>
+<div id="tip_comment2" style="color:Red"></div>
+<p>
+[Ctrl+Enter快捷键提交]
+</p>
+<div style="display:none">
+<span id="comment_edit_id"></span><span id="span_parentcomment_id"></span>
+<span id="span_parent_id"></span>
+<span id="span_comment_replyto"></span>
+<span id="span_comment_posted"></span>
+</div>
+</div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://console.upyun.com/register/?invite=H124C2iMZ?utm_source=cnblogs&amp;utm_medium=referral" target="_blank">【推荐】现在注册又拍云，首月可享 200G CDN流量，还可免费申请 SSL 证书</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="http://click.aliyun.com/m/26126/" target="_blank"><img width="300" height="250" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/24442-20170718132533661-166801094.jpg" alt="阿里云0718"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/574422/" target="_blank">中国解决分子压电材料世纪难题 以后可以用衣服给手机充电</a><br> ·  <a href="http://news.cnblogs.com/n/574421/" target="_blank">关于前端开发，500位工程师总结出了8款“最牛”编程语言工具</a><br> ·  <a href="http://news.cnblogs.com/n/574419/" target="_blank">现金消失背后，是蚂蚁金服开启全新智能商业时代的野心</a><br> ·  <a href="http://news.cnblogs.com/n/574418/" target="_blank">CVPR获奖论文公布，苹果斩获最佳论文！| CVPR 2017</a><br> ·  <a href="http://news.cnblogs.com/n/574417/" target="_blank">腾讯AI Lab入选CVPR的六篇论文逐一看|CVPR 2017</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="https://www.jiguang.cn/devservice?source=bky&amp;hmsr=%E5%8D%9A%E5%AE%A2%E5%9B%AD&amp;hmpl=&amp;hmcu=&amp;hmkw=&amp;hmci=" target="_blank"><img width="468" height="60" src="./CentOS 7 上安装 redis3.2.3安装与配置 - sandea - 博客园_files/24442-20170629165247758-2056260207.png" alt="极光推广_0701"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/570194/" target="_blank">小printf的故事：什么是真正的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/569992/" target="_blank">程序员的工作、学习与绩效</a><br> ·  <a href="http://kb.cnblogs.com/page/569056/" target="_blank">软件开发为什么很难</a><br> ·  <a href="http://kb.cnblogs.com/page/565901/" target="_blank">唱吧DevOps的落地，微服务CI/CD的范本技术解读</a><br> ·  <a href="http://kb.cnblogs.com/page/566523/" target="_blank">程序员，如何从平庸走向理想？</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"><b>历史上的今天:</b><br>2014-08-17 <a href="http://www.cnblogs.com/sandea/p/3917982.html">jquery mobile validation</a><br>2014-08-17 <a href="http://www.cnblogs.com/sandea/p/3917784.html">Quartz任务调度快速入门（转）</a><br></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/sandea/">sandea</a><br>园龄：<a href="http://home.cnblogs.com/u/sandea/" title="入园时间：2010-07-31">6年11个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/sandea/followers/">22</a><br>关注：<a href="http://home.cnblogs.com/u/sandea/followees/">6</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;0aa9267f-ba9c-df11-ba8f-001cf0cd104b&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/06/01&#39;);return false;">&lt;</a></td><td align="center">2017年7月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/08/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center"><a href="http://www.cnblogs.com/sandea/archive/2017/07/04.html"><u>4</u></a></td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalTodayDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/sandea/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/sandea/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/sandea/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/sandea/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/sandea/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/sandea/tag/UML/">UML</a>(2)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E6%A0%87%E5%87%86%E5%9B%BE/">UML标准图</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E9%83%A8%E7%BD%B2%E5%9B%BE/">UML部署图</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E5%AF%B9%E8%B1%A1%E5%9B%BE/">UML对象图</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E6%A6%82%E8%BF%B0/">UML概述</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9D%97/">UML构建模块</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E6%B4%BB%E5%8A%A8%E5%9B%BE/">UML活动图</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%A4%BA%E6%B3%95/">UML基本表示法</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E6%9E%B6%E6%9E%84/">UML架构</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/UML%E5%BB%BA%E6%A8%A1%E7%B1%BB%E5%9E%8B/">UML建模类型</a>(1)</li><li><a href="http://www.cnblogs.com/sandea/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/sandea/category/835692.html">Android(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/sandea/category/569546.html">Apache安装与配置(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/sandea/category/614298.html">APP(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/sandea/category/523219.html">CSS(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/sandea/category/853906.html">Elasticsearch(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/sandea/category/680671.html">FastDFS(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/sandea/category/898358.html">Git(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/sandea/category/523218.html">HTML5(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/sandea/category/754125.html">Java 多线程(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/sandea/category/583287.html">Java(Cache)(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/sandea/category/600750.html">JAVA(DWR)(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/sandea/category/548420.html">Java(Hibernate)(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/sandea/category/582055.html">Java(Junit)(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/sandea/category/570812.html">java(openfire+spark+netty)(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/sandea/category/548421.html">Java(Spring)(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/sandea/category/548422.html">Java(Struct)(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/sandea/category/592055.html">Java(标签)(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/sandea/category/604926.html">Java(任务调度)(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/sandea/category/523217.html">javasript(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/sandea/category/523145.html">Java基础(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/sandea/category/564172.html">Linux(85)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/sandea/category/569610.html">Linux MySQL(40)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/sandea/category/581855.html">Log4j(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="http://www.cnblogs.com/sandea/category/762014.html">Mac OS(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="http://www.cnblogs.com/sandea/category/910094.html">Maven(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_25" href="http://www.cnblogs.com/sandea/category/788685.html">Memcache(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_26" href="http://www.cnblogs.com/sandea/category/850189.html">MongoDB(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_27" href="http://www.cnblogs.com/sandea/category/523136.html">Net基础(75)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_28" href="http://www.cnblogs.com/sandea/category/672682.html">Nginx(15)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_29" href="http://www.cnblogs.com/sandea/category/885229.html">NodeJs(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_30" href="http://www.cnblogs.com/sandea/category/690955.html">phalcon(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_31" href="http://www.cnblogs.com/sandea/category/976591.html">PHP Composer (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_32" href="http://www.cnblogs.com/sandea/category/595116.html">PHP(Cache)(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_33" href="http://www.cnblogs.com/sandea/category/601807.html">PHP(数据库)(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_34" href="http://www.cnblogs.com/sandea/category/523143.html">PHP基础(40)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_35" href="http://www.cnblogs.com/sandea/category/997276.html">PostgreSQL</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_36" href="http://www.cnblogs.com/sandea/category/693598.html">Redis(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_37" href="http://www.cnblogs.com/sandea/category/580485.html">Smarty(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_38" href="http://www.cnblogs.com/sandea/category/839423.html">sphinx(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_39" href="http://www.cnblogs.com/sandea/category/603808.html">WebUI(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_40" href="http://www.cnblogs.com/sandea/category/843948.html">YII2(24)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_41" href="http://www.cnblogs.com/sandea/category/996198.html">阿里云DRDS(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_42" href="http://www.cnblogs.com/sandea/category/524554.html">操作系统(13)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_43" href="http://www.cnblogs.com/sandea/category/523150.html">服务器安全(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_44" href="http://www.cnblogs.com/sandea/category/523134.html">服务器架构(21)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_45" href="http://www.cnblogs.com/sandea/category/844291.html">高并发(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_46" href="http://www.cnblogs.com/sandea/category/725403.html">加密算法(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_47" href="http://www.cnblogs.com/sandea/category/533448.html">开发工具(16)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_48" href="http://www.cnblogs.com/sandea/category/523140.html">人机交付(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_49" href="http://www.cnblogs.com/sandea/category/524340.html">软件测试(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_50" href="http://www.cnblogs.com/sandea/category/523139.html">软件打包(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_51" href="http://www.cnblogs.com/sandea/category/523154.html">软件设计(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_52" href="http://www.cnblogs.com/sandea/category/523141.html">设计(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_53" href="http://www.cnblogs.com/sandea/category/661484.html">设计模式(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_54" href="http://www.cnblogs.com/sandea/category/523138.html">手机应用开发(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_55" href="http://www.cnblogs.com/sandea/category/607515.html">数据库(MySQL)(18)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_56" href="http://www.cnblogs.com/sandea/category/523146.html">数据库基础(21)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_57" href="http://www.cnblogs.com/sandea/category/708956.html">通过注释生成文档(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_58" href="http://www.cnblogs.com/sandea/category/523149.html">网络应用安全(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_59" href="http://www.cnblogs.com/sandea/category/523148.html">网站运营(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_60" href="http://www.cnblogs.com/sandea/category/603362.html">微信(7)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_61" href="http://www.cnblogs.com/sandea/category/554060.html">系统架构(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_62" href="http://www.cnblogs.com/sandea/category/314512.html">项目管理(38)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_63" href="http://www.cnblogs.com/sandea/category/935652.html">项目管理表格(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_64" href="http://www.cnblogs.com/sandea/category/523142.html">项目管理软件(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_65" href="http://www.cnblogs.com/sandea/category/860314.html">消息队列中间件(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_66" href="http://www.cnblogs.com/sandea/category/835556.html">信息安全(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_67" href="http://www.cnblogs.com/sandea/category/683570.html">虚拟化技术(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_68" href="http://www.cnblogs.com/sandea/category/602425.html">原型(AxureRP)(1)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/sandea/archive/2017/07.html">2017年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/sandea/archive/2017/06.html">2017年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/sandea/archive/2017/05.html">2017年5月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/sandea/archive/2017/04.html">2017年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/sandea/archive/2017/03.html">2017年3月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/sandea/archive/2017/02.html">2017年2月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/sandea/archive/2017/01.html">2017年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/sandea/archive/2016/12.html">2016年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/sandea/archive/2016/11.html">2016年11月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/sandea/archive/2016/10.html">2016年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/sandea/archive/2016/09.html">2016年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/sandea/archive/2016/08.html">2016年8月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/sandea/archive/2016/07.html">2016年7月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/sandea/archive/2016/06.html">2016年6月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/sandea/archive/2016/05.html">2016年5月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/sandea/archive/2016/04.html">2016年4月 (11)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/sandea/archive/2016/03.html">2016年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/sandea/archive/2016/02.html">2016年2月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/sandea/archive/2016/01.html">2016年1月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/sandea/archive/2015/12.html">2015年12月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/sandea/archive/2015/11.html">2015年11月 (20)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/sandea/archive/2015/10.html">2015年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/sandea/archive/2015/09.html">2015年9月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/sandea/archive/2015/08.html">2015年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/sandea/archive/2015/07.html">2015年7月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/sandea/archive/2015/06.html">2015年6月 (36)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/sandea/archive/2015/05.html">2015年5月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/sandea/archive/2015/04.html">2015年4月 (21)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/sandea/archive/2015/03.html">2015年3月 (34)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/sandea/archive/2015/02.html">2015年2月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/sandea/archive/2015/01.html">2015年1月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/sandea/archive/2014/12.html">2014年12月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/sandea/archive/2014/11.html">2014年11月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/sandea/archive/2014/10.html">2014年10月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/sandea/archive/2014/09.html">2014年9月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/sandea/archive/2014/08.html">2014年8月 (20)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/sandea/archive/2014/07.html">2014年7月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/sandea/archive/2014/06.html">2014年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/sandea/archive/2014/05.html">2014年5月 (22)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/sandea/archive/2014/04.html">2014年4月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/sandea/archive/2014/03.html">2014年3月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/sandea/archive/2014/02.html">2014年2月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/sandea/archive/2014/01.html">2014年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/sandea/archive/2013/12.html">2013年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/sandea/archive/2013/11.html">2013年11月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/sandea/archive/2013/10.html">2013年10月 (31)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/sandea/archive/2013/09.html">2013年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/sandea/archive/2013/08.html">2013年8月 (209)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/sandea/archive/2012/09.html">2012年9月 (2)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_articlecategory" class="catListArticleCategory sidebar-block">
+<h3 class="catListTitle">文章分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/sandea/category/523135.html">Net基础</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/sandea/category/314513.html">项目管理</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/sandea/p/6894564.html#3701745">1. Re:整理了一份招PHP高级工程师的面试题(转)</a></li>
+        <li class="recent_comment_body">这是面试题？拿书抄袭都不一定能找到。</li>
+        <li class="recent_comment_author">--wangjinming</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/sandea/p/3293708.html#3642593">2. Re:基于无锁的C#并发队列实现（转载）</a></li>
+        <li class="recent_comment_body">mark</li>
+        <li class="recent_comment_author">--大恒爸爸</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/sandea/p/6478607.html#3633640">3. Re:Apache优化：修改最大并发连接数（转）</a></li>
+        <li class="recent_comment_body">博主学的东西也好杂啊。</li>
+        <li class="recent_comment_author">--wangjinming</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/sandea/p/5637841.html#3590480">4. Re:YII2 实现后台操作记录日志(转)</a></li>
+        <li class="recent_comment_body">数据表和视图都生成好了，但后台操作，数据库并没有记录！  感觉model层里面saveLog（）方法根本没有用到，是不是再BaseController里面要加上这个方法？</li>
+        <li class="recent_comment_author">--张溪少年</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/sandea/p/5517873.html#3439701">5. Re:memcached的最佳实践方案（转）</a></li>
+        <li class="recent_comment_body">缓存简单的查询结果的时候，结果超过1M（比如100万条）会出问题吗？</li>
+        <li class="recent_comment_author">--wangjinming</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/sandea/p/5634294.html">1. php 数组排序以及按照某个字段排序(14693)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5782192.html">2. CentOS 7 上安装 redis3.2.3安装与配置(13066)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5205792.html">3. mysql-binlog日志恢复数据库(5974)</a></li><li><a href="http://www.cnblogs.com/sandea/p/4492743.html">4. LINUX创建用户的命令(3269)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5605273.html">5. Yii2.0高级框架数据库增删改查的一些操作（转）(3093)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/sandea/p/3293708.html">1. 基于无锁的C#并发队列实现（转载）(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/3289905.html">2. 一个电子商务系统的架构设计（转载）(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/3289926.html">3. EF4.1 企业架构模式 自动映射数据表（转载）(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/4379238.html">4. aip接口中对url参数md5加密防篡改的原理(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/6894564.html">5. 整理了一份招PHP高级工程师的面试题(转)(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/sandea/p/5714830.html">1. YII2项目常用技能知识总结(2)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5670954.html">2. Yii2 数据操作Query Builder(转)(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5650036.html">3. YII2 Model 类切换数据库连接(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/5605044.html">4. MySQL主从数据库同步延迟问题解决（转）(1)</a></li><li><a href="http://www.cnblogs.com/sandea/p/3293750.html">5. 百度或者Google---SEO优化（转载）(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2017 sandea
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

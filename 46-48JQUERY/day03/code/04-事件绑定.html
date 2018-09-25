@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //③ 批量绑定多个事件,使用json来处理
+        $(function(){
+            $('div').bind({
+                mouseover:function(evt){
+                    $(this).css('background-color','orange');
+                },
+                mouseout:function(evt){
+                    $(this).css('background-color','');
+                },
+                click:function(evt){
+                    $(this).css('font-size','30px');
+                }
+            });
+
+            $('div').bind('mouseover',f1);
+            $('div').bind('mouseover',f2);
+            $('div').bind('mouseover',f3);
+        });
+
+        function f1(){console.log(111);}
+        function f2(){console.log(222);}
+        function f3(){console.log(333);}
+
+        function cancel(){
+            //取消事件绑定
+            //$('div').unbind();
+            $('div').unbind('mouseover');
+        }
+    </script>
+    <style type="text/css">
+        div{width:300px; height:200px; background-color:pink;}
+    </style>
+</head>
+<body>
+    <h2>事件绑定(json对象批量绑定事件)</h2>
+    <div>this is autumn</div>
+    <input type="button" value="取消事件" onclick="cancel()" />
+</body>
+</html>

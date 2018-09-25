@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label id="date"></label>
+<input type="button" value="停" onclick="stop()"/>
+<input type="button" value="开始" onclick="start()"/>
+<script>
+
+    window.onload = function () {
+        var date = document.getElementById("date");
+    };
+
+    function showTime() {
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth();
+        var day = time.getDate();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var seconds = time.getSeconds();
+        return year + "年" + month + "月" + day + "日 " + hour + "时" + minute + "分" + seconds + "秒";
+    }
+
+    function start() {
+        var interval = setInterval(function () {
+            var result = showTime();
+            this.date.innerHTML = result;
+        }, 1000);
+        this.interval = interval;
+    }
+
+    function stop() {
+        clearInterval(this.interval);
+    }
+</script>
+
+</body>
+</html>

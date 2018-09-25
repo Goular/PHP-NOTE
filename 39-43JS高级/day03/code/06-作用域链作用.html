@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //作用域链作用
+        //③ 变量的作用域是“声明时”决定的，非运行时
+        function f1() {
+            var identity = "Student";
+            console.log("身份::" + identity);
+        }
+
+        function f2() {
+            var identify = "workman";
+            f1();////f1函数在任何地方调用都是访问到"student"信息
+        }
+        f2();
+
+    </script>
+
+</head>
+<body>
+<h2>作用域链</h2>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        function f1(){
+            //JQuery的简单使用
+            $('h2').css('backgound-color','green');
+            $('h2').css('color','blue');
+            $.get('./01.php',function(msg){
+                alert(msg);
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+<h2>jquery简单使用</h2>
+<input type="button" value="触发" onclick="f1()" />
+</body>
+</html>

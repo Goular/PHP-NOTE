@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1(){
+            //$(父节点).empty()
+            //$('#shu').empty();
+
+            //$(匹配节点).remove()
+            $('#quan,#yu').remove();
+        }
+
+    </script>
+</head>
+<body>
+<h2>节点删除</h2>
+<ul id="shu">
+    <li>刘备</li>
+    <li id="guan">关羽</li>
+    <li>张飞</li>
+</ul>
+<ul id="wu">
+    <li id="quan">孙权</li>
+    <li id="yu">周瑜</li>
+    <li>小乔</li>
+</ul>
+<input type="button" value="删除" onclick="f1()" />
+</body>
+</html>

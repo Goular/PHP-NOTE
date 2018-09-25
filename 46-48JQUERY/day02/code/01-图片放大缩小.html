@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        function f1() {
+            //图片放大
+            //① 获得图片原宽度、原高度
+            var w = $('img').width();
+            var h = $('img').height();
+            //② 新宽度、高度计算
+            var new_w = w + 5;
+            var new_h = new_w * h / w;
+            //③ 设置新宽度、高度
+            $('img').css({"height":new_h,"width":new_w});
+
+        }
+
+        function f2() {
+            //图片缩小
+            //① 获得图片原宽度、原高度
+            var w = $('img').width();
+            var h = $('img').height();
+            //② 新宽度、高度计算
+            var new_w = w-5;
+            var new_h = new_w*h/w;
+
+            //③ 设置新宽度、高度
+            $('img').css({"height":new_h,"width":new_w});
+        }
+
+    </script>
+</head>
+<body>
+<h2>图片放大缩小</h2>
+<img src="./3d.jpg" alt="" width="400"/><br/><br/>
+<input type="button" value="放大" onclick="f1()"/>
+<input type="button" value="缩小" onclick="f2()"/>
+</body>
+</html>

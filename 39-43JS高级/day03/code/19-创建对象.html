@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //创建对象
+        //字面量创建对象
+        var pig = {};
+        console.log(pig);
+
+        //有默认成员
+        var cat = {
+            name: "kitty",
+            color: "yellow",
+            climb: function () {
+                console.log("在爬树");
+            }
+        };
+        console.log(cat);
+
+        //对象访问成员：对象[成员名称]、对象.成员名称
+        console.log(cat.name);
+        console.log(cat['color']);
+        cat.climb();
+
+        //给对象丰富(添加)成员：
+        //对象[成员名] = 值
+        //对象.成员名 = 值
+        pig.color = "black";
+        pig['addr'] = "吉林";
+        pig.hobby = function () {
+            console.log('love sleep.');
+        };
+        console.log(pig);
+
+
+    </script>
+</head>
+<body>
+<h2></h2>
+</body>
+</html>

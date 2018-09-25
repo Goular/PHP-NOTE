@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        //③ 遍历jquery对象
+        //$().each(function(k dom对象下标, v 分别代表每个dom对象){});
+        var clr = ['gold', 'yellow', 'gray', 'purple', 'blue', 'red', 'pink', 'green'];
+
+        window.onload = function () {
+            $('li').each(function (key, value) {
+                //this 与 v 的代表意思一致，分别代表每个li的dom对象
+                //使用jquery框架的过程中，this大部分情况下都代表"dom对象"
+                console.log(this);
+                console.log(value);
+                console.log(key + "------" + value);
+
+                this.style.backgrounColor = clr[Math.floor(Math.random()*8)];
+                $(this).css('color','blue');
+            });
+        }
+
+    </script>
+</head>
+<body>
+<h2>each遍历方法</h2>
+<ul>
+    <li>哈尔滨</li>
+    <li>长春</li>
+    <li>沈阳</li>
+</ul>
+<input type="button" value="触发1" onclick="f1()"/>
+</body>
+</html>
